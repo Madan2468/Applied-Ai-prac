@@ -1,0 +1,1091 @@
+
+Applied Accelerated Artificial Intelligence / Architecture
+Assignments 1–5 — Full MCQs, Options & Correct Answers
+Compiled from the five uploaded NPTEL detailed-solution files
+
+Quick Answer Key
+Assignment 1: 1.A  2.B  3.A  4.B  5.C  6.A  7.D  8.C  9.A  10.A  11.C  12.C  13.D  14.B  15.D
+Assignment 2: 1.B  2.C  3.B  4.A  5.A  6.C  7.D  8.C  9.A  10.D  11.A  12.A  13.C  14.B  15.C
+Assignment 3: 1.D  2.C  3.B  4.B  5.B  6.B  7.B  8.B  9.C  10.C  11.C  12.C  13.A  14.B  15.B
+Assignment 4: 1.A  2.C  3.B  4.B  5.A  6.C  7.D  8.C  9.D  10.A  11.B  12.B  13.C  14.B  15.D
+Assignment 5: 1.B  2.C  3.C  4.B  5.C  6.B  7.D  8.A  9.A  10.A  11.D  12.C  13.C  14.B  15.A
+
+Assignment 1
+Question 1: What is Memory Wall?
+A) The high latency difference between DRAM & CPU
+B) The lack of storage space for large files in secondary hard drives
+C) The physical limitation of the silicon die size in processors
+D) Speed of L1 cache is around 4 cycles per core/private
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 2: What is Re-Order buffer?
+A) Stores recently used pages
+B) Looks ahead for dependent & independent instructions in advance
+C) Stores the recently used instructions
+D) Used in In-Order Execution
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 3: For data level parallelism, which type of extensions are used in Modern systems? Indian Ins titut e of T echnology Guw ahati
+A) SIMD
+B) SISD
+C) MISD
+D) MIMD
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 4: The left & right side of intersection of peak performance curve & peak memory bandwidth curve represents?
+A) Memory bound & compute intensive workload
+B) Compute intensive & memory bound workload
+C) Cannot differentiate
+D) None of the above
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 5: CPU cannot do transformation attention (large matrix multiplication). Why?
+A) Because it does not fall under the memory roof for CPUs only.
+B) The statement is false, it can be done by CPU.
+C) Because it is above the maximum compute performance of CPU
+D) It is neither done by CPU not by GPU
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 6: LLM inference & DNN training are:
+A) Memory Bound & Compute Bound
+B) Compute Bound & Memory Bound
+C) Memory Bound & Memory Bound
+D) Compute Bound & Compute Bound
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 7: DDR5 Memory have:
+A) 2500 - 6400 MT/s, 32 bit wide bus
+B) 4800 - 6400 MT/s, 32 bit wide bus
+C) 1200 - 4800 MT/s, 64 bit wide bus
+D) 4800 - 6400 MT/s, 64 bit wide bus
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 8: ECC (Error correcting code) Memory in AI servers do:
+A) Detect and correct single bit and double bit errors
+B) Detect single bit errors, correct double bit errors
+C) Detect double bit errors, correct single bit errors
+D) Correct both single bit and double bit errors
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 9: In NUMA architecture (like DGX H100), accessing cross socket memory adds around:
+A) 2x latency
+B) 3x latency
+C) 4x latency
+D) 6x latency
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 10: Tick the correct option regarding warps in CUDA:
+A) Warps is 32 threads executing same instruction on multiple data
+B) Warps is 64 threads executing different instruction on multiple data
+C) Warps is 32 threads executing same instruction on single data
+D) Warps is 64 threads executing same instruction on multiple data
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 11: The precision in Tensor cores is _______ to TFLOPS.
+A) Exponentially increasing
+B) Exponentially decreasing
+C) Inversely proportional
+D) Directly proportional
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 12: " torch.cuda.amp.autocast() " is used to:
+A) Default to higher precision units
+B) Default to lower precision units
+C) Automatic Mixed Precision
+D) None of the above
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 13: Which type of advantage does the HBM3 have over H100 & AMD MI300X?
+A) Computation advantage
+B) Memory storage advantage
+C) Multi core CPU advantage
+D) Memory Bandwidth advantage
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 14: What is the primary architectural bottleneck that NVIDIA's NVSwitch is designed to resolve?
+A) The storage read/write limitations between local NVMe drives and system memory.
+B) The bandwidth and scalability limits of point-to-point NVLink connections across multiple GPUs.
+C) The latency delays caused by PCIe slot power throttling during deep learning workloads. Indian Ins titut e of T echnology Guw ahati
+D) The network congestion between different server racks inside a data center over standard Ethernet.
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 15: Which of the following functions is NOT a CUDA Runtime API function?
+A) cudaFree
+B) cudaMemcpy()
+C) cudaMalloc()
+D) cuMemAlloc()
+Correct Option: D
+———————————————————————————————————————————————————————
+Assignment 2
+Question 1: Which of the following best describes the key structural difference between a Docker Image and a Container? Options:
+A) An image consists of a mutable filesystem, whereas a container is an immutable snapshot that cannot be modified.
+B) An image contains multiple layers and metadata, while a container is an instance of that image which adds its own writable layer, namespaces, and cgroups.
+C) A container is built exactly once using a Dockerfile step, whereas an image can be dynamically scaled using cgroups.
+D) Images use shared filesystem diffs to run, while containers completely copy the entire 5–10 GB base filesystem to run independently.
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 2: Why are layer caching and the ordering of steps considered critical when building large AI images? Options:
+A) Layer caching prevents the container's writable layer from exceeding the 5–10 GB limit.
+B) Incorrect step ordering deletes the underlying image metadata, forcing the runtime to crash.
+C) They drastically reduce rebuild times (e.g., from 30 minutes to 30 seconds) by reusing unchanged filesystem diffs shared between images. I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+D) They turn a stopped container instance back into an immutable image.
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 3: The driver version must be old enough for the toolkit in the image. Options:
+A) TRUE
+B) FALSE
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 4: Does Docker give us control to run any program on any specific available GPU? Options:
+A) TRUE
+B) FALSE
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 5: What is the correct command to install the NVIDIA Container Toolkit? Options:
+A) sudo apt-get install -y nvidia-container-toolkit
+B) sudo install -y nvidia-container-toolkit
+C) sudo apt-get install -y nvidia-containertoolkit
+D) sudo apt-get install -a nvidia-container-toolkits
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 6: A Docker reproducibility bug occurs when local code hasn't changed, but "something changed in the resolver's world." Which scenario best exemplifies this? Options:
+A) A non-deterministic race condition triggers in the application code.
+B) A corrupted local Docker cache forces the engine to skip build layers.
+C) An unpinned dependency or base image tag pulls a newer, breaking version during a fresh build.
+D) A host OS kernel update changes how the container handles low-level resource limits.
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 7: Even after pinning human-readable tags, Docker builds can still suffer from reproducibility bugs. Which technique guarantees byte-level build reproducibility? Options:
+A) Using semantic version ranges (e.g., >=3.1.5) in the Dockerfile. I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+B) Enabling strict tag-locking in the host daemon settings.
+C) Appending a .lock extension to the target build image name.
+D) Referencing the base image by its immutable SHA-256 digest.
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 8: When using COPY --from=builder, what happens to the layers of the builder stage in the final image? Options:
+A) They are stored as metadata but don't take up disk space.
+B) They are compressed and hidden within the final layer.
+C) They are completely excluded from the final image's manifest.
+D) They become read-only parent layers for the production stage.
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 9: What is the correct command to generate a reproducible requirements.txt file with dependency hashes using the pip-tools suite? Options:
+A) pip-compile --generate-hashes --output-file=requirements.txt requirements.in
+B) pip-compile --lock-dependencies --export=requirements.txt requirements.in
+C) pip-compile --freeze-hashes --output requirements.txt requirements.in
+D) pip-compile --strict-verification --write-to requirements.txt requirements.in I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 10: What is the Docker mechanism called when you link a specific, absolute path on your host hard disk directly to a path inside a container to persist your files even after the container is stopped? Options:
+A) Docker Cache Layers
+B) Host Port Mapping
+C) Container Image Commits
+D) Bind Mounts
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 11: When using Unified Memory in CUDA, how does cudaMallocManaged handle memory management between the CPU and the GPU? Options:
+A) It allocates a single pointer accessible by both the CPU and GPU, automatically migrating data between them as needed.
+B) It creates two completely different pointers that require manual synchronization functions after every operation.
+C) It locks the pointer so only the CPU can read the data while the GPU is actively executing a kernel.
+D) It duplicates the pointer across the physical hard drives of both the host system and the graphics card.
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 12: When launching a CUDA kernel using the execution configuration syntax kernel<<<X, Y>>>, what do the parameters X and Y dictate to the GPU hardware? Options:
+A) X is the number of thread blocks in the grid, and Y is the number of parallel threads within each block.
+B) X is the number of threads per block, and Y is the number of thread blocks in the grid.
+C) X is the amount of allocated constant memory, and Y is the amount of allocated shared memory.
+D) X is the maximum loop count per thread, and Y is the number of physical GPU streaming multiprocessors (SMs) to engage.
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 13: Which GPU sharing mechanism provides strict hardware-level isolation, ensuring that dedicated memory and SMs are completely partitioned so one tenant cannot trigger an Out-of-Memory (OOM) error in another? Options:
+A) Time-slicing
+B) Multi-Process Service (MPS)
+C) Multi-Instance GPU (MIG)
+D) Dynamic Core Over-provisioning
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 14: What is a major isolation limitation when using CUDA Multi-Process Service (MPS) to share a GPU between different processes? Options:
+A) It completely stops multiple processes from submitting kernels at the same time.
+B) Memory is still shared, meaning a buggy process can corrupt another's memory or crash the entire MPS server.
+C) It drops small inference request throughput by 30-50%.
+D) It enforces strict hardware-level partitions that prevent dynamic memory allocation entirely.
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 15: How does gang scheduling solve the "stranded GPU" problem in multi-node clusters? Options:
+A) It kills running idle nodes if they take too long to start.
+B) It splits a large 4-node job into smaller, single-node jobs.
+C) It ensures all required nodes launch simultaneously, allowing no partial allocations.
+D) It automatically downloads missing training data to the cluster.
+Correct Option: C
+———————————————————————————————————————————————————————
+Assignment 3
+Question 1: In Container Orchestration, which phase of the orchestration process involves continuously comparing the user's declared target configuration (desired state) against what is currently running (actual state)?
+A) You declare
+B) IT compiles
+C) It reconciles
+D) It watches
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 2: Which internal Google system served as the original foundation for Kubernetes before it was open-sourced in 2014 and donated to the CNCF in 2015?
+A) Kuberflow
+B) Helm
+C) Borg
+D) Argo
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 3: In the Kubernetes control plane architecture, which component acts as "the only door in" by handling authentication, validation, and admission control?
+A) etcd
+B) API Server I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+C) Scheduler
+D) Controller Manager
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 4: Which component on a Kubernetes Worker Node is responsible for configuring iptables or eBPF rules to ensure network traffic for Services properly routes to live Pod IPs?
+A) kubelet
+B) kube-proxy
+C) containerd
+D) NVIDIA device plugin
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 5: Which of the following correctly describes how storage volumes and IP addresses are assigned to containers within a Pod?
+A) Each container gets its own IP address, but volumes cannot be shared across containers.
+B) A single Pod IP is shared by all containers in the Pod, and volumes can mount into any container in the Pod.
+C) Volumes mount exclusively to the main application container and are inaccessible to sidecar containers.
+D) IP addresses are assigned at the container level, while storage volumes are assigned at the node level.
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 6: Which Kubernetes component is required to advertise a GPU as an extended resource to the scheduler?
+A) Docker Desktop Virtual Machine
+B) Nvidia Device Plug-in
+C) WSL2 Ubuntu Host
+D) Cube Control Labeling Module
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 7: What information is explicitly displayed inside the pod logs when running the gpu-smoke-working.yaml program successfully?
+A) A benchmark script testing floating-point operations
+B) An nvidia-smi table format output
+C) A direct memory dump of the physical GPU VRAM
+D) A continuous stream of CUDA core temperature metrics
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 8: Why are headless services configured specifically for stateful AI clusters instead of utilizing a default cluster IP address?
+A) They act as an encrypted cluster firewall layer.
+B) They map DNS lookups directly to individual pod IPs.
+C) They load-balance external network data globally.
+D) They alter the core container base settings dynamically.
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 9: Which operational practice must be followed when managing sensitive access tokens like Hugging Face (HF) API keys?
+A) Store the tokens directly within plain-text configuration maps.
+B) Bake authorization keys straight into the Dockerfile source layer.
+C) Isolate and hold the sensitive data using Kubernetes Secrets.
+D) Host credentials on a public cloud load-balancing endpoint.
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 10: Which directive is used within a container pod's manifest file to import all key-value configurations directly into the container's environment?
+A) dataFrom
+B) configMapRef
+C) envFrom
+D) valueFrom
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 11: If a pod manifest references a Secret named ml-tokens via envFrom, what occurs if the create-secret.sh script has not been run first?
+A) The pod skips the variables and starts anyway.
+B) The cluster dynamically generates empty values.
+C) The pod gets stuck in a creation error state.
+D) The system switches the type to a ConfigMap.
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 12: During the initial phase of the Canary rollout demonstration, how is the traffic split configured between the stable version and the canary version?
+A) 50% Stable / 50% Canary
+B) 75% Stable / 25% Canary
+C) 90% Stable / 10% Canary
+D) 100% Stable / 0% Canary
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 13: What happens to the cluster IP mapping when all worker pods are clubbed together into a regular Virtual IP (VIP) service?
+A) A single, unified Cluster IP is generated for the service.
+B) Each pod continues to use a completely unmapped public IP address.
+C) The control plane crashes due to an IP conflict.
+D) The service shifts exclusively to using external NodePorts.
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 14: When verifying the injected configuration inside the training pod, which command structure is used by the speaker to check the active environment variables?
+A) kubectl env-verify pod training-pod
+B) kubectl exec <pod-name> -- env
+C) kubectl inspect config --pod
+D) kubectl get env-form training-pod
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 15: What is generated for three stateful set workers when configuring a Headless Service?
+A) A single virtual IP address.
+B) Separate, individual IP addresses for each worker pod.
+C) A public load balancer endpoint.
+D) An egress gateway routing table.
+Correct Option: B
+———————————————————————————————————————————————————————
+Assignment 4
+Question 1: What is the final shape of the tensor after performing the following tensor operations sequentially?
+import torch# Initial tensor x = torch.randn(2, 1, 3)# Sequential tensor transformations y = x.unsqueeze(-1) z = y.squeeze(dim=0) w = z.squeeze(dim=-1)print(w.shape)
+A) torch.Size([2, 1, 3])
+B) torch.Size([1, 2, 3, -1])
+C) torch.Size([2, 1, 3, 1])
+D) torch.Size([1, 2, 3])
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 2: What is the primary technical reason PyTorch recommends avoiding in-place operations on tensors participating in an autograd graph? I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+A) Always
+B) Sometimes
+C) Never
+D) None of them
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 3: According to PyTorch's broadcasting rules, how are dimensions compared between two tensors?
+A) From left to right, missing dimensions are padded with zeros.
+B) From right to left (trailing dimensions first), where two dimensions are compatible if they are equal or one of them is 1.
+C) From the largest dimension to the smallest dimension.
+D) PyTorch randomly aligns dimensions until it finds a valid combination.
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 4: What happens to the memory usage of your program when you set requires_grad=True for many tensors?
+A) Memory remains exactly same
+B) Python stores the computational graph for backward propagation
+C) Memory usage decreases
+D) Memory cleared automatically
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 5: Which segment / line would cause this PyTorch module implementation to fail and throw an error?
+import torchimport torch.nn as nnclass MyLayer(nn.Module):def __init__(self): super().__init__()# ALWAYS call this self.linear = nn.Linear(4, 3)# creates W and b self.relu = nn.ReLUdef forward(self, x): x = self.linear(x)# calls linear.forward(x) return self.relu(x)# Instantiate the layer layer = MyLayer()# Pass input tensor through the layerout = layer(torch.randn(2, 4))# calls Layer.forward()print(out)
+A) self.relu = nn.ReLU
+B) def forward(self, x):
+C) x = self.linear(x)
+D) return self.relu(x)
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 6: Which of the following correctly describes the flow of execution for a single forward pass in DynamicNet?
+import torchimport torch.nn as nnclass DynamicNet(nn.Module):def __init__(self, d): super().__init__()# Dynamic architecture combining Linear and ReLU modules self.layers = nn.ModuleList() for _ in range(2): self.layers.append(nn.Linear(d, d)) self.layers.append(nn.ReLU())def forward(self, x): for layer in self.layers: x = layer(x) return xmodel = DynamicNet(d=4)
+A) Linear(4, 4) -> Linear(4, 4) -> ReLU() -> ReLU()
+B) ReLU() -> Linear(4, 4) -> ReLU() -> Linear(4, 4)
+C) Linear(4, 4) -> ReLU() -> Linear(4, 4) -> ReLU()
+D) Linear(4, 4) and ReLU() applied in parallel across two separate streams, then merged.
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 7: Which of the following statements is true regarding PyTorch loss functions (such as CrossEntropyLoss, BCEWithLogitsLoss, MSELoss, L1Loss, HuberLoss)?
+A) CrossEntropyLoss requires a Softmax layer in the model.
+B) BCEWithLogitsLoss requires integer target labels.
+C) MSELoss is robust against extreme data outliers.
+D) CrossEntropyLoss takes raw logits and integer labels.
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 8: What is the purpose of calling model.eval() at the beginning of an evaluation loop?
+A) To clear previously computed gradients.
+B) To enable automatic mixed precision (AMP) during evaluation.
+C) To disable layers like dropout and batch normalization.
+D) To calculate gradients.
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 9: Why is it crucial to call optimizer.zero_grad() in the training loop before computing the backward pass?
+A) To update the weight parameters and biases.
+B) To move the data to the target device.
+C) To compute the loss function.
+D) To reset the old gradient values from previous iterations.
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 10: In PyTorch training pipelines, what error occurs if data is not moved to the device (e.g., GPU) before executing the forward pass?
+A) Runtime Error
+B) Vanishing Gradient Error
+C) Zero Division Error
+D) Convergence Error
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 11: Which learning rate scheduling strategy is described as smoothly decaying the learning rate throughout the training process?
+A) Linear Warm-up only
+B) Cosine Annealing
+C) Static Scheduling
+D) Ignore Index Scheduling
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 12: When implementing a custom PyTorch dataset class, which two core methods must be explicitly defined to allow the PyTorch DataLoader to automatically process and fetch samples?
+A) __init__ and __forward__
+B) __len__ and __getitem__
+C) __update__ and __collate__
+D) __transform__ and __prefetch__ I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 13: Which parameter in the PyTorch DataLoader constructor page-locks CPU memory, enabling faster and direct DMA transfers to the GPU?
+A) persistent_workers
+B) drop_last
+C) pin_memory
+D) prefetch_factor
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 14: Which of the following is the correct implementation for the missing code block inside __getitem__ to extract a single pair of input data and its corresponding label by index?
+import torch from torch.utils.data import Datasetclass TextDataset(Dataset):def __init__(self, data, labels): self.data = data self.labels = labelsdef __len__(self): return len(self.data) I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t idef __getitem__(self, index):# Missing Code Block return item, label
+A) item = self.data.get(index); label = self.labels.get(index)
+B) item = self.data[index]; label = self.labels[index]
+C) item = self.data.pop(index); label = self.labels.pop(index)
+D) item = self.data.next(); label = self.labels.next()
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 15: If the entire dataset cannot be divided evenly by the chosen batch size, which DataLoader argument should be set to "True" to discard the final smaller batch?
+A) shuffle
+B) persistent_workers
+C) prefetch_factor
+D) drop_last
+Correct Option: D
+———————————————————————————————————————————————————————
+Assignment 5
+Question 1: Which high-level API is used in TensorFlow for rapid model prototyping? Options:
+A) PyTorch API
+B) Keras API
+C) NumPy API
+D) TFX API
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 2: What decorator is used in modern TensorFlow versions to convert eager code to graph execution? Options:
+A) @tf.graph
+B) @tf.compile
+C) @tf.function
+D) @tf.eager
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 3: How does TensorFlow's gradient tracking behavior during a standard gradient tape call differ from PyTorch's default zero_grad approach? Options:
+A) TensorFlow requires an explicit call to reset gradients.
+B) TensorFlow automatically retains all calculated tape states.
+C) TensorFlow clears recorded states by default after a gradient call.
+D) TensorFlow lacks support for multi-loss tracking entirely.
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 4: What parameter must be explicitly configured in a TensorFlow gradient tape to successfully evaluate multiple loss functions sequentially without throwing an error? Options:
+A) accumulate=True
+B) persistent=True
+C) retain_graph=True
+D) trace_gradients=True
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 5: Which tensor type must be used in TensorFlow to prevent exceptions when trying to perform states or weight updates during training? Options:
+A) tf.constant
+B) tf.matrix
+C) tf.variable
+D) tf.zeros
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 6: What is the primary advantage of executing a compiled C++ graph using tf.function over standard eager mode execution in TensorFlow 2.x? Options:
+A) Easier model debugging and line-by-line inspection.
+B) Significant execution speedup for computations.
+C) Direct execution of native NumPy array slices.
+D) Automatic handling of non-persistent gradient tapes.
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 7: How does setting "num_parallel_calls=tf.data.AUTOTUNE" optimize the data pre-processing stage in a TensorFlow input pipeline? I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i Options:
+A) It dynamically adjusts the batch size dynamically based on memory.
+B) It sequentializes data processing to save GPU bandwidth.
+C) It triggers a warm-up sequence to minimize initialization time.
+D) It automatically balances workloads based on CPU cores and load.
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 8: Why does a slow input data pipeline directly reduce overall GPU resource utilization during deep learning training? Options:
+A) It causes the GPU to sit idle waiting for data.
+B) It throttles the C++ back-end graph template.
+C) It fills the target RAM with synthetic data.
+D) It reduces the multi-loss persistent gradient.
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 9: During a multi-epoch training process, what behavior occurs in the second epoch if a dataset applies .map() for pre-processing without using .cache()? Options:
+A) TensorFlow re-executes the map routine calls entirely.
+B) The pipeline relies on cached data from the first epoch.
+C) The data pipeline automatically throws a syntax warning. I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+D) The preprocessing pipeline switches to a C++ graph execution.
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 10: How can you explicitly prevent unnecessary graph retracing when passing inputs with varying shapes to a @tf.function decorated function? Options:
+A) By defining a custom input_signature with None dimensions.
+B) By using regular Python lists instead of TensorFlow tensors.
+C) By wrapping the tensor inside a Python while loop construct.
+D) By manually clearing the cache before every individual call.
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 11: What is the specific TensorFlow graph equivalent for a standard Python if-else branch structure when building optimized control flows? Options:
+A) tf.while_loop
+B) tf.print
+C) tf.reduce_max
+D) tf.cond
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 12: During XLA's operator fusion, how are intermediate results stored to prevent High Bandwidth Memory (HBM) traffic? Options:
+A) In cached graphs
+B) In global memory
+C) In local registers
+D) In transient tensors
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 13: When a model is serialized using TensorFlow's native model.export method for production, what is the primary structural role of the saved "serving signature" Options:
+A) It contains optimizer configurations for resuming continuous training.
+B) It encapsulates the metadata required for zero-downtime framework rollback.
+C) It explicitly defines the input and output tensors required by inference APIs.
+D) It maps network operations directly onto resource-constrained NPU hardware.
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 14: If you want to stay strictly within the Google ecosystem and deploy a machine learning model targeting highly resource-constrained mobile apps or edge devices, which framework should you convert your SavedModel to? Options:
+A) ONNX Runtime GPU
+B) TensorFlow Light
+C) PyTorch TorchScript
+D) TensorRT Engine
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 15: Which specific file in a standard TensorFlow SavedModel directory is explicitly responsible for maintaining cryptographic hashes to ensure integrity verification during cross-platform model deployment? Options:
+A) fingerprint.pb
+B) saved_model.pb
+C) variables.index
+D) graph.proto
+Correct Option: A
+———————————————————————————————————————————————————————
+
+Assignments 6–10
+Additional full MCQs and correct options from the uploaded detailed-solution files.
+Updated Quick Answer Key — Assignments 1–10
+Assignment 1: 1.A  2.B  3.A  4.B  5.C  6.A  7.D  8.C  9.A  10.A  11.C  12.C  13.D  14.B  15.D
+Assignment 2: 1.B  2.C  3.B  4.A  5.A  6.C  7.D  8.C  9.A  10.D  11.A  12.A  13.C  14.B  15.C
+Assignment 3: 1.D  2.C  3.B  4.B  5.B  6.B  7.B  8.B  9.C  10.C  11.C  12.C  13.A  14.B  15.B
+Assignment 4: 1.A  2.C  3.B  4.B  5.A  6.C  7.D  8.C  9.D  10.A  11.B  12.B  13.C  14.B  15.D
+Assignment 5: 1.B  2.C  3.C  4.B  5.C  6.B  7.D  8.A  9.A  10.A  11.D  12.C  13.C  14.B  15.A
+Assignment 6: 1.B  2.B  3.D  4.A  5.B  6.D  7.A  8.B  9.A  10.A  11.C  12.A  13.A  14.B  15.C
+Assignment 7: 1.D  2.C  3.C  4.B  5.A  6.B  7.A  8.B  9.D  10.D  11.A  12.C  13.C  14.D  15.A
+Assignment 8: 1.B  2.C  3.B  4.B  5.C  6.D  7.D  8.A  9.B  10.C  11.C  12.B  13.A  14.B  15.D
+Assignment 9: 1.C  2.B  3.C  4.D  5.C  6.B  7.B  8.C  9.D  10.C  11.B  12.A  13.C  14.D  15.B
+Assignment 10: 1.B  2.A  3.D  4.A  5.A  6.A  7.B  8.C  9.C  10.A  11.C  12.C  13.B  14.D  15.C
+
+Assignment 6
+Question 1: What primary training objective is used during the pretraining stage of Large Language Models (LLMs)? Options:
+A) Masked token prediction
+B) Next-token prediction
+C) Contrastive sequence matching
+D) Direct preference optimization
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 2: Which adaptation approach modifies external retrieved context rather than updating any internal model parameters? Options:
+A) Parameter-Efficient Fine-Tuning (PEFT)
+B) Retrieval-Augmented Generation (RAG)
+C) Supervised Fine-Tuning (SFT)
+D) Low-Rank Adaptation (LoRA)
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 3: Beyond model parameters, which component often contributes significantly to memory overhead during full model fine-tuning? Options:
+A) Static input token IDs
+B) Tokenizer vocabulary lookup tables
+C) Fixed positional embedding matrices
+D) Optimizer states and gradients
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 4: What primary operation converts input text into subword units before fed into an LLM embedding layer? Options:
+A) Tokenization
+B) Normalization
+C) Quantization
+D) De-noising
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 5: What is the primary benefit of utilizing Brain Float 16 (BF16) over conventional Floating Point 16 (FP16) when training large transformer models? Options:
+A) It uses fewer total bits to store numerical values
+B) It has a wider exponent range
+C) It automatically applies gradient scaling routines
+D) It can safely downcast the final output tensors. I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 6: How can the numerical issue of naive softmax calculations blowing up into "Not a Number" (NaN) or infinity be successfully stabilized? Options:
+A) By manually calling a blanket model.half() function
+B) By switching the target system architecture to a legacy GPU
+C) By executing the backward pass within an autocast region
+D) By subtracting the maximum value from the logits before softmax
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 7: What occurs when tiny gradients flush directly to zero during the training process, and what symptom describes this state? Options:
+A) Underflow, causing the learning process to stall
+B) Underflow, causing the loss function to hit infinity
+C) Overflow, causing the parameters to immediately vanish
+D) Overflow, causing logits to blow up before the softmax
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 8: Which of the following components has the same shape as the model weights when training an LLM? Options:
+A) Optimizer states I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+B) Gradients
+C) Activations
+D) Framework overhead
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 9: What is the primary trade-off involved when implementing gradient checkpointing in LLM training? Options:
+A) Trading compute for memory
+B) Trading precision for speed
+C) Trading accuracy for memory
+D) Trading throughput for precision
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 10: What happens to a weight update step in dynamic loss scaling if an 'inf' or 'nan' value is detected in the gradients? Options:
+A) The update step is skipped entirely
+B) The update step runs with a fixed scale
+C) Only the update of corrupted weights are skipped
+D) The model falls back to full precision
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 11: Which parameter-efficient fine-tuning technique is specifically recommended when weight updates are necessary but the memory or GPU budget is highly limited? Options:
+A) Supervised Fine-Tuning (SFT)
+B) Continued Pre-training (CPT)
+C) Low-Order Rank Adaptation (LoRA)
+D) Zero-Shot Generation
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 12: What major limitation was observed when testing the base, pre-trained GPT-2 model using a zero-shot generation prompt? Options:
+A) It did not know how to follow the specified instruction format
+B) It failed to generate grammatically correct English sentences
+C) It was unable to process abstract concepts like networks
+D) It completely refused to output text due to policy constraints
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 13: When setting up a model's weights to be frozen so that the backward pass does not update them during training, which configuration must be applied? Options:
+A) requires_grad = False
+B) requires_grad = True
+C) double_quantization = True
+D) optimizer_state = True I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 14: During the practical implementation of LoRA, how are the weight matrices A and B typically initialized? Options:
+A) Matrix A is initialized with zeros, and Matrix B is initialized from a Gaussian distribution
+B) Matrix A is initialized from a Gaussian distribution, and Matrix B is initialized with zeros
+C) Both Matrix A and Matrix B are initialized with zeros
+D) Both Matrix A and Matrix B are drawn from a uniform float distribution
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 15: If a task requires parameter updates, why is PEFT typically recommended as the first adaptation strategy instead of full fine-tuning? Options:
+A) It optimizes the entire model framework from scratch to eliminate noise
+B) It completely avoids the backward pass workflow during training
+C) It adds and trains only a few parameters to test baseline performance
+D) It guarantees higher structural throughput by using 4-bit normal floats
+Correct Option: C
+———————————————————————————————————————————————————————
+
+Assignment 7
+Question 1: Which parallelism strategy involves replicating the entire model on every GPU while splitting the input batch?
+A) Pipeline Parallelism
+B) Tensor Parallelism
+C) Data Parallelism
+D) Sharded Parallelism
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 2: When training a model is splitted into batch wise manner where we split the input weight matrix, which parallelism strategy is required?
+A) Data Parallelism
+B) Pipeline Parallelism
+C) Tensor Parallelism
+D) Fully Sharded Data Parallel
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 3: I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i In a PyTorch DistributedDataParallel (DDP) script, what is the consequence of forgetting to call sampler.set_epoch(epoch) inside your training loop?
+A) The training script hangs indefinitely
+B) The model runs out of memory
+C) The data is shuffled identically every epoch
+D) The gradients fail to synchronize
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 4: Which two collective communication primitives combine to form the standard Ring All-reduce operation?
+A) Broadcast and Reduce
+B) Reduce-scatter and All-gather
+C) All-gather and Broadcast
+D) Scatter and Gather
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 5: For a Ring All-reduce algorithm with N GPUs and a gradient size of M bytes, what does the per-GPU bandwidth cost "asymptotically" approach as N becomes very large?
+A) M bytes
+B) 2M bytes
+C) N x M bytes
+D) M / N bytes
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 6: How does DistributedDataParallel (DDP) handle execution across GPUs to ensure true isolation?
+A) One thread per GPU
+B) One process per GPU
+C) One process for all GPUs
+D) Multiple processes per GPU
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 7: When saving a checkpoint in DDP, why must you use .module.state_dict() instead of just .state_dict()?
+A) To avoid a 'module.' prefix on every key
+B) To compress the checkpoint size
+C) To save the optimizer state
+D) To sync the weights across ranks
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 8: In a naive all-reduce implementation with N GPUs and gradient size M, what is the per-GPU communication traffic? I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+A) O(M)
+B) O(N*M)
+C) O(M/N)
+D) O(N+M)
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 9: During a multi-node rendezvous using c10d, what is the initial action taken by Rank 0?
+A) Probes for active NVLink connections
+B) Broadcasts the initial model weights
+C) Sends a unique NCCL ID to all active nodes
+D) Opens a TCP store and waits for connections
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 10: Which of the following represents the slowest fallback option for interconnect bandwidth?
+A) PCIe Gen5
+B) InfiniBand NDR
+C) RoCEv2 Ethernet
+D) TCP sockets
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 11: What is the primary characteristic of "weak scaling" in distributed training?
+A) Training a bigger problem with constant wall time
+B) Finishing a fixed job faster with more GPUs
+C) Reducing the communication overhead to zero
+D) Minimizing the batch size per GPU
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 12: According to the PyTorch profiler breakdown, what is the recommended fix for addressing "load imbalance" during training?
+A) Pinning processes to healthy GPUs
+B) Using fewer Python callbacks
+C) Ensuring same-shape inputs (pad or drop)
+D) Tuning NCCL bucket sizes
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 13: How is scaling efficiency mathematically calculated for an N-GPU training run?
+A) throughput(N) / throughput(1)
+B) N * throughput(N) / throughput(1)
+C) throughput(N) / (N * throughput(1))
+D) throughput(1) / (N * throughput(N))
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 14: Which optimization lever is considered the dominant factor for improving communication efficiency?
+A) Mixed precision (AMP)
+B) Hierarchical all-reduce
+C) Gradient compression
+D) Larger per-GPU batch + gradient accumulation
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 15: If you are training a 70B parameter model where the overall memory is very tight, but individual layers still fit perfectly on a GPU, which tool is recommended?
+A) Fully Sharded Data Parallel (FSDP)
+B) DistributedDataParallel (DDP)
+C) Tensor Parallelism (Megatron)
+D) 3D Parallelism (Megatron-DeepSpeed)
+Correct Option: A
+———————————————————————————————————————————————————————
+
+Assignment 8
+Question 1: : According to the linear scaling rule, if the baseline learning rate is 0.075 at a batch size of 512, what should the new learning rate be if the batch size is increased to 4096?
+A) 0.2
+B) 0.6
+C) 0.75
+D) 0.8
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 2: : What is defined as the point past which increasing the batch size further stops providing proportional returns in training efficiency?
+A) Effective batch size
+B) Baseline batch size
+C) Divergence batch size
+D) Critical batch size
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 3: : What happens during a training "warm-up" phase to prevent early divergence?
+A) The learning rate is immediately set to its maximum value
+B) The learning rate is linearly ramped up from near zero to the full value
+C) The batch size is gradually decreased over several iterations
+D) The gradients are completely cleared for the first 500 steps
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 4: : Why does a single slow GPU slow down the entire multi-GPU training process?
+A) Because all GPUs must finish a step and synchronize before moving to the next
+B) Because the system automatically reduces the overall batch size
+C) Because the slow GPU forces a roll back to the last checkpoint
+D) Because it triggers an automatic switch from Adam to the LAMB optimizer
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 5: : Which term describes a system's ability to keep working or recover properly when a part of it fails?
+A) Sharding
+B) Elastic training
+C) Fault tolerance
+D) Rendezvous
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 6: : If a training script saves a checkpoint at step 700 and a worker's GPU crashes at step 743, what happens when torchrun restarts the job?
+A) Training will start completely over from step 0
+B) Training skips ahead to step 800 to avoid the corrupted block
+C) Training continues exactly from step 743 without losing any work
+D) Training resumes from step 700, losing 43 steps of work
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 7: : What is a major advantage of utilizing an asynchronous save (async checkpoint) over a synchronous save?
+A) It splits the dataset into smaller, easier-to-manage batches. I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+B) It automatically reduces the learning rate to prevent memory fragmentation
+C) It requires no background processing or coordination among workers
+D) It hands the save to a background process so foreground training keeps running
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 8: : Why is it highly discouraged to ship raw optimizer states along with a model for inference?
+A) It increases model size by 4x to 5x without aiding inference
+B) It restricts the model to cross-platform frameworks
+C) It prevents the framework from utilizing numeric formats
+D) It completely stops the training progression
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 9: : In a model registry, what status is given to a model version that is currently live and serving real user traffic?
+A) Staging
+B) Production
+C) Archived
+D) None
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 10: : Which deployment strategy involves sending a small slice of traffic to a new model version before fully switching over?
+A) Rolling update
+B) Blue-green deployment
+C) Canary deployment
+D) Shadow rollout
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 11: : In Kubernetes, what mechanism is used to check the health and status of a container?
+A) Rollback
+B) Artifact
+C) Probe
+D) Budget
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 12: : What is the default Kubernetes rollout strategy for most stateless services?
+A) Blue-green deployment
+B) Rolling update
+C) Canary deployment
+D) Shadow rollout
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 13: : What occurs during a linear learning rate warm-up over the first 10% of training steps?
+A) The learning rate increases gradually to its peak value
+B) The learning rate drops instantly to zero
+C) The batch size decreases at a steady rate
+D) The model updates stop entirely for those steps
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 14: : Why does large batch training typically underperform if a high learning rate is immediately used without a warm-up period?
+A) It experiences too many optimization steps per epoch. I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+B) It suffers from fewer optimization steps per epoch
+C) The dataset size automatically shrinks
+D) The GPU memory completely runs out
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 15: : Which specific deployment target is the TorchScript (.ts) model packaging format typically used for?
+A) Hugging Face Transformers
+B) ONNX Runtime engines
+C) Cloud-hosted TensorRT servers
+D) Mobile or standalone C++ applications
+Correct Option: D
+———————————————————————————————————————————————————————
+
+Assignment 9
+Question 1: Which graph capture mechanism cannot handle dynamic control flow (such as if-else statements) because it is highly tensor shape specific?
+A) torch.export
+B) torch.jit.script
+C) torch.jit.trace
+D) torch.compile
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 2: What is the recommended modern API for capturing graphs with dynamic shape support in PyTorch versions 2.x and later?
+A) torch.jit.trace
+B) torch.export
+C) torch.jit.script
+D) torch.cuda.graph
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 3: During a transformer forward pass execution on an NVIDIA GPU at batch size 1, what primary issue causes the GPU to remain idle while waiting for the next kernel call?
+A) Matrix multiplication latency
+B) CPU launch overhead
+C) Flash attention tiling I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+D) GPU memory fragmentation
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 4: What are the graph nodes represented as in an ONNX graph?
+A) Edge devices
+B) Core weights
+C) Tensor edges
+D) Operators
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 5: Why can an execution provider fallback hurt the overall performance during model serving?
+A) It disables the operator fusions permanently
+B) It causes a reduction in model parameters
+C) It introduces data transfer and synchronization overhead
+D) It changes static shapes into symbolic ones
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 6: In which scenario is the ONNX runtime considered an ideal choice for model deployment?
+A) When maximizing the throughput of a specific specialized hardware target
+B) When deploying cross-platform models across various target environments
+C) When executing highly customized neural networks on restricted single-node systems
+D) When managing complex training loops and backpropagation tasks I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 7: What optimization happens during the "tactic selection" phase of TensorRT's pipeline?
+A) It permanently fusions layers together
+B) It selects the fastest kernel for an operation
+C) It reduces the memory fragmentation
+D) It adjusts the dynamic shape range boundaries
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 8: Which specific optimization technique is implemented in TensorRT-LLM to reduce memory fragmentation and improve concurrency?
+A) Shape specialization profiles
+B) Operator kernel serialization
+C) Paging for large KV caches
+D) Explicit data type fallback
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 9: Why is engine building in TensorRT considered a decoupled and expensive process?
+A) It repeatedly executes complete backpropagation steps
+B) It downloads pre-optimized architectures over the network
+C) It converts symbolic layouts to static arrays dynamically
+D) It explores and tests multiple candidate kernels
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 10: What does the parameter "zero point" represent in the context of quantization?
+A) The maximum integer value in a scale
+B) The margin of error after reconstruction
+C) The integer code representing real zero
+D) The spacing between representable labels
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 11: What is a key difference between Post-Training Quantization (PTQ) and Quantization-Aware Training (QAT)?
+A) PTQ is much more expensive to run than QAT
+B) QAT simulates quantization during the training or fine-tuning stage
+C) PTQ provides a higher baseline accuracy than QAT
+D) QAT requires storing less metadata than PTQ
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 12: Why is large language model (LLM) quantization trickier compared to other traditional deep learning models?
+A) LLM weights and activations can contain outlier channels
+B) Traditional deep learning models do not use activation clipping
+C) LLMs cannot utilize approximate second-order information
+D) LLM hardware architectures lack support for matrix multiplication
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 13: Which technique utilizes approximate second-order information (usually the Hessian matrix) to compensate for layer-wise quantization errors?
+A) Static PTQ
+B) AWQ
+C) GPTQ
+D) Dynamic PTQ
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 14: The Activation-error Weight Quantization (AWQ) technique primarily relies on calibration data to identify which of the following?
+A) Backpropagation thresholds
+B) Outlier hardware nodes
+C) Linear regression targets
+D) Salient activation channels
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 15: What is a key benefit of using group-wise scaling over choosing a single scale for an entire matrix?
+A) It avoids the need to store any metadata
+B) It minimizes the quantization error
+C) It completely eliminates the need for suitable kernels
+D) It drastically reduces the runtime memory load
+Correct Option: B
+———————————————————————————————————————————————————————
+
+Assignment 10
+Question 1: Which operation is considered the most expensive in a distributed data processing pipeline because it involves regrouping and moving data across workers? ●
+A) Evaluation ●
+B) Shuffle ●
+C) Partitioning ●
+D) Lineage
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 2: Which of the following best defines the concept of "data lineage" within a distributed data engineering architecture? ●
+A) A dynamic layout mechanism that optimizes physical disk storage distribution. ●
+B) A deterministic profile that calculates network latency between operational workers. ●
+C) A record of data derivation that facilitates state reconstruction in the event of failure. ●
+D) An immediate evaluation strategy that executes instruction blocks line by line
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 3: How does a tool like Spark or Dask handle instruction execution differently compared to Pandas? ●
+A) It relies heavily on strict static allocation ●
+B) It executes each individual line immediately I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i ●
+C) It uses a highly centralized row range lookup ●
+D) It employs an optimization via lazy evaluation
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 4: In distributed data systems, how does a scheduler notice that a worker has unexpectedly failed mid-group? ●
+A) It detects that the worker stopped heartbeating ●
+B) It scans the primary key for missing data entries ●
+C) It identifies that a local task graph has ended ●
+D) It encounters an automatically forced row range
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 5: Which partitioning scheme is ideal for a clickstream group by user ID to achieve zero shuffle? ●
+A) Hashing ●
+B) Salting ●
+C) Row range ●
+D) Range date
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 6: Which framework is nearly identical to Pandas and best suited for tabular ETL ranging from 10 GB to 10 terabytes? ●
+A) A stateless function ●
+B) A cloud-managed storage pod ●
+C) A data partitioning scheduler ●
+D) A stateful Python object
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 7: Which deployment model allows for dynamic autoscaling of pods when working with Dask? ●
+A) Local cluster ●
+B) Kubernetes cluster ●
+C) Cloud-managed service ●
+D) Single core machine
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 8: What is a common mistake when managing frameworks, which leads to poor GPU utilization? ●
+A) Using Ray tune for model serving ●
+B) Choosing Dask for GPU inference ●
+C) Deploying Ray tasks on Kubernetes ●
+D) Applying Pandas APIs to Dask arrays
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 9: What is the purpose of "salting" in the context of handling data skew? ●
+A) It deletes duplicate rows from the partition. ●
+B) It caches data frames directly into the CPU memory. ●
+C) It adds a random value to a skewed key to spread rows. ●
+D) It converts a Python user-defined function into SQL
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 10: For which size of data sets will GPUs not provide any processing benefit when using CUDF? I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i ●
+A) Less than 100k rows ●
+B) Around 10 million rows ●
+C) More than 50 million rows ●
+D) Petabyte-scale data sets
+Correct Option: A
+———————————————————————————————————————————————————————
+Question 11: Which component in Spark automatically rewrites queries to optimize performance and speed? ●
+A) Executor ●
+B) Delta Lake ●
+C) Cluster Manager ●
+D) Catalyst Optimizer
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 12: What common mistake in Spark causes the driver to run out of memory and crash? ●
+A) Calling .collect() on a huge data set ●
+B) Utilizing Adaptive Query Execution ●
+C) Writing data directly to the storage ●
+D) Processing data sets with small keys
+Correct Option: C
+———————————————————————————————————————————————————————
+Question 13: Which of the following is defined as a discrete, timestamped record of something that actually happened in a system? ●
+A) Metric ●
+B) Log ●
+C) Trace ●
+D) SLO I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i
+Correct Option: B
+———————————————————————————————————————————————————————
+Question 14: In the provided ETL troubleshooting scenario, what was diagnosed as the root cause for the runtime jumping from 40 minutes to 3 hours? ●
+A) Disk storage failure ●
+B) Data skew from a new bot account ●
+C) Network packet loss ●
+D) Wrong schema definition
+Correct Option: D
+———————————————————————————————————————————————————————
+Question 15: When investigating a data pipeline bottleneck, in what specific order should you analyze the three complimentary signals? ●
+A) Traces, Metrics, Logs ●
+B) Metrics, Traces, Logs ●
+C) Logs, Metrics, Traces ●
+D) Traces, Logs, Metrics
+Correct Option: C
+———————————————————————————————————————————————————————

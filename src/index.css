@@ -1,0 +1,309 @@
+:root {
+  /* Seed & Refero Design Tokens */
+  --bg-organic: #f9f9f5;
+  --bg-card: #ffffff;
+  --bg-sage-light: #edf2ea;
+  --bg-sage-hover: #e4ece1;
+  
+  --color-forest: #1c3a27;
+  --color-forest-hover: #142a1c;
+  --color-forest-glow: rgba(28, 58, 39, 0.15);
+  
+  --color-sage: #889982;
+  --color-sage-dark: #4a5c45;
+  --color-sage-border: #d2dcd0;
+  
+  --color-correct-bg: #eaf6ed;
+  --color-correct-border: #137333;
+  --color-correct-text: #0d5224;
+  --color-correct-glow: rgba(19, 115, 51, 0.2);
+
+  --color-wrong-bg: #fdf0ee;
+  --color-wrong-border: #d93025;
+  --color-wrong-text: #921815;
+  --color-wrong-glow: rgba(217, 48, 37, 0.2);
+
+  --text-dark: #1c3a27;
+  --text-body: #344238;
+  --text-muted: #6e7d71;
+
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+
+  --radius-pill: 9999px;
+  --radius-card: 24px;
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-organic);
+  color: var(--text-dark);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-organic);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-sage-border);
+  border-radius: 3px;
+}
+
+/* Refero Seed Top Stepper Progress */
+.seed-top-stepper {
+  width: 100%;
+  height: 4px;
+  background: #e2e8e0;
+  position: relative;
+  overflow: hidden;
+}
+
+.seed-top-stepper-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-forest), #2d5a3c);
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(28, 58, 39, 0.4);
+}
+
+/* Keyframe Animations */
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popScale {
+  0% { transform: scale(0.96); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shakeHorizontal {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+@keyframes checkmarkPop {
+  0% { transform: scale(0) rotate(-20deg); opacity: 0; }
+  60% { transform: scale(1.25) rotate(5deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes gentlePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(28, 58, 39, 0.2); }
+  50% { box-shadow: 0 0 0 8px rgba(28, 58, 39, 0); }
+}
+
+@keyframes glowBorder {
+  0%, 100% { border-color: var(--color-correct-border); }
+  50% { border-color: #34a853; }
+}
+
+@keyframes floatLightbulb {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(4deg); }
+}
+
+/* Seed Option Pill with Staggered Cascading Entry */
+.seed-option-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 26px;
+  background: #ffffff;
+  border: 1.5px solid var(--color-sage-border);
+  border-radius: var(--radius-pill);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  box-shadow: 0 2px 6px rgba(28, 58, 39, 0.03);
+  animation: slideInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.seed-option-pill:nth-child(1) { animation-delay: 0.04s; }
+.seed-option-pill:nth-child(2) { animation-delay: 0.09s; }
+.seed-option-pill:nth-child(3) { animation-delay: 0.14s; }
+.seed-option-pill:nth-child(4) { animation-delay: 0.19s; }
+.seed-option-pill:nth-child(5) { animation-delay: 0.24s; }
+
+.seed-option-pill:hover:not(:disabled) {
+  background: var(--bg-sage-light);
+  border-color: var(--color-forest);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(28, 58, 39, 0.07);
+}
+
+.seed-option-pill:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+/* Radio Circle on Right */
+.seed-pill-radio {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 14px;
+  transition: all 0.2s ease;
+}
+
+.seed-option-pill:hover:not(:disabled) .seed-pill-radio {
+  border-color: var(--color-forest);
+}
+
+/* Correct Selection State */
+.seed-option-pill.state-correct {
+  background: var(--color-correct-bg);
+  border: 2px solid var(--color-correct-border);
+  color: var(--color-correct-text);
+  font-weight: 600;
+  animation: popScale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 16px var(--color-correct-glow);
+}
+
+.seed-option-pill.state-correct .seed-pill-radio {
+  border-color: var(--color-correct-border);
+  background: var(--color-correct-border);
+}
+
+/* Wrong Selection State */
+.seed-option-pill.state-wrong {
+  background: var(--color-wrong-bg);
+  border: 2px solid var(--color-wrong-border);
+  color: var(--color-wrong-text);
+  font-weight: 600;
+  animation: shakeHorizontal 0.4s ease-in-out;
+  box-shadow: 0 4px 16px var(--color-wrong-glow);
+}
+
+.seed-option-pill.state-wrong .seed-pill-radio {
+  border-color: var(--color-wrong-border);
+  background: var(--color-wrong-border);
+}
+
+/* Hint for Correct Option when User Made a Mistake */
+.seed-option-pill.state-correct-hint {
+  background: #f0fdf4;
+  border: 2px dashed var(--color-correct-border);
+  color: var(--color-correct-text);
+  font-weight: 600;
+  animation: glowBorder 2s infinite ease-in-out;
+}
+
+/* Badges next to option (Pill check / alert) */
+.seed-badge-correct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-correct-border);
+  color: #ffffff;
+  animation: checkmarkPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.seed-badge-wrong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-wrong-border);
+  color: #ffffff;
+  animation: checkmarkPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Seed Refero "DID YOU KNOW?" Card */
+.seed-did-you-know {
+  background: #ffffff;
+  border: 1.5px solid var(--color-sage-border);
+  border-radius: var(--radius-card);
+  padding: 24px 30px;
+  margin-top: 28px;
+  box-shadow: 0 12px 36px rgba(28, 58, 39, 0.06);
+  animation: slideInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.seed-lightbulb-icon {
+  animation: floatLightbulb 3s infinite ease-in-out;
+}
+
+/* Seed Pill Continue Button */
+.seed-btn-continue {
+  background: var(--color-forest);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 16px 54px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 220px;
+  box-shadow: 0 6px 20px rgba(28, 58, 39, 0.2);
+}
+
+.seed-btn-continue:hover:not(:disabled) {
+  background: var(--color-forest-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(28, 58, 39, 0.35);
+}
+
+.seed-btn-continue.ready-pulse {
+  animation: gentlePulse 2s infinite ease-in-out;
+}
+
+.seed-btn-continue:disabled {
+  background: #ccd6c9;
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Main Container */
+.seed-quiz-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 36px 24px 80px;
+}
+
+.animate-fade-in {
+  animation: slideInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
