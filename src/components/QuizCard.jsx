@@ -112,6 +112,12 @@ export default function QuizCard({
     }, 1200);
   };
 
+  const correctOptionInDisplay = useMemo(() => {
+    return processedOptions.find(opt => opt.originalKey === question.correct);
+  }, [processedOptions, question.correct]);
+
+  const correctDisplayLabel = correctOptionInDisplay ? correctOptionInDisplay.displayLabel : question.correct;
+
   return (
     <div key={question.id} className="seed-quiz-container animate-fade-in">
       {/* Sub-header meta bar */}
@@ -178,7 +184,7 @@ export default function QuizCard({
         Select the correct answer choice.
       </p>
 
-      {/* STAGGERED PILL OPTIONS WITH RIGHT BADGE INDICATOR */}
+      {/* STAGGERED PILL OPTIONS WITH DISPLAY LABELS AND RIGHT BADGE INDICATOR */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '32px' }}>
         {processedOptions.map((opt, idx) => {
           const selectedKey = currentRecord ? currentRecord.selectedKey : selectedOptionKey;
@@ -201,6 +207,24 @@ export default function QuizCard({
               disabled={isAnswered}
               className={pillClass}
             >
+              <span style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '28px',
+                height: '28px',
+                borderRadius: '50%',
+                background: isThisSelected ? (isCorrectAnswer ? 'var(--color-correct-border)' : 'var(--color-wrong-border)') : 'var(--bg-sage-light)',
+                color: isThisSelected ? '#fff' : 'var(--color-forest)',
+                fontWeight: 700,
+                fontSize: '0.85rem',
+                marginRight: '14px',
+                flexShrink: 0,
+                transition: 'all 0.2s ease'
+              }}>
+                {opt.displayLabel}
+              </span>
+
               <span style={{ flex: 1, paddingRight: '12px' }}>
                 {opt.text}
               </span>
@@ -263,8 +287,8 @@ export default function QuizCard({
             lineHeight: 1.4
           }}>
             {currentRecord && currentRecord.isCorrect 
-              ? `Correct! Option (${question.correct}) is the right answer.` 
-              : `Key Concept: Option (${question.correct}) is correct.`}
+              ? `Correct! Option (${correctDisplayLabel}) is the right answer.` 
+              : `Key Concept: Option (${correctDisplayLabel}) is correct.`}
           </h4>
 
           <p style={{
