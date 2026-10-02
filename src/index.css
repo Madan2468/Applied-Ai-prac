@@ -260,14 +260,47 @@ body {
   animation: floatLightbulb 3s infinite ease-in-out;
 }
 
-/* Seed Pill Continue Button */
+/* Seed Pill Secondary Button (Previous Question) */
+.seed-btn-secondary {
+  background: var(--bg-sage-light);
+  color: var(--color-forest);
+  border: 1.5px solid var(--color-sage-border);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(28, 58, 39, 0.04);
+}
+
+.seed-btn-secondary:hover:not(:disabled) {
+  background: var(--bg-sage-hover);
+  border-color: var(--color-forest);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(28, 58, 39, 0.1);
+}
+
+.seed-btn-secondary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Seed Pill Continue / Next Button */
 .seed-btn-continue {
   background: var(--color-forest);
   color: #ffffff;
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.05rem;
-  padding: 16px 54px;
+  padding: 14px 36px;
   border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
@@ -276,7 +309,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-width: 220px;
+  min-width: 160px;
   box-shadow: 0 6px 20px rgba(28, 58, 39, 0.2);
 }
 

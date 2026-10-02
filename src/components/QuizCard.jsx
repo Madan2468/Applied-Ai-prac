@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import confetti from 'canvas-confetti';
 import { 
   Sparkles, 
-  ArrowRight, 
+  ArrowRight,
+  ArrowLeft, 
   Bookmark, 
   BookmarkCheck, 
   Clock, 
@@ -29,13 +30,27 @@ export default function QuizCard({
   const [selectedOptionKey, setSelectedOptionKey] = useState(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [timerSeconds, setTimerSeconds] = useState(0);
+  const autoAdvanceTimerRef = useRef(null);
+
+  const clearAutoAdvance = () => {
+    if (autoAdvanceTimerRef.current) {
+      clearTimeout(autoAdvanceTimerRef.current);
+      autoAdvanceTimerRef.current = null;
+    }
+  };
 
   useEffect(() => {
     setTimerSeconds(0);
     const interval = setInterval(() => {
       setTimerSeconds(prev => prev + 1);
     }, 1000);
-    return () => clearInterval(interval);
+
+    clearAutoAdvance();
+
+    return () => {
+      clearInterval(interval);
+      clearAutoAdvance();
+    };
   }, [question.id]);
 
   useEffect(() => {
@@ -60,6 +75,8 @@ export default function QuizCard({
 
   const handleSelectOption = (optItem) => {
     if (isAnswered) return;
+
+    clearAutoAdvance();
 
     const isCorrect = optItem.originalKey === question.correct;
     setSelectedOptionKey(optItem.originalKey);
@@ -88,6 +105,11 @@ export default function QuizCard({
       correctKey: question.correct,
       timeTaken: timerSeconds
     });
+
+    // Automatically move to the next question after a brief feedback pause
+    autoAdvanceTimerRef.current = setTimeout(() => {
+      onNext();
+    }, 1200);
   };
 
   return (
@@ -257,17 +279,52 @@ export default function QuizCard({
         </div>
       )}
 
-      {/* BOTTOM ACTION BUTTON (CONTINUE WITH GENTLE PULSE WHEN READY) */}
-      <div style={{ textAlign: 'center', marginTop: '40px' }}>
+      {/* BOTTOM ACTION BUTTONS: PREVIOUS & NEXT */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginTop: '40px',
+        gap: '16px',
+        flexWrap: 'wrap'
+      }}>
         <button
           onClick={() => {
+            clearAutoAdvance();
+            soundManager.playClick();
+            onPrev();
+          }}
+          disabled={currentIndex === 0}
+          className="seed-btn-secondary"
+        >
+          <ArrowLeft size={18} />
+          Previous
+        </button>
+
+        <span style={{
+          fontSize: '0.9rem',
+          fontWeight: 700,
+          color: 'var(--color-forest)',
+          letterSpacing: '0.02em'
+        }}>
+          {currentIndex + 1} of {totalQuestions}
+        </span>
+
+        <button
+          onClick={() => {
+            clearAutoAdvance();
             soundManager.playClick();
             onNext();
           }}
-          disabled={!isAnswered}
           className={`seed-btn-continue ${isAnswered ? 'ready-pulse' : ''}`}
         >
-          {currentIndex < totalQuestions - 1 ? 'Continue' : 'Complete Quiz'}
+          {currentIndex < totalQuestions - 1 ? (
+            <>
+              Next <ArrowRight size={18} />
+            </>
+          ) : (
+            'Complete Quiz'
+          )}
         </button>
       </div>
     </div>

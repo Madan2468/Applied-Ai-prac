@@ -6,6 +6,7 @@ import QuizCard from './components/QuizCard';
 import ResultsModal from './components/ResultsModal';
 import StudyFlashcardMode from './components/StudyFlashcardMode';
 import SearchModal from './components/SearchModal';
+import QuestionNavigator from './components/QuestionNavigator';
 import { shuffleArray } from './utils/shuffle';
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
   const [activeMode, setActiveMode] = useState('weeks'); // 'weeks' | 'practice' | 'all_practice' | 'flashcards' | 'results'
   const [currentWeekNum, setCurrentWeekNum] = useState(1);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   // Options & Audio
   const [shuffleOptions, setShuffleOptions] = useState(true);
@@ -186,6 +188,14 @@ export default function App() {
 
         {(activeMode === 'practice' || activeMode === 'all_practice') && currentQuestion && (
           <div style={{ maxWidth: '750px', margin: '32px auto 0', padding: '0 20px' }}>
+            <QuestionNavigator
+              questions={activeQuestions}
+              currentIndex={currentQuestionIndex}
+              onSelectIndex={(idx) => setCurrentQuestionIndex(idx)}
+              userAnswers={quizAnswers}
+              isOpen={isNavOpen}
+              setIsOpen={setIsNavOpen}
+            />
             <QuizCard
               question={currentQuestion}
               currentIndex={currentQuestionIndex}
