@@ -14,7 +14,7 @@
           "D": "Speed of L1 cache is around 4 cycles per core/private"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "The \"Memory Wall\" refers to the growing performance gap between how fast a CPU can execute instructions and how fast data can be transferred from main memory (DRAM). While processor speeds have increased exponentially over decades, memory access times have improved at a much slower rate, causing the CPU to frequently sit idle while waiting for data."
       },
       {
         "id": "w1_q2",
@@ -27,12 +27,12 @@
           "D": "Used in In-Order Execution"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "The Re-Order Buffer (ROB) is a critical component used in Out-of-Order (OoO) execution processors. It tracks instructions that are executed out of chronological order due to structural or data dependencies, allowing the processor to safely check ahead for independent instructions while ensuring they are committed (retired) in the correct, original program order."
       },
       {
         "id": "w1_q3",
         "q_num": 3,
-        "question": "For data level parallelism, which type of extensions are used in Modern systems? Indian Ins titut e of T echnology Guw ahati",
+        "question": "For data level parallelism, which type of extensions are used in Modern systems?",
         "options": {
           "A": "SIMD",
           "B": "SISD",
@@ -40,7 +40,7 @@
           "D": "MIMD"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "SIMD stands for Single Instruction, Multiple Data. It allows a processor architecture to apply a single machine instruction across a vector of multiple data points simultaneously. Modern examples include Intel AVX/AVX-512 and ARM Neon, which are fundamental for accelerating vector/matrix mathematics."
       },
       {
         "id": "w1_q4",
@@ -53,7 +53,7 @@
           "D": "None of the above"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "This question refers to the Roofline Performance Model. The point of intersection represents the hardware's machine balance. To the left of this inflection point, the workload's performance is limited by the memory bandwidth (Memory-bound). To the right of this point, the performance hits the hardware plateau and is limited by raw processing speed (Compute-bound / Compute-intensive)."
       },
       {
         "id": "w1_q5",
@@ -66,7 +66,7 @@
           "D": "It is neither done by CPU not by GPU"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Large matrix operations like Transformer Attention mechanisms require trillions of calculations per second (FLOPs). While a CPU is technically capable of running the code logic, its physical architectural limits (fewer cores, lack of specialized tensor processing units) mean these operations require compute performance levels that vastly exceed what a standard CPU can physically deliver in a reasonable timeframe."
       },
       {
         "id": "w1_q6",
@@ -79,7 +79,7 @@
           "D": "Compute Bound & Compute Bound"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "11 LLM Inference is primarily Memory-bound because it processes tokens sequentially (batch size is often small), requiring the entire set of model weights to be fetched from memory for every single token generated. DNN Training is primarily Compute-bound because it processes large batch sizes over complex forward and backward passes, maximizing data reuse inside processor registers/caches."
       },
       {
         "id": "w1_q7",
@@ -92,7 +92,7 @@
           "D": "4800 - 6400 MT/s, 64 bit wide bus"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "Standard JEDEC DDR5 memory modules operate within baseline speeds of 4800 to 6400 MT/s (MegaTransfers per second). A standard single-channel desktop/server DDR5 DIMM maintains a total data bus width of 64 bits (architecturally split into two independent 32-bit subchannels to improve efficiency)."
       },
       {
         "id": "w1_q8",
@@ -105,7 +105,7 @@
           "D": "Correct both single bit and double bit errors"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Standard enterprise ECC memory uses SECDED (Single Error Correction, Double Error Detection) algorithms. It can seamlessly identify and correct a single-bit corruption on the fly without system interruption, and safely detect (but not fix) a double-bit memory error, triggering a system alert to prevent data corruption."
       },
       {
         "id": "w1_q9",
@@ -118,7 +118,7 @@
           "D": "6x latency"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "In Non-Uniform Memory Access (NUMA) systems, a CPU or GPU has \"local\" memory directly wired to its socket. If a processor must access memory wired to a different socket (cross-socket communication), the data must traverse interconnect fabrics (like UPI or Infinity Fabric), which adds an overhead penalty of approximately 2x latency compared to a direct local fetch."
       },
       {
         "id": "w1_q10",
@@ -131,7 +131,7 @@
           "D": "Warps is 64 threads executing same instruction on multiple data"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "In NVIDIA's CUDA programming model, a \"Warp\" is the basic unit of execution. It consists of a group of 32 threads that are executed concurrently in a SIMT (Single Instruction, Multiple Threads) fashion, meaning all 32 threads execute the exact same instruction at any given clock cycle across different pieces of data."
       },
       {
         "id": "w1_q11",
@@ -144,7 +144,7 @@
           "D": "Directly proportional"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "As numerical precision decreases (e.g., shifting down from FP32 to FP16, BF16, or INT8), the processing hardware can handle far more calculations simultaneously within the same physical silicon footprint. Therefore, lower numerical precision leads to higher raw processing throughput (TFLOPS), making precision and performance throughput inversely proportional."
       },
       {
         "id": "w1_q12",
@@ -157,7 +157,7 @@
           "D": "None of the above"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "torch.cuda.amp.autocast() is PyTorch’s utility handler for Automatic Mixed Precision (AMP) training. It automatically matches specific operations (like matrix multiplications) to faster, lower-precision data types (like float16/bfloat16) while keeping critical operations (like loss scaling and reductions) in float32 to preserve model convergence."
       },
       {
         "id": "w1_q13",
@@ -170,7 +170,7 @@
           "D": "Memory Bandwidth advantage"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "High Bandwidth Memory 3 (HBM3) utilizes a 3D-stacked DRAM design connected via an ultra-wide silicon interposer interface. This provides massive memory bandwidth advantages (reaching terabytes per second) compared to traditional GDDR or DDR memory subsystems, keeping hyper-parallel computing engines properly saturated with data."
       },
       {
         "id": "w1_q14",
@@ -179,11 +179,11 @@
         "options": {
           "A": "The storage read/write limitations between local NVMe drives and system memory.",
           "B": "The bandwidth and scalability limits of point-to-point NVLink connections across multiple GPUs.",
-          "C": "The latency delays caused by PCIe slot power throttling during deep learning workloads. Indian Ins titut e of T echnology Guw ahati",
+          "C": "The latency delays caused by PCIe slot power throttling during deep learning workloads.",
           "D": "The network congestion between different server racks inside a data center over standard Ethernet."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "While NVLink allows direct high-speed point-to-point connections between a limited number of local GPUs, scaling beyond a single baseboard requires a centralized crossbar system. NVSwitch enables multiple NVLink links to map across a unified switching fabric, allowing all GPUs inside an enterprise node (or across multiple nodes) to communicate at full NVLink speeds simultaneously."
       },
       {
         "id": "w1_q15",
@@ -196,66 +196,66 @@
           "D": "cuMemAlloc()"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "Functions prefixing with lower-case cuda (such as cudaMalloc , cudaFree , cudaMemcpy ) belong to the higher-level CUDA Runtime API. Functions prefixing with cu and utilizing alternative casing (such as cuMemAlloc ) belong directly to the lower-level CUDA Driver API, which interacts closer to the hardware level."
       }
     ]
   },
   {
     "week": 2,
-    "title": "Week 2: Docker Containers, GPU Runtime & Image Optimization",
+    "title": "Week 2: Docker Containers, Linux Namespaces & Storage",
     "questions": [
       {
         "id": "w2_q1",
         "q_num": 1,
-        "question": "Which of the following best describes the key structural difference between a Docker Image and a Container? Options:",
+        "question": "Which of the following best describes the key structural difference between a Docker Image and a Container?",
         "options": {
           "A": "An image consists of a mutable filesystem, whereas a container is an immutable snapshot that cannot be modified.",
           "B": "An image contains multiple layers and metadata, while a container is an instance of that image which adds its own writable layer, namespaces, and cgroups.",
           "C": "A container is built exactly once using a Dockerfile step, whereas an image can be dynamically scaled using cgroups.",
-          "D": "Images use shared filesystem diffs to run, while containers completely copy the entire 5\u201310 GB base filesystem to run independently."
+          "D": "Images use shared filesystem diffs to run, while containers completely copy the entire 5–10 GB base filesystem to run independently."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "A Docker image is a read-only, immutable template made up of stacked filesystem layers and config metadata. A container is a runnable instance of that image. When a container starts, the Docker engine adds a thin, temporary writable layer (container layer) on top of the image stacks and isolates the process using Linux namespaces (for environment isolation) and cgroups (for resource limiting)."
       },
       {
         "id": "w2_q2",
         "q_num": 2,
-        "question": "Why are layer caching and the ordering of steps considered critical when building large AI images? Options:",
+        "question": "Why are layer caching and the ordering of steps considered critical when building large AI images?",
         "options": {
-          "A": "Layer caching prevents the container's writable layer from exceeding the 5\u201310 GB limit.",
+          "A": "Layer caching prevents the container's writable layer from exceeding the 5–10 GB limit.",
           "B": "Incorrect step ordering deletes the underlying image metadata, forcing the runtime to crash.",
-          "C": "They drastically reduce rebuild times (e.g., from 30 minutes to 30 seconds) by reusing unchanged filesystem diffs shared between images. I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i",
+          "C": "They drastically reduce rebuild times (e.g., from 30 minutes to 30 seconds) by reusing unchanged filesystem diffs shared between images.",
           "D": "They turn a stopped container instance back into an immutable image."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Docker builds images layer-by-layer. If a layer's contents and instructions have not changed, Docker reuses the cached layer. However, if a step changes (like modifying local application code), that cache and all subsequent layer caches are invalidated. Putting slow-changing, heavy steps (like installing CUDA packages or python dependencies) before fast-changing steps (like copying application source code) ensures that heavy installations are cached, dramatically speeding up subsequent builds."
       },
       {
         "id": "w2_q3",
         "q_num": 3,
-        "question": "The driver version must be old enough for the toolkit in the image. Options:",
+        "question": "The driver version must be old enough for the toolkit in the image.",
         "options": {
           "A": "TRUE",
           "B": "FALSE"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "This statement is false. The NVIDIA host driver (kernel-space driver installed on the host operating system) must be new enough to support the CUDA driver API version required by the CUDA toolkit/libraries packaged inside the container image. Host drivers are generally backward-compatible, meaning newer host drivers can run containers with older CUDA toolkits, but old host drivers cannot run newer CUDA toolkit versions."
       },
       {
         "id": "w2_q4",
         "q_num": 4,
-        "question": "Does Docker give us control to run any program on any specific available GPU? Options:",
+        "question": "Does Docker give us control to run any program on any specific available GPU?",
         "options": {
           "A": "TRUE",
           "B": "FALSE"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Docker, in tandem with the NVIDIA Container Toolkit, gives you granular control over hardware access. You can isolate and target specific GPUs for a container using flags such as --gpus '\"device=0\"' or by passing the NVIDIA_VISIBLE_DEVICES environment variable, restricting the containerized application's visibility to only the selected physical GPUs."
       },
       {
         "id": "w2_q5",
         "q_num": 5,
-        "question": "What is the correct command to install the NVIDIA Container Toolkit? Options:",
+        "question": "What is the correct command to install the NVIDIA Container Toolkit?",
         "options": {
           "A": "sudo apt-get install -y nvidia-container-toolkit",
           "B": "sudo install -y nvidia-container-toolkit",
@@ -263,12 +263,12 @@
           "D": "sudo apt-get install -a nvidia-container-toolkits"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "The correct package name in the official NVIDIA apt repositories is nvidia-container-toolkit . Using the standard Debian/Ubuntu package manager apt-get with the -y (assume-yes) flag is the standard and correct syntax to install the utility."
       },
       {
         "id": "w2_q6",
         "q_num": 6,
-        "question": "A Docker reproducibility bug occurs when local code hasn't changed, but \"something changed in the resolver's world.\" Which scenario best exemplifies this? Options:",
+        "question": "A Docker reproducibility bug occurs when local code hasn't changed, but \"something changed in the resolver's world.\" Which scenario best exemplifies this?",
         "options": {
           "A": "A non-deterministic race condition triggers in the application code.",
           "B": "A corrupted local Docker cache forces the engine to skip build layers.",
@@ -276,25 +276,25 @@
           "D": "A host OS kernel update changes how the container handles low-level resource limits."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "If a Dockerfile points to a dynamic tag (like ubuntu:latest or python:3.10 ) or installs packages without strict version locking (like pip install requirements.txt with unpinned packages), a rebuild at a later date will query external registries. If an upstream maintainer updates that tag or package with breaking changes, your build will fail or break despite your local application code remaining completely identical."
       },
       {
         "id": "w2_q7",
         "q_num": 7,
-        "question": "Even after pinning human-readable tags, Docker builds can still suffer from reproducibility bugs. Which technique guarantees byte-level build reproducibility? Options:",
+        "question": "Even after pinning human-readable tags, Docker builds can still suffer from reproducibility bugs. Which technique guarantees byte-level build reproducibility?",
         "options": {
-          "A": "Using semantic version ranges (e.g., >=3.1.5) in the Dockerfile. I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i",
+          "A": "Using semantic version ranges (e.g., >=3.1.5 ) in the Dockerfile.",
           "B": "Enabling strict tag-locking in the host daemon settings.",
           "C": "Appending a .lock extension to the target build image name.",
           "D": "Referencing the base image by its immutable SHA-256 digest."
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "Human-readable tags (like python:3.9-slim ) are mutable—they can be updated by registry owners to include patches or changes. To guarantee absolute, byte-for-byte reproducibility, you must reference the unique, cryptographic SHA-256 hash of the image manifest (e.g., python:3.9-slim@sha256:... ). Because cryptographic digests are immutable, the engine will always pull the exact same set of image bytes."
       },
       {
         "id": "w2_q8",
         "q_num": 8,
-        "question": "When using COPY --from=builder, what happens to the layers of the builder stage in the final image? Options:",
+        "question": "When using COPY --from=builder , what happens to the layers of the builder stage in the final image?",
         "options": {
           "A": "They are stored as metadata but don't take up disk space.",
           "B": "They are compressed and hidden within the final layer.",
@@ -302,25 +302,25 @@
           "D": "They become read-only parent layers for the production stage."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "In a multi-stage build, each FROM instruction begins a brand new stage with a clean filesystem. When you use COPY --from=builder , you are selectively picking out only the specified artifacts/files from that prior stage. The intermediate layers created during the builder stage (such as compiler dependencies, build tools, and temporary caches) are discarded entirely and are not referenced in the final image's manifest, resulting in a lean production image."
       },
       {
         "id": "w2_q9",
         "q_num": 9,
-        "question": "What is the correct command to generate a reproducible requirements.txt file with dependency hashes using the pip-tools suite? Options:",
+        "question": "What is the correct command to generate a reproducible requirements.txt file with dependency hashes using the pip-tools suite?",
         "options": {
           "A": "pip-compile --generate-hashes --output-file=requirements.txt requirements.in",
           "B": "pip-compile --lock-dependencies --export=requirements.txt requirements.in",
           "C": "pip-compile --freeze-hashes --output requirements.txt requirements.in",
-          "D": "pip-compile --strict-verification --write-to requirements.txt requirements.in I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i"
+          "D": "pip-compile --strict-verification --write-to requirements.txt requirements.in"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "The official CLI tool pip-compile uses the --generate-hashes flag to parse input requirements (such as requirements.in ), resolve dependencies, and download and write the security SHA-256 hashes for each resolved package. The --output-file= option dictates where the fully locked dependencies file should be written."
       },
       {
         "id": "w2_q10",
         "q_num": 10,
-        "question": "What is the Docker mechanism called when you link a specific, absolute path on your host hard disk directly to a path inside a container to persist your files even after the container is stopped? Options:",
+        "question": "What is the Docker mechanism called when you link a specific, absolute path on your host hard disk directly to a path inside a container to persist your files even after the container is stopped?",
         "options": {
           "A": "Docker Cache Layers",
           "B": "Host Port Mapping",
@@ -328,12 +328,12 @@
           "D": "Bind Mounts"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "A Bind Mount maps a user-specified, absolute path from the host computer directly to a mount point inside the container. Because it references the host filesystem, any modifications made within the container write directly to your local hard drive. This keeps your physical files intact, editable, and saved even if the container is stopped, deleted, or rebuilt."
       },
       {
         "id": "w2_q11",
         "q_num": 11,
-        "question": "When using Unified Memory in CUDA, how does cudaMallocManaged handle memory management between the CPU and the GPU? Options:",
+        "question": "When using Unified Memory in CUDA, how does cudaMallocManaged handle memory management between the CPU and the GPU?",
         "options": {
           "A": "It allocates a single pointer accessible by both the CPU and GPU, automatically migrating data between them as needed.",
           "B": "It creates two completely different pointers that require manual synchronization functions after every operation.",
@@ -341,12 +341,12 @@
           "D": "It duplicates the pointer across the physical hard drives of both the host system and the graphics card."
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "cudaMallocManaged allocates Unified Memory, which returns a single pointer that can be referenced by both CPU and GPU code. The CUDA driver and system software automatically handle page faults and migrate data between the system RAM (CPU) and video memory (GPU) on demand, removing the need for developers to write manual data transfer commands like cudaMemcpy ."
       },
       {
         "id": "w2_q12",
         "q_num": 12,
-        "question": "When launching a CUDA kernel using the execution configuration syntax kernel<<<X, Y>>>, what do the parameters X and Y dictate to the GPU hardware? Options:",
+        "question": "When launching a CUDA kernel using the execution configuration syntax kernel<<<X, Y>>> , what do the parameters X and Y dictate to the GPU hardware?",
         "options": {
           "A": "X is the number of thread blocks in the grid, and Y is the number of parallel threads within each block.",
           "B": "X is the number of threads per block, and Y is the number of thread blocks in the grid.",
@@ -354,12 +354,12 @@
           "D": "X is the maximum loop count per thread, and Y is the number of physical GPU streaming multiprocessors (SMs) to engage."
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "In CUDA's triple angle bracket launch configuration <<<gridDim, blockDim>>> : ● The first parameter ( X ) represents the dimension of the grid, which specifies the total number of thread blocks to spawn. ● The second parameter ( Y ) represents the dimension of a block, which specifies the number of threads inside each individual thread block."
       },
       {
         "id": "w2_q13",
         "q_num": 13,
-        "question": "Which GPU sharing mechanism provides strict hardware-level isolation, ensuring that dedicated memory and SMs are completely partitioned so one tenant cannot trigger an Out-of-Memory (OOM) error in another? Options:",
+        "question": "Which GPU sharing mechanism provides strict hardware-level isolation, ensuring that dedicated memory and SMs are completely partitioned so one tenant cannot trigger an Out-of-Memory (OOM) error in another?",
         "options": {
           "A": "Time-slicing",
           "B": "Multi-Process Service (MPS)",
@@ -367,12 +367,12 @@
           "D": "Dynamic Core Over-provisioning"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Multi-Instance GPU (MIG) splits a single physical GPU into several separate, independent hardware instances (up to 7 on architectures like the H100 or B200). Each partition has dedicated, isolated memory, memory controllers, and Streaming Multiprocessors (SMs). This strict hardware separation ensures that high resource usage or an OOM crash in one instance has absolutely no effect on neighboring instances."
       },
       {
         "id": "w2_q14",
         "q_num": 14,
-        "question": "What is a major isolation limitation when using CUDA Multi-Process Service (MPS) to share a GPU between different processes? Options:",
+        "question": "What is a major isolation limitation when using CUDA Multi-Process Service (MPS) to share a GPU between different processes?",
         "options": {
           "A": "It completely stops multiple processes from submitting kernels at the same time.",
           "B": "Memory is still shared, meaning a buggy process can corrupt another's memory or crash the entire MPS server.",
@@ -380,12 +380,12 @@
           "D": "It enforces strict hardware-level partitions that prevent dynamic memory allocation entirely."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Unlike MIG, MPS uses logical partitioning (soft isolation). Multiple processes feed commands to a single control server to share SM hardware concurrently. However, the physical memory space is not strictly partitioned in hardware. Therefore, a memory access bug or an OOM crash in one client process can corrupt the address space of other active processes or crash the central MPS server daemon, taking all sibling client processes down with it."
       },
       {
         "id": "w2_q15",
         "q_num": 15,
-        "question": "How does gang scheduling solve the \"stranded GPU\" problem in multi-node clusters? Options:",
+        "question": "How does gang scheduling solve the \"stranded GPU\" problem in multi-node clusters?",
         "options": {
           "A": "It kills running idle nodes if they take too long to start.",
           "B": "It splits a large 4-node job into smaller, single-node jobs.",
@@ -393,13 +393,13 @@
           "D": "It automatically downloads missing training data to the cluster."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "In distributed training across multiple nodes, a job cannot run unless all nodes are online and synchronized. The \"stranded GPU\" issue occurs when some nodes are allocated and sit idle, locking up precious resources while waiting on a missing node that is still queued. Gang scheduling (as used in schedulers like Slurm) avoids this by making an \"all-or-nothing\" decision: it only runs the job when every single required node is simultaneously ready, eliminating wasteful partial allocations."
       }
     ]
   },
   {
     "week": 3,
-    "title": "Week 3: Container Orchestration & Cluster Management",
+    "title": "Week 3: Container Orchestration, Kubernetes & Clusters",
     "questions": [
       {
         "id": "w3_q1",
@@ -412,7 +412,7 @@
           "D": "It watches"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "The \"watch\" phase continuously monitors the current cluster state to detect drift from the desired state. This streaming observation triggers reconciliation loops to restore target configurations automatically."
       },
       {
         "id": "w3_q2",
@@ -425,7 +425,7 @@
           "D": "Argo"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Borg was Google’s internal large-scale cluster management system built to manage millions of jobs. Kubernetes was designed as an open-source rewrite of Borg, drawing on years of operational lessons learned."
       },
       {
         "id": "w3_q3",
@@ -433,12 +433,12 @@
         "question": "In the Kubernetes control plane architecture, which component acts as \"the only door in\" by handling authentication, validation, and admission control?",
         "options": {
           "A": "etcd",
-          "B": "API Server I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i",
+          "B": "API Server",
           "C": "Scheduler",
           "D": "Controller Manager"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "The kube-apiserver acts as the central hub and primary entry point for all control plane interactions. It authenticates, authorizes, and validates all incoming REST requests before storing state changes in etcd ."
       },
       {
         "id": "w3_q4",
@@ -451,7 +451,7 @@
           "D": "NVIDIA device plugin"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "kube-proxy runs on every node to manage network routing rules via technologies like iptables or IPVS/eBPF. It proxies virtual Service IP traffic directly to the dynamically changing underlying Pod network endpoints."
       },
       {
         "id": "w3_q5",
@@ -464,7 +464,7 @@
           "D": "IP addresses are assigned at the container level, while storage volumes are assigned at the node level."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Pods serve as the atomic unit of scheduling where all co-located containers share a single network namespace (and IP). Mounted storage volumes are shared across containers in the same Pod via local mount points."
       },
       {
         "id": "w3_q6",
@@ -477,7 +477,7 @@
           "D": "Cube Control Labeling Module"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "The NVIDIA Device Plugin is a DaemonSet that discovers host GPU hardware and registers GPU capacity with kubelet . This enables the Kubernetes scheduler to track and allocate GPUs as extended resources ( [nvidia.com/gpu](https://nvidia.com/gpu) )."
       },
       {
         "id": "w3_q7",
@@ -490,7 +490,7 @@
           "D": "A continuous stream of CUDA core temperature metrics"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Smoke tests for GPU access execute a lightweight container invoking nvidia-smi to verify hardware access. Success produces the standard tabular output listing GPU model, driver details, and CUDA runtime availability."
       },
       {
         "id": "w3_q8",
@@ -503,7 +503,7 @@
           "D": "They alter the core container base settings dynamically."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Headless Services (specifying clusterIP: None ) bypass single virtual IP load balancing. They return direct A / AAAA DNS records for individual Pod IPs, enabling direct point-to-point worker communication in stateful setups."
       },
       {
         "id": "w3_q9",
@@ -516,7 +516,7 @@
           "D": "Host credentials on a public cloud load-balancing endpoint."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Hardcoding sensitive tokens into images or ConfigMaps exposes them to leakages and source control risks. Kubernetes Secrets decouple sensitive credentials, allowing secure mounting at runtime without exposing raw keys."
       },
       {
         "id": "w3_q10",
@@ -529,12 +529,12 @@
           "D": "valueFrom"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "envFrom bulk-injects all key-value pairs from a specified ConfigMap or Secret as container environment variables. This avoids explicitly declaring individual variables using valueFrom ."
       },
       {
         "id": "w3_q11",
         "q_num": 11,
-        "question": "If a pod manifest references a Secret named ml-tokens via envFrom, what occurs if the create-secret.sh script has not been run first?",
+        "question": "If a pod manifest references a Secret named ml-tokens via envFrom , what occurs if the create-secret.sh script has not been run first?",
         "options": {
           "A": "The pod skips the variables and starts anyway.",
           "B": "The cluster dynamically generates empty values.",
@@ -542,7 +542,7 @@
           "D": "The system switches the type to a ConfigMap."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "When a Pod references a non-existent Secret or ConfigMap during startup, kubelet cannot populate required environment variables. As a result, the Pod fails to start and remains stuck in CreateContainerConfigError ."
       },
       {
         "id": "w3_q12",
@@ -555,7 +555,7 @@
           "D": "100% Stable / 0% Canary"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Canary rollouts mitigate risk by initially exposing new releases to a minimal user slice. A 90/10 split allows safely observing metrics and error logs on 10% canary traffic before committing to a full deployment."
       },
       {
         "id": "w3_q13",
@@ -568,7 +568,7 @@
           "D": "The service shifts exclusively to using external NodePorts."
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Standard Kubernetes Services assign an internal virtual IP (ClusterIP) that abstracts underlying Pod pods. Traffic directed to this single IP is automatically load-balanced across all matching endpoints."
       },
       {
         "id": "w3_q14",
@@ -581,7 +581,7 @@
           "D": "kubectl get env-form training-pod"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Executing kubectl exec <pod-name> -- env runs the Linux env command directly inside a running container. This dumps all active environment variables, validating that ConfigMaps or Secrets were successfully injected."
       },
       {
         "id": "w3_q15",
@@ -594,18 +594,18 @@
           "D": "An egress gateway routing table."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Headless Services forgo allocating a single shared virtual IP. Instead, DNS query responses provide direct, individual IP addresses for each matching Pod in the StatefulSet to support direct inter-node communication."
       }
     ]
   },
   {
     "week": 4,
-    "title": "Week 4: Tensor Operations, Matrix Computations & Accelerators",
+    "title": "Week 4: PyTorch Tensors, Autograd & Computational Graphs",
     "questions": [
       {
         "id": "w4_q1",
         "q_num": 1,
-        "question": "What is the final shape of the tensor after performing the following tensor operations sequentially? import torch# Initial tensor x = torch.randn(2, 1, 3)# Sequential tensor transformations y = x.unsqueeze(-1) z = y.squeeze(dim=0) w = z.squeeze(dim=-1)print(w.shape)",
+        "question": "What is the final shape of the tensor after performing the following tensor operations sequentially? import torch # Initial tensor x = torch.randn(2, 1, 3) # Sequential tensor transformations y = x.unsqueeze(-1) z = y.squeeze(dim=0) w = z.squeeze(dim=-1) print(w.shape)",
         "options": {
           "A": "torch.Size([2, 1, 3])",
           "B": "torch.Size([1, 2, 3, -1])",
@@ -613,12 +613,12 @@
           "D": "torch.Size([1, 2, 3])"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "unsqueeze(-1) adds a dimension at the end to make shape (2, 1, 3, 1) , but squeeze(dim=0) does nothing because dimension 0 has size 2 (not 1). Finally, squeeze(dim=-1) removes the trailing size-1 dimension, returning the tensor back to its original shape (2, 1, 3) ."
       },
       {
         "id": "w4_q2",
         "q_num": 2,
-        "question": "What is the primary technical reason PyTorch recommends avoiding in-place operations on tensors participating in an autograd graph? I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i",
+        "question": "What is the primary technical reason PyTorch recommends avoiding in-place operations on tensors participating in an autograd graph?",
         "options": {
           "A": "Always",
           "B": "Sometimes",
@@ -626,7 +626,7 @@
           "D": "None of them"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "In-place operations directly modify tensor memory, which destroys the original values needed by autograd to compute derivatives during the backward pass. PyTorch disallows or raises errors on these operations to maintain graph integrity and prevent silent, incorrect gradient calculations."
       },
       {
         "id": "w4_q3",
@@ -639,7 +639,7 @@
           "D": "PyTorch randomly aligns dimensions until it finds a valid combination."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Broadcasting aligns tensor shapes by comparing their dimension sizes starting from the rightmost (trailing) dimension and moving leftward. Two dimensions are compatible only if they are equal or if one of them has a size of 1, which gets expanded to match the other."
       },
       {
         "id": "w4_q4",
@@ -652,12 +652,12 @@
           "D": "Memory cleared automatically"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Setting requires_grad=True instructs PyTorch to construct an execution graph that tracks every intermediate tensor operation performed. This graph holds references to internal activation state tensors in memory so gradients can be properly computed during .backward() ."
       },
       {
         "id": "w4_q5",
         "q_num": 5,
-        "question": "Which segment / line would cause this PyTorch module implementation to fail and throw an error? import torchimport torch.nn as nnclass MyLayer(nn.Module):def __init__(self): super().__init__()# ALWAYS call this self.linear = nn.Linear(4, 3)# creates W and b self.relu = nn.ReLUdef forward(self, x): x = self.linear(x)# calls linear.forward(x) return self.relu(x)# Instantiate the layer layer = MyLayer()# Pass input tensor through the layerout = layer(torch.randn(2, 4))# calls Layer.forward()print(out)",
+        "question": "Which segment / line would cause this PyTorch module implementation to fail and throw an error? import torch import torch.nn as nn class MyLayer(nn.Module): def __init__(self): super().__init__() # ALWAYS call this self.linear = nn.Linear(4, 3) # creates W and b self.relu = nn.ReLU def forward(self, x): x = self.linear(x) # calls linear.forward(x) return self.relu(x) # Instantiate the layer layer = MyLayer() # Pass input tensor through the layer out = layer(torch.randn(2, 4)) # calls Layer.forward() print(out)",
         "options": {
           "A": "self.relu = nn.ReLU",
           "B": "def forward(self, x):",
@@ -665,12 +665,12 @@
           "D": "return self.relu(x)"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "The provided snippet is fully syntactically correct and outputs a valid tensor of shape (2, 3) without raising any exceptions. It only fails if option A ( self.relu = nn.ReLU without parentheses) is substituted into __init__ , making self.relu an uninstantiated class rather than a callable module."
       },
       {
         "id": "w4_q6",
         "q_num": 6,
-        "question": "Which of the following correctly describes the flow of execution for a single forward pass in DynamicNet? import torchimport torch.nn as nnclass DynamicNet(nn.Module):def __init__(self, d): super().__init__()# Dynamic architecture combining Linear and ReLU modules self.layers = nn.ModuleList() for _ in range(2): self.layers.append(nn.Linear(d, d)) self.layers.append(nn.ReLU())def forward(self, x): for layer in self.layers: x = layer(x) return xmodel = DynamicNet(d=4)",
+        "question": "Which of the following correctly describes the flow of execution for a single forward pass in DynamicNet ? import torch import torch.nn as nn class DynamicNet(nn.Module): def __init__(self, d): super().__init__() # Dynamic architecture combining Linear and ReLU modules self.layers = nn.ModuleList() for _ in range(2): self.layers.append(nn.Linear(d, d)) self.layers.append(nn.ReLU()) def forward(self, x): for layer in self.layers: x = layer(x) return x model = DynamicNet(d=4)",
         "options": {
           "A": "Linear(4, 4) -> Linear(4, 4) -> ReLU() -> ReLU()",
           "B": "ReLU() -> Linear(4, 4) -> ReLU() -> Linear(4, 4)",
@@ -678,7 +678,7 @@
           "D": "Linear(4, 4) and ReLU() applied in parallel across two separate streams, then merged."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "The __init__ loop alternates appending a Linear(d, d) layer followed immediately by a ReLU() activation layer twice into nn.ModuleList. In forward(), iterating over self.layers executes these four sub-modules strictly sequentially in the exact order they were added."
       },
       {
         "id": "w4_q7",
@@ -691,7 +691,7 @@
           "D": "CrossEntropyLoss takes raw logits and integer labels."
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "PyTorch's CrossEntropyLoss internally combines LogSoftmax and NLLLoss into a single numerically stable function, so models should output raw logits without a manual Softmax. It expects unnormalized continuous model outputs paired with target class indices formatted as integers."
       },
       {
         "id": "w4_q8",
@@ -704,7 +704,7 @@
           "D": "To calculate gradients."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Calling model.eval() switches the model into evaluation mode, altering the behavior of specific mechanisms like Dropout and Batch Normalization. It stops Dropout from randomly zeroing out activations and forces Batch Normalization to use running dataset statistics instead of batch statistics."
       },
       {
         "id": "w4_q9",
@@ -717,7 +717,7 @@
           "D": "To reset the old gradient values from previous iterations."
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "By default, PyTorch accumulates (adds together) gradients in .grad buffers during every backward pass rather than overwriting them. Calling optimizer.zero_grad() clears these stale values so old gradients from previous mini-batches do not corrupt current weight updates."
       },
       {
         "id": "w4_q10",
@@ -730,7 +730,7 @@
           "D": "Convergence Error"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "PyTorch cannot perform mathematical operations on tensors that reside on different physical hardware devices (such as CPU memory versus GPU memory). Attempting a forward pass with mismatched device locations raises a RuntimeError declaring device mismatch."
       },
       {
         "id": "w4_q11",
@@ -743,7 +743,7 @@
           "D": "Ignore Index Scheduling"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Cosine Annealing uses a cosine curve function to gradually decrease the learning rate from a high starting point down to a minimum target value over time. This smooth decay helps the optimizer explore the loss landscape early and settle into local minima gently near the end of training."
       },
       {
         "id": "w4_q12",
@@ -753,10 +753,10 @@
           "A": "__init__ and __forward__",
           "B": "__len__ and __getitem__",
           "C": "__update__ and __collate__",
-          "D": "__transform__ and __prefetch__ I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i"
+          "D": "__transform__ and __prefetch__"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "The __len__ method must return the total number of items in the dataset so the DataLoader knows its batch bounds. The __getitem__ method defines how to retrieve and preprocess a single sample and its corresponding label by index."
       },
       {
         "id": "w4_q13",
@@ -769,12 +769,12 @@
           "D": "prefetch_factor"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Setting pin_memory=True allocates host (CPU) memory in a page-locked region, preventing the operating system from swapping it to disk. This enables host-to-device Direct Memory Access (DMA) transfers, significantly speeding up data movement to CUDA GPUs."
       },
       {
         "id": "w4_q14",
         "q_num": 14,
-        "question": "Which of the following is the correct implementation for the missing code block inside __getitem__ to extract a single pair of input data and its corresponding label by index? import torch from torch.utils.data import Datasetclass TextDataset(Dataset):def __init__(self, data, labels): self.data = data self.labels = labelsdef __len__(self): return len(self.data) I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t idef __getitem__(self, index):# Missing Code Block return item, label",
+        "question": "Which of the following is the correct implementation for the missing code block inside __getitem__ to extract a single pair of input data and its corresponding label by index? import torch from torch.utils.data import Dataset class TextDataset(Dataset): def __init__(self, data, labels): self.data = data self.labels = labels def __len__(self): return len(self.data) def __getitem__(self, index): # Missing Code Block return item, label",
         "options": {
           "A": "item = self.data.get(index); label = self.labels.get(index)",
           "B": "item = self.data[index]; label = self.labels[index]",
@@ -782,7 +782,7 @@
           "D": "item = self.data.next(); label = self.labels.next()"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "PyTorch Datasets access underlying sequences (like lists, arrays, or tensors) using standard Python indexing syntax [index] . Using .get() , .pop() , or .next() will raise AttributeError exceptions because standard indexable sequence types do not support those methods for index lookup."
       },
       {
         "id": "w4_q15",
@@ -795,18 +795,18 @@
           "D": "drop_last"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "When a dataset size isn't perfectly divisible by the batch size, the final batch will contain fewer samples than expected, which can introduce noisy gradients. Setting drop_last=True causes the DataLoader to discard this uneven trailing batch to ensure uniform batch sizes throughout training."
       }
     ]
   },
   {
     "week": 5,
-    "title": "Week 5: High-Level Frameworks & Distributed Training Fundamentals",
+    "title": "Week 5: TensorFlow Architecture, Keras & Data Pipelines",
     "questions": [
       {
         "id": "w5_q1",
         "q_num": 1,
-        "question": "Which high-level API is used in TensorFlow for rapid model prototyping? Options:",
+        "question": "Which high-level API is used in TensorFlow for rapid model prototyping?",
         "options": {
           "A": "PyTorch API",
           "B": "Keras API",
@@ -814,12 +814,12 @@
           "D": "TFX API"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Keras serves as the primary high-level API within TensorFlow, providing user-friendly abstractions for constructing and training neural networks. It simplifies prototyping by streamlining layer creation, model compilation, and training execution into clean, high-level commands."
       },
       {
         "id": "w5_q2",
         "q_num": 2,
-        "question": "What decorator is used in modern TensorFlow versions to convert eager code to graph execution? Options:",
+        "question": "What decorator is used in modern TensorFlow versions to convert eager code to graph execution?",
         "options": {
           "A": "@tf.graph",
           "B": "@tf.compile",
@@ -827,12 +827,12 @@
           "D": "@tf.eager"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "The @tf.function decorator compiles Python functions into optimized TensorFlow computation graphs using AutoGraph. This transformation provides fast graph-mode execution and hardware optimizations while allowing developers to write code imperatively."
       },
       {
         "id": "w5_q3",
         "q_num": 3,
-        "question": "How does TensorFlow's gradient tracking behavior during a standard gradient tape call differ from PyTorch's default zero_grad approach? Options:",
+        "question": "How does TensorFlow's gradient tracking behavior during a standard gradient tape call differ from PyTorch's default zero_grad approach?",
         "options": {
           "A": "TensorFlow requires an explicit call to reset gradients.",
           "B": "TensorFlow automatically retains all calculated tape states.",
@@ -840,12 +840,12 @@
           "D": "TensorFlow lacks support for multi-loss tracking entirely."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "A standard tf.GradientTape automatically releases its recorded operations and memory as soon as tape.gradient() is called. In contrast, PyTorch accumulates gradients across operations by default until zero_grad() is explicitly called to reset them."
       },
       {
         "id": "w5_q4",
         "q_num": 4,
-        "question": "What parameter must be explicitly configured in a TensorFlow gradient tape to successfully evaluate multiple loss functions sequentially without throwing an error? Options:",
+        "question": "What parameter must be explicitly configured in a TensorFlow gradient tape to successfully evaluate multiple loss functions sequentially without throwing an error?",
         "options": {
           "A": "accumulate=True",
           "B": "persistent=True",
@@ -853,12 +853,12 @@
           "D": "trace_gradients=True"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Setting persistent=True keeps the gradient tape from releasing its recorded operations after the first gradient calculation. This enables multiple calls to tape.gradient() for different loss functions, requiring manual resource cleanup using del tape ."
       },
       {
         "id": "w5_q5",
         "q_num": 5,
-        "question": "Which tensor type must be used in TensorFlow to prevent exceptions when trying to perform states or weight updates during training? Options:",
+        "question": "Which tensor type must be used in TensorFlow to prevent exceptions when trying to perform states or weight updates during training?",
         "options": {
           "A": "tf.constant",
           "B": "tf.matrix",
@@ -866,12 +866,12 @@
           "D": "tf.zeros"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "tf.Variable objects represent mutable tensor states whose values can be modified in-place using update ops like assign_sub . Standard constants ( tf.constant ) are immutable, causing errors if modified during model weight updates."
       },
       {
         "id": "w5_q6",
         "q_num": 6,
-        "question": "What is the primary advantage of executing a compiled C++ graph using tf.function over standard eager mode execution in TensorFlow 2.x? Options:",
+        "question": "What is the primary advantage of executing a compiled C++ graph using tf.function over standard eager mode execution in TensorFlow 2.x?",
         "options": {
           "A": "Easier model debugging and line-by-line inspection.",
           "B": "Significant execution speedup for computations.",
@@ -879,12 +879,12 @@
           "D": "Automatic handling of non-persistent gradient tapes."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Graph compilation eliminates Python runtime overhead and enables low-level optimizations like operator fusion and constant folding. This results in significantly faster execution speeds and higher hardware utilization compared to eager evaluation."
       },
       {
         "id": "w5_q7",
         "q_num": 7,
-        "question": "How does setting \"num_parallel_calls=tf.data.AUTOTUNE\" optimize the data pre-processing stage in a TensorFlow input pipeline? I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i Options:",
+        "question": "How does setting \"num_parallel_calls=tf.data.AUTOTUNE\" optimize the data pre-processing stage in a TensorFlow input pipeline?",
         "options": {
           "A": "It dynamically adjusts the batch size dynamically based on memory.",
           "B": "It sequentializes data processing to save GPU bandwidth.",
@@ -892,12 +892,12 @@
           "D": "It automatically balances workloads based on CPU cores and load."
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "Using tf.data.AUTOTUNE allows TensorFlow to dynamically adjust the level of parallel CPU thread execution at runtime. This removes input bottlenecks and maximizes data throughput automatically without manual thread tuning."
       },
       {
         "id": "w5_q8",
         "q_num": 8,
-        "question": "Why does a slow input data pipeline directly reduce overall GPU resource utilization during deep learning training? Options:",
+        "question": "Why does a slow input data pipeline directly reduce overall GPU resource utilization during deep learning training?",
         "options": {
           "A": "It causes the GPU to sit idle waiting for data.",
           "B": "It throttles the C++ back-end graph template.",
@@ -905,25 +905,25 @@
           "D": "It reduces the multi-loss persistent gradient."
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "GPUs require a continuous pipeline of pre-processed batches to maintain high computational throughput during training steps. If CPU preprocessing is too slow, the GPU stalls waiting for incoming data, leading to underutilized compute resources."
       },
       {
         "id": "w5_q9",
         "q_num": 9,
-        "question": "During a multi-epoch training process, what behavior occurs in the second epoch if a dataset applies .map() for pre-processing without using .cache()? Options:",
+        "question": "During a multi-epoch training process, what behavior occurs in the second epoch if a dataset applies .map() for pre-processing without using .cache()?",
         "options": {
           "A": "TensorFlow re-executes the map routine calls entirely.",
           "B": "The pipeline relies on cached data from the first epoch.",
-          "C": "The data pipeline automatically throws a syntax warning. I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i",
+          "C": "The data pipeline automatically throws a syntax warning.",
           "D": "The preprocessing pipeline switches to a C++ graph execution."
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Without .cache() , mapping transformations are evaluated lazily during every single epoch traversal. Using .cache() saves the preprocessed dataset in memory or local storage after the first epoch to prevent redundant CPU computation."
       },
       {
         "id": "w5_q10",
         "q_num": 10,
-        "question": "How can you explicitly prevent unnecessary graph retracing when passing inputs with varying shapes to a @tf.function decorated function? Options:",
+        "question": "How can you explicitly prevent unnecessary graph retracing when passing inputs with varying shapes to a @tf.function decorated function?",
         "options": {
           "A": "By defining a custom input_signature with None dimensions.",
           "B": "By using regular Python lists instead of TensorFlow tensors.",
@@ -931,12 +931,12 @@
           "D": "By manually clearing the cache before every individual call."
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Defining dynamic dimensions as None within tf.TensorSpec allows a single compiled graph to handle variable input dimensions. This prevents TensorFlow from triggering costly graph re-compilations whenever input shapes change across calls."
       },
       {
         "id": "w5_q11",
         "q_num": 11,
-        "question": "What is the specific TensorFlow graph equivalent for a standard Python if-else branch structure when building optimized control flows? Options:",
+        "question": "What is the specific TensorFlow graph equivalent for a standard Python if-else branch structure when building optimized control flows?",
         "options": {
           "A": "tf.while_loop",
           "B": "tf.print",
@@ -944,12 +944,12 @@
           "D": "tf.cond"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "tf.cond builds conditional branch logic directly into the TensorFlow computational graph structure. This ensures both conditional paths can be compiled and correctly evaluated on target hardware like GPUs or TPUs."
       },
       {
         "id": "w5_q12",
         "q_num": 12,
-        "question": "During XLA's operator fusion, how are intermediate results stored to prevent High Bandwidth Memory (HBM) traffic? Options:",
+        "question": "During XLA's operator fusion, how are intermediate results stored to prevent High Bandwidth Memory (HBM) traffic?",
         "options": {
           "A": "In cached graphs",
           "B": "In global memory",
@@ -957,12 +957,12 @@
           "D": "In transient tensors"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "XLA fuses multiple consecutive tensor operations into single hardware kernels, keeping temporary results inside ultra-fast on-chip registers. This minimizes memory bandwidth bottlenecks by avoiding unnecessary read/write operations to main HBM memory."
       },
       {
         "id": "w5_q13",
         "q_num": 13,
-        "question": "When a model is serialized using TensorFlow's native model.export method for production, what is the primary structural role of the saved \"serving signature\" Options:",
+        "question": "When a model is serialized using TensorFlow's native model.export method for production, what is the primary structural role of the saved \"serving signature\"",
         "options": {
           "A": "It contains optimizer configurations for resuming continuous training.",
           "B": "It encapsulates the metadata required for zero-downtime framework rollback.",
@@ -970,12 +970,12 @@
           "D": "It maps network operations directly onto resource-constrained NPU hardware."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "A serving signature defines the exact tensor names, shapes, and data types expected by external inference clients. This creates a clean interface contract that decouples serving environments like TensorFlow Serving from internal graph details."
       },
       {
         "id": "w5_q14",
         "q_num": 14,
-        "question": "If you want to stay strictly within the Google ecosystem and deploy a machine learning model targeting highly resource-constrained mobile apps or edge devices, which framework should you convert your SavedModel to? Options:",
+        "question": "If you want to stay strictly within the Google ecosystem and deploy a machine learning model targeting highly resource-constrained mobile apps or edge devices, which framework should you convert your SavedModel to?",
         "options": {
           "A": "ONNX Runtime GPU",
           "B": "TensorFlow Light",
@@ -983,12 +983,12 @@
           "D": "TensorRT Engine"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "TensorFlow Lite (TFLite) is Google’s dedicated framework for executing efficient inference on mobile and micro-edge devices. It applies optimizations like quantization and memory reduction to deliver low latency on embedded hardware."
       },
       {
         "id": "w5_q15",
         "q_num": 15,
-        "question": "Which specific file in a standard TensorFlow SavedModel directory is explicitly responsible for maintaining cryptographic hashes to ensure integrity verification during cross-platform model deployment? Options:",
+        "question": "Which specific file in a standard TensorFlow SavedModel directory is explicitly responsible for maintaining cryptographic hashes to ensure integrity verification during cross-platform model deployment?",
         "options": {
           "A": "fingerprint.pb",
           "B": "saved_model.pb",
@@ -996,18 +996,18 @@
           "D": "graph.proto"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "The fingerprint.pb file stores cryptographic hashes and metadata describing the exact state of the saved model artifacts. Serving systems use it to verify model integrity and ensure consistency across cross-platform deployments."
       }
     ]
   },
   {
     "week": 6,
-    "title": "Week 6: Pre-training Objectives, LLM Architecture & Scaling",
+    "title": "Week 6: LLM Pretraining, Quantization & Fine-Tuning",
     "questions": [
       {
         "id": "w6_q1",
         "q_num": 1,
-        "question": "What primary training objective is used during the pretraining stage of Large Language Models (LLMs)? Options:",
+        "question": "What primary training objective is used during the pretraining stage of Large Language Models (LLMs)?",
         "options": {
           "A": "Masked token prediction",
           "B": "Next-token prediction",
@@ -1015,12 +1015,12 @@
           "D": "Direct preference optimization"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "During pretraining, LLMs learn language representations by predicting the probability distribution of the next token given preceding context. This self-supervised autoregressive objective enables models to learn from massive amounts of unlabeled text without human annotation."
       },
       {
         "id": "w6_q2",
         "q_num": 2,
-        "question": "Which adaptation approach modifies external retrieved context rather than updating any internal model parameters? Options:",
+        "question": "Which adaptation approach modifies external retrieved context rather than updating any internal model parameters?",
         "options": {
           "A": "Parameter-Efficient Fine-Tuning (PEFT)",
           "B": "Retrieval-Augmented Generation (RAG)",
@@ -1028,12 +1028,12 @@
           "D": "Low-Rank Adaptation (LoRA)"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "RAG fetches relevant document passages from external sources and injects them directly into the input prompt at inference time. Because it operates solely by augmenting the prompt context, it expands model knowledge without modifying any internal model weights."
       },
       {
         "id": "w6_q3",
         "q_num": 3,
-        "question": "Beyond model parameters, which component often contributes significantly to memory overhead during full model fine-tuning? Options:",
+        "question": "Beyond model parameters, which component often contributes significantly to memory overhead during full model fine-tuning?",
         "options": {
           "A": "Static input token IDs",
           "B": "Tokenizer vocabulary lookup tables",
@@ -1041,12 +1041,12 @@
           "D": "Optimizer states and gradients"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "Full model fine-tuning requires tracking first and second momentum states along with weight gradients for every single trainable parameter. These optimizer states and gradients combined consume several times more GPU memory than the base model parameters themselves."
       },
       {
         "id": "w6_q4",
         "q_num": 4,
-        "question": "What primary operation converts input text into subword units before fed into an LLM embedding layer? Options:",
+        "question": "What primary operation converts input text into subword units before fed into an LLM embedding layer?",
         "options": {
           "A": "Tokenization",
           "B": "Normalization",
@@ -1054,64 +1054,64 @@
           "D": "De-noising"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Tokenization decomposes raw input text strings into subword units or characters based on a predefined vocabulary. This subword tokens are mapped to discrete numerical IDs that index directly into the model's dense embedding matrix."
       },
       {
         "id": "w6_q5",
         "q_num": 5,
-        "question": "What is the primary benefit of utilizing Brain Float 16 (BF16) over conventional Floating Point 16 (FP16) when training large transformer models? Options:",
+        "question": "What is the primary benefit of utilizing Brain Float 16 (BF16) over conventional Floating Point 16 (FP16) when training large transformer models?",
         "options": {
-          "A": "It uses fewer total bits to store numerical values",
-          "B": "It has a wider exponent range",
-          "C": "It automatically applies gradient scaling routines",
-          "D": "It can safely downcast the final output tensors. I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i"
+          "A": "It uses fewer total bits to store numerical values.",
+          "B": "It has a wider exponent range.",
+          "C": "It automatically applies gradient scaling routines.",
+          "D": "It can safely downcast the final output tensors."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "BF16 maintains an 8-bit exponent field matching standard FP32, effectively preventing numerical underflow and overflow during training. This expanded dynamic range removes the need for complex loss scaling workarounds required by FP16's narrow 5-bit exponent."
       },
       {
         "id": "w6_q6",
         "q_num": 6,
-        "question": "How can the numerical issue of naive softmax calculations blowing up into \"Not a Number\" (NaN) or infinity be successfully stabilized? Options:",
+        "question": "How can the numerical issue of naive softmax calculations blowing up into \"Not a Number\" (NaN) or infinity be successfully stabilized?",
         "options": {
-          "A": "By manually calling a blanket model.half() function",
-          "B": "By switching the target system architecture to a legacy GPU",
-          "C": "By executing the backward pass within an autocast region",
-          "D": "By subtracting the maximum value from the logits before softmax"
+          "A": "By manually calling a blanket model.half() function.",
+          "B": "By switching the target system architecture to a legacy GPU.",
+          "C": "By executing the backward pass within an autocast region.",
+          "D": "By subtracting the maximum value from the logits before softmax."
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "Subtracting the maximum logit value from all input logits ensures that the maximum exponent evaluated during softmax is zero.This shift-invariant mathematical trick prevents numeric overflow during exponentiation without changing the final output probabilities."
       },
       {
         "id": "w6_q7",
         "q_num": 7,
-        "question": "What occurs when tiny gradients flush directly to zero during the training process, and what symptom describes this state? Options:",
+        "question": "What occurs when tiny gradients flush directly to zero during the training process, and what symptom describes this state?",
         "options": {
-          "A": "Underflow, causing the learning process to stall",
-          "B": "Underflow, causing the loss function to hit infinity",
-          "C": "Overflow, causing the parameters to immediately vanish",
+          "A": "Underflow, causing the learning process to stall.",
+          "B": "Underflow, causing the loss function to hit infinity.",
+          "C": "Overflow, causing the parameters to immediately vanish.",
           "D": "Overflow, causing logits to blow up before the softmax"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Underflow occurs when tiny gradient values fall below the representable numerical precision limit and round down to zero.Without non-zero gradient values to update model weights, backpropagation produces no parameter changes and training stalls."
       },
       {
         "id": "w6_q8",
         "q_num": 8,
-        "question": "Which of the following components has the same shape as the model weights when training an LLM? Options:",
+        "question": "Which of the following components has the same shape as the model weights when training an LLM?",
         "options": {
-          "A": "Optimizer states I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i",
+          "A": "Optimizer states",
           "B": "Gradients",
           "C": "Activations",
           "D": "Framework overhead"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Gradients represent partial derivatives of the scalar loss function computed with respect to each individual model parameter.Because every trainable weight requires a corresponding gradient value, gradient tensors share an exact 1:1 structural shape with weights."
       },
       {
         "id": "w6_q9",
         "q_num": 9,
-        "question": "What is the primary trade-off involved when implementing gradient checkpointing in LLM training? Options:",
+        "question": "What is the primary trade-off involved when implementing gradient checkpointing in LLM training?",
         "options": {
           "A": "Trading compute for memory",
           "B": "Trading precision for speed",
@@ -1119,25 +1119,25 @@
           "D": "Trading throughput for precision"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Gradient checkpointing drastically reduces memory usage by discarding intermediate activation tensors during the forward pass. It then recomputes these missing activations on-demand during the backward pass, increasing total FLOPs in exchange for lower VRAM footprint."
       },
       {
         "id": "w6_q10",
         "q_num": 10,
-        "question": "What happens to a weight update step in dynamic loss scaling if an 'inf' or 'nan' value is detected in the gradients? Options:",
+        "question": "What happens to a weight update step in dynamic loss scaling if an 'inf' or 'nan' value is detected in the gradients?",
         "options": {
-          "A": "The update step is skipped entirely",
-          "B": "The update step runs with a fixed scale",
-          "C": "Only the update of corrupted weights are skipped",
-          "D": "The model falls back to full precision"
+          "A": "The update step is skipped entirely.",
+          "B": "The update step runs with a fixed scale.",
+          "C": "Only the update of corrupted weights are skipped.",
+          "D": "The model falls back to full precision."
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "An 'inf' or 'nan' value indicates numeric overflow during backpropagation, which would permanently corrupt model parameters if applied. The framework skips the parameter update step, reduces the scale factor for subsequent batches, and resumes training safely."
       },
       {
         "id": "w6_q11",
         "q_num": 11,
-        "question": "Which parameter-efficient fine-tuning technique is specifically recommended when weight updates are necessary but the memory or GPU budget is highly limited? Options:",
+        "question": "Which parameter-efficient fine-tuning technique is specifically recommended when weight updates are necessary but the memory or GPU budget is highly limited?",
         "options": {
           "A": "Supervised Fine-Tuning (SFT)",
           "B": "Continued Pre-training (CPT)",
@@ -1145,65 +1145,65 @@
           "D": "Zero-Shot Generation"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "LoRA freezes pretrained model weights and introduces small, trainable low-rank decomposition matrices into transformer layers. This reduces trainable parameters and optimizer memory by orders of magnitude, making fine-tuning feasible on limited GPU hardware."
       },
       {
         "id": "w6_q12",
         "q_num": 12,
-        "question": "What major limitation was observed when testing the base, pre-trained GPT-2 model using a zero-shot generation prompt? Options:",
+        "question": "What major limitation was observed when testing the base, pre-trained GPT-2 model using a zero-shot generation prompt?",
         "options": {
-          "A": "It did not know how to follow the specified instruction format",
-          "B": "It failed to generate grammatically correct English sentences",
-          "C": "It was unable to process abstract concepts like networks",
-          "D": "It completely refused to output text due to policy constraints"
+          "A": "It did not know how to follow the specified instruction format.",
+          "B": "It failed to generate grammatically correct English sentences.",
+          "C": "It was unable to process abstract concepts like networks.",
+          "D": "It completely refused to output text due to policy constraints."
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Base pretrained models are optimized purely for raw autoregressive text continuation rather than task or instruction execution.Without instruction fine-tuning, zero-shot prompts often cause the model to repeat or extend the prompt rather than output the answer format."
       },
       {
         "id": "w6_q13",
         "q_num": 13,
-        "question": "When setting up a model's weights to be frozen so that the backward pass does not update them during training, which configuration must be applied? Options:",
+        "question": "When setting up a model's weights to be frozen so that the backward pass does not update them during training, which configuration must be applied?",
         "options": {
           "A": "requires_grad = False",
           "B": "requires_grad = True",
           "C": "double_quantization = True",
-          "D": "optimizer_state = True I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i"
+          "D": "optimizer_state = True"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Setting a tensor's requires_grad attribute to False excludes it from autograd computation graph construction.This prevents autograd from computing gradients for those parameters during backpropagation, leaving the weights frozen."
       },
       {
         "id": "w6_q14",
         "q_num": 14,
-        "question": "During the practical implementation of LoRA, how are the weight matrices A and B typically initialized? Options:",
+        "question": "During the practical implementation of LoRA, how are the weight matrices A and B typically initialized?",
         "options": {
-          "A": "Matrix A is initialized with zeros, and Matrix B is initialized from a Gaussian distribution",
-          "B": "Matrix A is initialized from a Gaussian distribution, and Matrix B is initialized with zeros",
-          "C": "Both Matrix A and Matrix B are initialized with zeros",
-          "D": "Both Matrix A and Matrix B are drawn from a uniform float distribution"
+          "A": "Matrix A is initialized with zeros, and Matrix B is initialized from a Gaussian distribution.",
+          "B": "Matrix A is initialized from a Gaussian distribution, and Matrix B is initialized with zeros.",
+          "C": "Both Matrix A and Matrix B are initialized with zeros.",
+          "D": "Both Matrix A and Matrix B are drawn from a uniform float distribution."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Initializing matrix B to zeros ensures that the rank update product Δ W = B · A equals zero at the start of training.This guarantees that the model's baseline behavior matches original pretrained weights prior to fine-tuning updates."
       },
       {
         "id": "w6_q15",
         "q_num": 15,
-        "question": "If a task requires parameter updates, why is PEFT typically recommended as the first adaptation strategy instead of full fine-tuning? Options:",
+        "question": "If a task requires parameter updates, why is PEFT typically recommended as the first adaptation strategy instead of full fine-tuning?",
         "options": {
-          "A": "It optimizes the entire model framework from scratch to eliminate noise",
-          "B": "It completely avoids the backward pass workflow during training",
-          "C": "It adds and trains only a few parameters to test baseline performance",
-          "D": "It guarantees higher structural throughput by using 4-bit normal floats"
+          "A": "It optimizes the entire model framework from scratch to eliminate noise.",
+          "B": "It completely avoids the backward pass workflow during training.",
+          "C": "It adds and trains only a few parameters to test baseline performance.",
+          "D": "It guarantees higher structural throughput by using 4-bit normal floats."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "PEFT trains only a tiny fraction of the total model parameters, dramatically lowering compute time, VRAM, and storage requirements. This allows rapid baseline evaluation and task adaptation before committing resources to full model fine-tuning."
       }
     ]
   },
   {
     "week": 7,
-    "title": "Week 7: Distributed Parallelism Strategies (Data, Model, Pipeline)",
+    "title": "Week 7: Distributed Training, Parallelism & Model Sharding",
     "questions": [
       {
         "id": "w7_q1",
@@ -1215,8 +1215,8 @@
           "C": "Data Parallelism",
           "D": "Sharded Parallelism"
         },
-        "correct": "D",
-        "explanation": ""
+        "correct": "C",
+        "explanation": "In Data Parallelism, the complete model parameters are replicated across all participating GPUs, and each GPU processes a distinct partition of the batch. The computed gradients across all GPUs are then aggregated using an all-reduce operation before updating the shared weights."
       },
       {
         "id": "w7_q2",
@@ -1229,20 +1229,20 @@
           "D": "Fully Sharded Data Parallel"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Tensor Parallelism splits individual weight matrices and tensor operations across multiple GPUs within a single layer. This allows training massive individual layers that exceed the memory capacity of a single GPU."
       },
       {
         "id": "w7_q3",
         "q_num": 3,
-        "question": "I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i In a PyTorch DistributedDataParallel (DDP) script, what is the consequence of forgetting to call sampler.set_epoch(epoch) inside your training loop?",
+        "question": "In a PyTorch DistributedDataParallel (DDP) script, what is the consequence of forgetting to call sampler.set_epoch(epoch) inside your training loop?",
         "options": {
-          "A": "The training script hangs indefinitely",
-          "B": "The model runs out of memory",
-          "C": "The data is shuffled identically every epoch",
-          "D": "The gradients fail to synchronize"
+          "A": "The training script hangs indefinitely.",
+          "B": "The model runs out of memory.",
+          "C": "The data is shuffled identically every epoch.",
+          "D": "The gradients fail to synchronize."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Calling sampler.set_epoch(epoch) updates the random seed of the DistributedSampler at the start of each epoch. Without it, the sampler reuses the exact same deterministic ordering every epoch, leading to identical batch sequences and reduced generalization."
       },
       {
         "id": "w7_q4",
@@ -1255,7 +1255,7 @@
           "D": "Scatter and Gather"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Ring All-reduce operates in two sequential phases: first, a Reduce-scatter phase aggregates gradient chunks around the ring so each GPU holds a fully reduced chunk. Then, an All-gather phase broadcasts these reduced chunks back to all GPUs so every rank receives the complete updated gradient."
       },
       {
         "id": "w7_q5",
@@ -1267,8 +1267,8 @@
           "C": "N x M bytes",
           "D": "M / N bytes"
         },
-        "correct": "A",
-        "explanation": ""
+        "correct": "B",
+        "explanation": "Each GPU transfers bytes of data during the combined 2 × 𝑁 − 1 𝑁 × 𝑀 Reduce-scatter and All-gather phases. As becomes very large ($N \\to \\infty$), the factor 𝑁 approaches , making the total transferred data per GPU asymptotically approach 𝑁 − 1 𝑁 1 bytes. 2 𝑀"
       },
       {
         "id": "w7_q6",
@@ -1281,7 +1281,7 @@
           "D": "Multiple processes per GPU"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "PyTorch DDP uses a multi-process model where a dedicated Python process is spawned for each individual GPU device. This process isolation completely avoids Python's Global Interpreter Lock (GIL) bottlenecks and avoids GPU resource contention."
       },
       {
         "id": "w7_q7",
@@ -1294,12 +1294,12 @@
           "D": "To sync the weights across ranks"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Wrapping a model in DistributedDataParallel prepends a \"module.\" prefix to all layer names in its state_dict() . Accessing .module.state_dict() retrieves the underlying unwrapped model's state dictionary directly, ensuring key compatibility when loading checkpoints into non-DDP models."
       },
       {
         "id": "w7_q8",
         "q_num": 8,
-        "question": "In a naive all-reduce implementation with N GPUs and gradient size M, what is the per-GPU communication traffic? I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i",
+        "question": "In a naive all-reduce implementation with N GPUs and gradient size M, what is the per-GPU communication traffic?",
         "options": {
           "A": "O(M)",
           "B": "O(N*M)",
@@ -1307,7 +1307,7 @@
           "D": "O(N+M)"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "A naive parameter-server or master-worker all-reduce implementation requires transferring the entire -byte gradient tensor from all workers to a central 𝑀 𝑁 node. Consequently, total communication traffic per worker scales linearly with , 𝑁 resulting in an overhead. 𝑂 ( 𝑁 · 𝑀 )"
       },
       {
         "id": "w7_q9",
@@ -1320,7 +1320,7 @@
           "D": "Opens a TCP store and waits for connections"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "During PyTorch c10d initialization, Rank 0 creates a key-value TCPStore server listening on a designated host address and port. All secondary worker ranks connect to this central TCP store during rendezvous to discover peer ranks and exchange network configuration data."
       },
       {
         "id": "w7_q10",
@@ -1333,33 +1333,33 @@
           "D": "TCP sockets"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "Standard TCP sockets rely on CPU software stack processing and standard network protocols, introducing significant latency and lower bandwidth. High-performance interconnects like InfiniBand NDR, RoCEv2, and PCIe Gen5 utilize hardware direct memory access (RDMA/GPUDirect) to bypass CPU software bottlenecks."
       },
       {
         "id": "w7_q11",
         "q_num": 11,
         "question": "What is the primary characteristic of \"weak scaling\" in distributed training?",
         "options": {
-          "A": "Training a bigger problem with constant wall time",
-          "B": "Finishing a fixed job faster with more GPUs",
-          "C": "Reducing the communication overhead to zero",
-          "D": "Minimizing the batch size per GPU"
+          "A": "Training a bigger problem with constant wall time.",
+          "B": "Finishing a fixed job faster with more GPUs.",
+          "C": "Reducing the communication overhead to zero.",
+          "D": "Minimizing the batch size per GPU."
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Weak scaling evaluates execution efficiency when the workload per GPU (local batch size) is kept fixed as more GPUs are added. The goal is to scale up the total model capacity and dataset size while keeping total execution time constant."
       },
       {
         "id": "w7_q12",
         "q_num": 12,
         "question": "According to the PyTorch profiler breakdown, what is the recommended fix for addressing \"load imbalance\" during training?",
         "options": {
-          "A": "Pinning processes to healthy GPUs",
-          "B": "Using fewer Python callbacks",
-          "C": "Ensuring same-shape inputs (pad or drop)",
-          "D": "Tuning NCCL bucket sizes"
+          "A": "Pinning processes to healthy GPUs.",
+          "B": "Using fewer Python callbacks.",
+          "C": "Ensuring same-shape inputs (pad or drop).",
+          "D": "Tuning NCCL bucket sizes."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Load imbalance occurs when different GPUs process variable sequence lengths or batch sizes, forcing faster ranks to wait idly at synchronization points for slower ranks. Standardizing input tensor shapes across all ranks via padding or dropping residual samples eliminates execution variance."
       },
       {
         "id": "w7_q13",
@@ -1372,7 +1372,7 @@
           "D": "throughput(1) / (N * throughput(N))"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Scaling efficiency measures how close a distributed cluster comes to ideal linear speedup by dividing total throughput on GPUs by times single-GPU throughput. 𝑁 𝑁 A value of ($100\\%$) indicates perfect linear scaling without communication overhead 1 . 0 losses."
       },
       {
         "id": "w7_q14",
@@ -1385,7 +1385,7 @@
           "D": "Larger per-GPU batch + gradient accumulation"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "Increasing local batch sizes and accumulating gradients over multiple micro-batches decreases the frequency of inter-GPU communication calls. Extending computation time relative to networking time drastically reduces communication bottlenecks and boosts overall GPU compute utilization."
       },
       {
         "id": "w7_q15",
@@ -1398,18 +1398,18 @@
           "D": "3D Parallelism (Megatron-DeepSpeed)"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "FSDP shards model parameters, gradients, and optimizer states across data-parallel ranks, gathering parameters layer-by-layer only when needed during forward and backward passes. This eliminates parameter duplication while allowing large models whose individual layers fit into GPU memory to train efficiently."
       }
     ]
   },
   {
     "week": 8,
-    "title": "Week 8: Training Optimization, Learning Rates & Linear Scaling Rules",
+    "title": "Week 8: Training Optimization, Scaling & Fault Tolerance",
     "questions": [
       {
         "id": "w8_q1",
         "q_num": 1,
-        "question": ": According to the linear scaling rule, if the baseline learning rate is 0.075 at a batch size of 512, what should the new learning rate be if the batch size is increased to 4096?",
+        "question": "According to the linear scaling rule, if the baseline learning rate is 0.075 at a batch size of 512, what should the new learning rate be if the batch size is increased to 4096?",
         "options": {
           "A": "0.2",
           "B": "0.6",
@@ -1417,51 +1417,51 @@
           "D": "0.8"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "The linear scaling rule scales the learning rate proportionally with the batch size increase (4096/512=8). Multiplying the baseline learning rate of 0.075 by 8 yields 0.6."
       },
       {
         "id": "w8_q2",
         "q_num": 2,
-        "question": ": What is defined as the point past which increasing the batch size further stops providing proportional returns in training efficiency?",
+        "question": "What is defined as the point past which increasing the batch size further stops providing proportional returns in training efficiency?",
         "options": {
           "A": "Effective batch size",
           "B": "Baseline batch size",
           "C": "Divergence batch size",
           "D": "Critical batch size"
         },
-        "correct": "C",
-        "explanation": ""
+        "correct": "D",
+        "explanation": "The critical batch size marks the inflection point where hardware scaling efficiency drops and further batch size increases yield diminishing returns in gradient noise reduction."
       },
       {
         "id": "w8_q3",
         "q_num": 3,
-        "question": ": What happens during a training \"warm-up\" phase to prevent early divergence?",
+        "question": "What happens during a training \"warm-up\" phase to prevent early divergence?",
         "options": {
-          "A": "The learning rate is immediately set to its maximum value",
-          "B": "The learning rate is linearly ramped up from near zero to the full value",
-          "C": "The batch size is gradually decreased over several iterations",
-          "D": "The gradients are completely cleared for the first 500 steps"
+          "A": "The learning rate is immediately set to its maximum value.",
+          "B": "The learning rate is linearly ramped up from near zero to the full value.",
+          "C": "The batch size is gradually decreased over several iterations.",
+          "D": "The gradients are completely cleared for the first 500 steps."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Starting with a very small learning rate and gradually increasing it prevents large, destabilizing gradient updates when the model parameters are still random and unstable."
       },
       {
         "id": "w8_q4",
         "q_num": 4,
-        "question": ": Why does a single slow GPU slow down the entire multi-GPU training process?",
+        "question": "Why does a single slow GPU slow down the entire multi-GPU training process?",
         "options": {
-          "A": "Because all GPUs must finish a step and synchronize before moving to the next",
-          "B": "Because the system automatically reduces the overall batch size",
-          "C": "Because the slow GPU forces a roll back to the last checkpoint",
-          "D": "Because it triggers an automatic switch from Adam to the LAMB optimizer"
+          "A": "Because all GPUs must finish a step and synchronize before moving to the next.",
+          "B": "Because the system automatically reduces the overall batch size.",
+          "C": "Because the slow GPU forces a roll back to the last checkpoint.",
+          "D": "Because it triggers an automatic switch from Adam to the LAMB optimizer."
         },
-        "correct": "B",
-        "explanation": ""
+        "correct": "A",
+        "explanation": "Data-parallel synchronous training relies on barrier synchronization at each iteration, meaning fast GPUs must idle and wait for the slowest worker to finish its gradient computation."
       },
       {
         "id": "w8_q5",
         "q_num": 5,
-        "question": ": Which term describes a system's ability to keep working or recover properly when a part of it fails?",
+        "question": "Which term describes a system's ability to keep working or recover properly when a part of it fails?",
         "options": {
           "A": "Sharding",
           "B": "Elastic training",
@@ -1469,38 +1469,38 @@
           "D": "Rendezvous"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Fault tolerance mechanisms ensure that distributed systems can detect node failures, preserve progress via checkpoints, and recover without restarting from scratch."
       },
       {
         "id": "w8_q6",
         "q_num": 6,
-        "question": ": If a training script saves a checkpoint at step 700 and a worker's GPU crashes at step 743, what happens when torchrun restarts the job?",
+        "question": "If a training script saves a checkpoint at step 700 and a worker's GPU crashes at step 743, what happens when torchrun restarts the job?",
         "options": {
-          "A": "Training will start completely over from step 0",
-          "B": "Training skips ahead to step 800 to avoid the corrupted block",
-          "C": "Training continues exactly from step 743 without losing any work",
-          "D": "Training resumes from step 700, losing 43 steps of work"
+          "A": "Training will start completely over from step 0.",
+          "B": "Training skips ahead to step 800 to avoid the corrupted block.",
+          "C": "Training continues exactly from step 743 without losing any work.",
+          "D": "Training resumes from step 700, losing 43 steps of work."
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "Since checkpoints are saved periodically at discrete intervals, restarting after a crash rolls back execution to the most recent successfully saved state."
       },
       {
         "id": "w8_q7",
         "q_num": 7,
-        "question": ": What is a major advantage of utilizing an asynchronous save (async checkpoint) over a synchronous save?",
+        "question": "What is a major advantage of utilizing an asynchronous save (async checkpoint) over a synchronous save?",
         "options": {
-          "A": "It splits the dataset into smaller, easier-to-manage batches. I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i",
-          "B": "It automatically reduces the learning rate to prevent memory fragmentation",
-          "C": "It requires no background processing or coordination among workers",
-          "D": "It hands the save to a background process so foreground training keeps running"
+          "A": "It splits the dataset into smaller, easier-to-manage batches.",
+          "B": "It automatically reduces the learning rate to prevent memory fragmentation.",
+          "C": "It requires no background processing or coordination among workers.",
+          "D": "It hands the save to a background process so foreground training keeps running."
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "Asynchronous checkpointing serializes model weights in a separate background thread or process, preventing the main GPU training loop from stalling during disk I/O."
       },
       {
         "id": "w8_q8",
         "q_num": 8,
-        "question": ": Why is it highly discouraged to ship raw optimizer states along with a model for inference?",
+        "question": "Why is it highly discouraged to ship raw optimizer states along with a model for inference?",
         "options": {
           "A": "It increases model size by 4x to 5x without aiding inference",
           "B": "It restricts the model to cross-platform frameworks",
@@ -1508,12 +1508,12 @@
           "D": "It completely stops the training progression"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Optimizer states like momentum and variance buffers are strictly required for backpropagation updates and gradient optimization, serving zero purpose during forward-pass inference."
       },
       {
         "id": "w8_q9",
         "q_num": 9,
-        "question": ": In a model registry, what status is given to a model version that is currently live and serving real user traffic?",
+        "question": "In a model registry, what status is given to a model version that is currently live and serving real user traffic?",
         "options": {
           "A": "Staging",
           "B": "Production",
@@ -1521,12 +1521,12 @@
           "D": "None"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "The production tag designates the verified model artifact currently deployed in live operational environments to handle real client queries."
       },
       {
         "id": "w8_q10",
         "q_num": 10,
-        "question": ": Which deployment strategy involves sending a small slice of traffic to a new model version before fully switching over?",
+        "question": "Which deployment strategy involves sending a small slice of traffic to a new model version before fully switching over?",
         "options": {
           "A": "Rolling update",
           "B": "Blue-green deployment",
@@ -1534,12 +1534,12 @@
           "D": "Shadow rollout"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Canary deployments route a fractional percentage of live production traffic to a new model version to test stability and real-world behavior safely."
       },
       {
         "id": "w8_q11",
         "q_num": 11,
-        "question": ": In Kubernetes, what mechanism is used to check the health and status of a container?",
+        "question": "In Kubernetes, what mechanism is used to check the health and status of a container?",
         "options": {
           "A": "Rollback",
           "B": "Artifact",
@@ -1547,12 +1547,12 @@
           "D": "Budget"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Kubernetes uses liveness, readiness, and startup probes to periodically assess container health and determine if traffic should be routed to it."
       },
       {
         "id": "w8_q12",
         "q_num": 12,
-        "question": ": What is the default Kubernetes rollout strategy for most stateless services?",
+        "question": "What is the default Kubernetes rollout strategy for most stateless services?",
         "options": {
           "A": "Blue-green deployment",
           "B": "Rolling update",
@@ -1560,38 +1560,38 @@
           "D": "Shadow rollout"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Rolling updates incrementally replace old pods with new pods one by one or in small batches, ensuring zero downtime during application deployments."
       },
       {
         "id": "w8_q13",
         "q_num": 13,
-        "question": ": What occurs during a linear learning rate warm-up over the first 10% of training steps?",
+        "question": "What occurs during a linear learning rate warm-up over the first 10% of training steps?",
         "options": {
-          "A": "The learning rate increases gradually to its peak value",
-          "B": "The learning rate drops instantly to zero",
-          "C": "The batch size decreases at a steady rate",
-          "D": "The model updates stop entirely for those steps"
+          "A": "The learning rate increases gradually to its peak value.",
+          "B": "The learning rate drops instantly to zero.",
+          "C": "The batch size decreases at a steady rate.",
+          "D": "The model updates stop entirely for those steps."
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Warm-up safely scales the learning rate from zero up to the target learning rate, preventing explosive gradient updates at the start of training."
       },
       {
         "id": "w8_q14",
         "q_num": 14,
-        "question": ": Why does large batch training typically underperform if a high learning rate is immediately used without a warm-up period?",
+        "question": "Why does large batch training typically underperform if a high learning rate is immediately used without a warm-up period?",
         "options": {
-          "A": "It experiences too many optimization steps per epoch. I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i",
-          "B": "It suffers from fewer optimization steps per epoch",
-          "C": "The dataset size automatically shrinks",
-          "D": "The GPU memory completely runs out"
+          "A": "It experiences too many optimization steps per epoch.",
+          "B": "It suffers from fewer optimization steps per epoch.",
+          "C": "The dataset size automatically shrinks.",
+          "D": "The GPU memory completely runs out."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Large batches lead to fewer total weight updates per epoch, meaning high initial learning rates can cause unstable gradient trajectories before the optimizer stabilizes."
       },
       {
         "id": "w8_q15",
         "q_num": 15,
-        "question": ": Which specific deployment target is the TorchScript (.ts) model packaging format typically used for?",
+        "question": "Which specific deployment target is the TorchScript (.ts) model packaging format typically used for?",
         "options": {
           "A": "Hugging Face Transformers",
           "B": "ONNX Runtime engines",
@@ -1599,13 +1599,13 @@
           "D": "Mobile or standalone C++ applications"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "TorchScript serializes PyTorch models into a static graph format, enabling execution in non-Python runtime environments like mobile apps and C++ backends."
       }
     ]
   },
   {
     "week": 9,
-    "title": "Week 9: Graph Capture Mechanisms & Execution Engines",
+    "title": "Week 9: PyTorch 2.0 Compiler, TorchDynamo & Inductor",
     "questions": [
       {
         "id": "w9_q1",
@@ -1618,7 +1618,7 @@
           "D": "torch.compile"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "torch.jit.trace records operations based on a single execution pass with example inputs. Therefore, it silently ignores alternative control flow paths not taken during that specific trace, making it unsuitable for highly dynamic logic."
       },
       {
         "id": "w9_q2",
@@ -1631,7 +1631,7 @@
           "D": "torch.cuda.graph"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Introduced in PyTorch 2.0, torch.export is the standard ahead-of-time (AOT) compilation tool designed to capture full graph structures. It reliably handles dynamic shapes and produces a standardized ExportedProgram suitable for stable deployment."
       },
       {
         "id": "w9_q3",
@@ -1640,11 +1640,11 @@
         "options": {
           "A": "Matrix multiplication latency",
           "B": "CPU launch overhead",
-          "C": "Flash attention tiling I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i",
+          "C": "Flash attention tiling",
           "D": "GPU memory fragmentation"
         },
-        "correct": "C",
-        "explanation": ""
+        "correct": "B",
+        "explanation": "At a batch size of 1, the computational workload per kernel is so small that the GPU finishes executing tasks faster than the CPU can queue them up. This bottleneck leaves the GPU idle while waiting for the CPU to dispatch subsequent instructions."
       },
       {
         "id": "w9_q4",
@@ -1657,20 +1657,20 @@
           "D": "Operators"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "In the ONNX (Open Neural Network Exchange) computational graph model, the individual nodes represent mathematical or functional operators (such as Convolution, ReLU, or MatMul). The edges that connect these nodes represent the tensors flowing between the operations."
       },
       {
         "id": "w9_q5",
         "q_num": 5,
         "question": "Why can an execution provider fallback hurt the overall performance during model serving?",
         "options": {
-          "A": "It disables the operator fusions permanently",
-          "B": "It causes a reduction in model parameters",
-          "C": "It introduces data transfer and synchronization overhead",
-          "D": "It changes static shapes into symbolic ones"
+          "A": "It disables the operator fusions permanently.",
+          "B": "It causes a reduction in model parameters.",
+          "C": "It introduces data transfer and synchronization overhead.",
+          "D": "It changes static shapes into symbolic ones."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "When a hardware accelerator (like a GPU) cannot execute a specific node, the ONNX Runtime falls back to the CPU. This forces data to be actively transferred between the device memory and the host memory, creating significant latency and synchronization delays."
       },
       {
         "id": "w9_q6",
@@ -1680,23 +1680,23 @@
           "A": "When maximizing the throughput of a specific specialized hardware target",
           "B": "When deploying cross-platform models across various target environments",
           "C": "When executing highly customized neural networks on restricted single-node systems",
-          "D": "When managing complex training loops and backpropagation tasks I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i"
+          "D": "When managing complex training loops and backpropagation tasks"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "ONNX Runtime is inherently designed for wide interoperability and portability. It allows a single exported model to be deployed seamlessly across different operating systems, hardware architectures, and accelerators using various execution providers."
       },
       {
         "id": "w9_q7",
         "q_num": 7,
         "question": "What optimization happens during the \"tactic selection\" phase of TensorRT's pipeline?",
         "options": {
-          "A": "It permanently fusions layers together",
-          "B": "It selects the fastest kernel for an operation",
-          "C": "It reduces the memory fragmentation",
-          "D": "It adjusts the dynamic shape range boundaries"
+          "A": "It permanently fusions layers together.",
+          "B": "It selects the fastest kernel for an operation.",
+          "C": "It reduces the memory fragmentation.",
+          "D": "It adjusts the dynamic shape range boundaries."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "During tactic selection, TensorRT automatically profiles multiple hardware-specific kernel implementations (tactics) for a given layer. It benchmarks these candidate kernels directly on the target GPU to choose the one that delivers the fastest execution time."
       },
       {
         "id": "w9_q8",
@@ -1709,20 +1709,20 @@
           "D": "Explicit data type fallback"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "TensorRT-LLM utilizes PagedAttention, which treats the Key-Value (KV) cache like virtual memory mapped into non-contiguous blocks (pages). This optimization essentially eliminates memory fragmentation and allows the system to process much larger batches concurrently."
       },
       {
         "id": "w9_q9",
         "q_num": 9,
         "question": "Why is engine building in TensorRT considered a decoupled and expensive process?",
         "options": {
-          "A": "It repeatedly executes complete backpropagation steps",
-          "B": "It downloads pre-optimized architectures over the network",
-          "C": "It converts symbolic layouts to static arrays dynamically",
-          "D": "It explores and tests multiple candidate kernels"
+          "A": "It repeatedly executes complete backpropagation steps.",
+          "B": "It downloads pre-optimized architectures over the network.",
+          "C": "It converts symbolic layouts to static arrays dynamically.",
+          "D": "It explores and tests multiple candidate kernels."
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "The engine building phase involves an exhaustive local search where TensorRT profiles hundreds of potential kernel fusions and implementations on the specific target hardware. This benchmarking process takes considerable"
       },
       {
         "id": "w9_q10",
@@ -1735,33 +1735,33 @@
           "D": "The spacing between representable labels"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "In asymmetric quantization, the \"zero point\" is the quantized integer value that maps exactly to the real-world floating-point value of 0.0. This guarantees that operations like zero-padding, which are common in neural networks, introduce no approximation errors."
       },
       {
         "id": "w9_q11",
         "q_num": 11,
         "question": "What is a key difference between Post-Training Quantization (PTQ) and Quantization-Aware Training (QAT)?",
         "options": {
-          "A": "PTQ is much more expensive to run than QAT",
-          "B": "QAT simulates quantization during the training or fine-tuning stage",
-          "C": "PTQ provides a higher baseline accuracy than QAT",
-          "D": "QAT requires storing less metadata than PTQ"
+          "A": "PTQ is much more expensive to run than QAT.",
+          "B": "QAT simulates quantization during the training or fine-tuning stage.",
+          "C": "PTQ provides a higher baseline accuracy than QAT.",
+          "D": "QAT requires storing less metadata than PTQ."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "While PTQ directly converts a pre-trained model's weights without any retraining, QAT integrates fake quantization nodes into the computational graph during the training process itself. This allows the model to learn and adapt to quantization errors, resulting in higher accuracy."
       },
       {
         "id": "w9_q12",
         "q_num": 12,
         "question": "Why is large language model (LLM) quantization trickier compared to other traditional deep learning models?",
         "options": {
-          "A": "LLM weights and activations can contain outlier channels",
-          "B": "Traditional deep learning models do not use activation clipping",
-          "C": "LLMs cannot utilize approximate second-order information",
-          "D": "LLM hardware architectures lack support for matrix multiplication"
+          "A": "LLM weights and activations can contain outlier channels.",
+          "B": "Traditional deep learning models do not use activation clipping.",
+          "C": "LLMs cannot utilize approximate second-order information.",
+          "D": "LLM hardware architectures lack support for matrix multiplication."
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Large Language Models frequently exhibit extreme outlier values in specific activation channels that are crucial for accuracy. Quantizing these dramatic outliers with standard broad scales drastically degrades model performance without specialized scaling techniques."
       },
       {
         "id": "w9_q13",
@@ -1774,7 +1774,7 @@
           "D": "Dynamic PTQ"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "GPTQ (Generative Pre-trained Transformer Quantization) uses an optimal brain quantization approach that relies on the inverse Hessian matrix. As it iteratively quantizes weights, it adjusts the remaining unquantized weights to explicitly compensate for the introduced error."
       },
       {
         "id": "w9_q14",
@@ -1787,221 +1787,221 @@
           "D": "Salient activation channels"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "AWQ observes a small set of calibration data to determine which activation channels are the most \"salient\" or important to the model's overall output. It then protects the corresponding weights associated with these salient channels from aggressive quantization."
       },
       {
         "id": "w9_q15",
         "q_num": 15,
         "question": "What is a key benefit of using group-wise scaling over choosing a single scale for an entire matrix?",
         "options": {
-          "A": "It avoids the need to store any metadata",
-          "B": "It minimizes the quantization error",
-          "C": "It completely eliminates the need for suitable kernels",
-          "D": "It drastically reduces the runtime memory load"
+          "A": "It avoids the need to store any metadata.",
+          "B": "It minimizes the quantization error.",
+          "C": "It completely eliminates the need for suitable kernels.",
+          "D": "It drastically reduces the runtime memory load."
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Group-wise scaling divides a large weight matrix into smaller functional blocks (groups) and computes an independent scale and zero point for each block. This localized precision significantly reduces the overall quantization error compared to using a single scale for the entire tensor."
       }
     ]
   },
   {
     "week": 10,
-    "title": "Week 10: Compute Bottlenecks, Attention Profiling & Kernel Tuning",
+    "title": "Week 10: Distributed Data Processing, Triton & Serving",
     "questions": [
       {
         "id": "w10_q1",
         "q_num": 1,
-        "question": "Which operation is considered the most expensive in a distributed data processing pipeline because it involves regrouping and moving data across workers? \u25cf",
+        "question": "Which operation is considered the most expensive in a distributed data processing pipeline because it involves regrouping and moving data across workers?",
         "options": {
-          "A": "Evaluation \u25cf",
-          "B": "Shuffle \u25cf",
-          "C": "Partitioning \u25cf",
+          "A": "Evaluation",
+          "B": "Shuffle",
+          "C": "Partitioning",
           "D": "Lineage"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Shuffling redistributes data across different partitions, which heavily utilizes network bandwidth, disk I/O, and data serialization. This massive movement of data between worker nodes naturally makes it the most resource-intensive operation in distributed computing."
       },
       {
         "id": "w10_q2",
         "q_num": 2,
-        "question": "Which of the following best defines the concept of \"data lineage\" within a distributed data engineering architecture? \u25cf",
+        "question": "Which of the following best defines the concept of \"data lineage\" within a distributed data engineering architecture?",
         "options": {
-          "A": "A dynamic layout mechanism that optimizes physical disk storage distribution. \u25cf",
-          "B": "A deterministic profile that calculates network latency between operational workers. \u25cf",
-          "C": "A record of data derivation that facilitates state reconstruction in the event of failure. \u25cf",
-          "D": "An immediate evaluation strategy that executes instruction blocks line by line"
+          "A": "A dynamic layout mechanism that optimizes physical disk storage distribution.",
+          "B": "A deterministic profile that calculates network latency between operational workers.",
+          "C": "A record of data derivation that facilitates state reconstruction in the event of failure.",
+          "D": "An immediate evaluation strategy that executes instruction blocks line by line."
         },
-        "correct": "A",
-        "explanation": ""
+        "correct": "C",
+        "explanation": "Data lineage tracks the exact sequence of transformations applied to a base dataset, creating a logical execution plan. If a node fails, the system uses this lineage graph to recompute only the lost partitions from the original data instead of restarting the entire pipeline."
       },
       {
         "id": "w10_q3",
         "q_num": 3,
-        "question": "How does a tool like Spark or Dask handle instruction execution differently compared to Pandas? \u25cf",
+        "question": "How does a tool like Spark or Dask handle instruction execution differently compared to Pandas?",
         "options": {
-          "A": "It relies heavily on strict static allocation \u25cf",
-          "B": "It executes each individual line immediately I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i \u25cf",
-          "C": "It uses a highly centralized row range lookup \u25cf",
+          "A": "It relies heavily on strict static allocation",
+          "B": "It executes each individual line immediately",
+          "C": "It uses a highly centralized row range lookup",
           "D": "It employs an optimization via lazy evaluation"
         },
         "correct": "D",
-        "explanation": ""
+        "explanation": "Unlike Pandas, which executes operations eagerly line-by-line, frameworks like Spark build a directed acyclic graph (DAG) of transformations. Execution only begins when an action is called, allowing the engine to optimize the entire query plan for maximum efficiency."
       },
       {
         "id": "w10_q4",
         "q_num": 4,
-        "question": "In distributed data systems, how does a scheduler notice that a worker has unexpectedly failed mid-group? \u25cf",
+        "question": "In distributed data systems, how does a scheduler notice that a worker has unexpectedly failed mid-group?",
         "options": {
-          "A": "It detects that the worker stopped heartbeating \u25cf",
-          "B": "It scans the primary key for missing data entries \u25cf",
-          "C": "It identifies that a local task graph has ended \u25cf",
+          "A": "It detects that the worker stopped heartbeating",
+          "B": "It scans the primary key for missing data entries",
+          "C": "It identifies that a local task graph has ended",
           "D": "It encounters an automatically forced row range"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "Worker nodes periodically send quick \"heartbeat\" signals over the network to the central cluster manager to confirm they are active. If the scheduler stops receiving these heartbeats within a specific timeout window, it assumes the worker has crashed and reassigns its tasks."
       },
       {
         "id": "w10_q5",
         "q_num": 5,
-        "question": "Which partitioning scheme is ideal for a clickstream group by user ID to achieve zero shuffle? \u25cf",
+        "question": "Which partitioning scheme is ideal for a clickstream group by user ID to achieve zero shuffle?",
         "options": {
-          "A": "Hashing \u25cf",
-          "B": "Salting \u25cf",
-          "C": "Row range \u25cf",
+          "A": "Hashing",
+          "B": "Salting",
+          "C": "Row range",
           "D": "Range date"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "By hashing the user ID, all records belonging to the same user will consistently map to the exact same partition. When a \"group by\" is performed on this ID, the data is already localized on the correct node, eliminating the need to shuffle data across the network."
       },
       {
         "id": "w10_q6",
         "q_num": 6,
-        "question": "Which framework is nearly identical to Pandas and best suited for tabular ETL ranging from 10 GB to 10 terabytes? \u25cf",
+        "question": "Which framework is nearly identical to Pandas and best suited for tabular ETL ranging from 10 GB to 10 terabytes?",
         "options": {
-          "A": "A stateless function \u25cf",
-          "B": "A cloud-managed storage pod \u25cf",
-          "C": "A data partitioning scheduler \u25cf",
+          "A": "A stateless function",
+          "B": "A cloud-managed storage pod",
+          "C": "A data partitioning scheduler",
           "D": "A stateful Python object"
         },
-        "correct": "A",
-        "explanation": ""
+        "correct": "D",
+        "explanation": "While phrasing is unconventional, distributed architectures for tabular ETL (like Ray or Dask) rely on stateful Python objects (Actors) to scale processing. These tools maintain state across nodes to handle datasets that exceed single-machine memory constraints."
       },
       {
         "id": "w10_q7",
         "q_num": 7,
-        "question": "Which deployment model allows for dynamic autoscaling of pods when working with Dask? \u25cf",
+        "question": "Which deployment model allows for dynamic autoscaling of pods when working with Dask?",
         "options": {
-          "A": "Local cluster \u25cf",
-          "B": "Kubernetes cluster \u25cf",
-          "C": "Cloud-managed service \u25cf",
+          "A": "Local cluster",
+          "B": "Kubernetes cluster",
+          "C": "Cloud-managed service",
           "D": "Single core machine"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "Kubernetes natively supports dynamic resource allocation, allowing distributed frameworks like Dask to seamlessly spin up or tear down worker pods based on the real-time workload. This elastic autoscaling ensures optimal resource utilization and cost efficiency."
       },
       {
         "id": "w10_q8",
         "q_num": 8,
-        "question": "What is a common mistake when managing frameworks, which leads to poor GPU utilization? \u25cf",
+        "question": "What is a common mistake when managing frameworks, which leads to poor GPU utilization?",
         "options": {
-          "A": "Using Ray tune for model serving \u25cf",
-          "B": "Choosing Dask for GPU inference \u25cf",
-          "C": "Deploying Ray tasks on Kubernetes \u25cf",
+          "A": "Using Ray tune for model serving",
+          "B": "Choosing Dask for GPU inference",
+          "C": "Deploying Ray tasks on Kubernetes",
           "D": "Applying Pandas APIs to Dask arrays"
         },
-        "correct": "C",
-        "explanation": ""
+        "correct": "B",
+        "explanation": "Dask is primarily designed for distributed task scheduling and data processing, not for managing the strict memory complexities of GPU model inference. Utilizing specialized serving frameworks is necessary to achieve high throughput and avoid severe GPU bottlenecks."
       },
       {
         "id": "w10_q9",
         "q_num": 9,
-        "question": "What is the purpose of \"salting\" in the context of handling data skew? \u25cf",
+        "question": "What is the purpose of \"salting\" in the context of handling data skew?",
         "options": {
-          "A": "It deletes duplicate rows from the partition. \u25cf",
-          "B": "It caches data frames directly into the CPU memory. \u25cf",
-          "C": "It adds a random value to a skewed key to spread rows. \u25cf",
-          "D": "It converts a Python user-defined function into SQL"
+          "A": "It deletes duplicate rows from the partition.",
+          "B": "It caches data frames directly into the CPU memory.",
+          "C": "It adds a random value to a skewed key to spread rows.",
+          "D": "It converts a Python user-defined function into SQL."
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Data skew occurs when one key has vastly more records than others, overloading a single partition. Salting adds a randomized prefix or suffix to this problematic key, artificially breaking the massive group into smaller sub-keys that distribute evenly across nodes."
       },
       {
         "id": "w10_q10",
         "q_num": 10,
-        "question": "For which size of data sets will GPUs not provide any processing benefit when using CUDF? I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i \u25cf",
+        "question": "For which size of data sets will GPUs not provide any processing benefit when using CUDF?",
         "options": {
-          "A": "Less than 100k rows \u25cf",
-          "B": "Around 10 million rows \u25cf",
-          "C": "More than 50 million rows \u25cf",
+          "A": "Less than 100k rows",
+          "B": "Around 10 million rows",
+          "C": "More than 50 million rows",
           "D": "Petabyte-scale data sets"
         },
         "correct": "A",
-        "explanation": ""
+        "explanation": "For very small datasets, the overhead time spent transferring data from the CPU to the GPU's memory (the PCIe bottleneck) takes longer than the actual computation. CPUs are already fast enough to process sub-100k rows instantly, making GPU acceleration counterproductive."
       },
       {
         "id": "w10_q11",
         "q_num": 11,
-        "question": "Which component in Spark automatically rewrites queries to optimize performance and speed? \u25cf",
+        "question": "Which component in Spark automatically rewrites queries to optimize performance and speed?",
         "options": {
-          "A": "Executor \u25cf",
-          "B": "Delta Lake \u25cf",
-          "C": "Cluster Manager \u25cf",
+          "A": "Executor",
+          "B": "Delta Lake",
+          "C": "Cluster Manager",
           "D": "Catalyst Optimizer"
         },
-        "correct": "C",
-        "explanation": ""
+        "correct": "D",
+        "explanation": "The Catalyst Optimizer is Spark's advanced query planning engine that parses SQL and DataFrame operations into an optimized physical execution plan. It applies smart rules like filter pushdown and column pruning to heavily reduce data scanning times."
       },
       {
         "id": "w10_q12",
         "q_num": 12,
-        "question": "What common mistake in Spark causes the driver to run out of memory and crash? \u25cf",
+        "question": "What common mistake in Spark causes the driver to run out of memory and crash?",
         "options": {
-          "A": "Calling .collect() on a huge data set \u25cf",
-          "B": "Utilizing Adaptive Query Execution \u25cf",
-          "C": "Writing data directly to the storage \u25cf",
+          "A": "Calling .collect() on a huge data set",
+          "B": "Utilizing Adaptive Query Execution",
+          "C": "Writing data directly to the storage",
           "D": "Processing data sets with small keys"
         },
-        "correct": "C",
-        "explanation": ""
+        "correct": "A",
+        "explanation": "The .collect() operation forces all distributed worker nodes to send their entire partitioned data back to a single driver node. If the resulting dataset exceeds the driver node's allocated memory capacity, it throws an OutOfMemory (OOM) error and crashes."
       },
       {
         "id": "w10_q13",
         "q_num": 13,
-        "question": "Which of the following is defined as a discrete, timestamped record of something that actually happened in a system? \u25cf",
+        "question": "Which of the following is defined as a discrete, timestamped record of something that actually happened in a system?",
         "options": {
-          "A": "Metric \u25cf",
-          "B": "Log \u25cf",
-          "C": "Trace \u25cf",
-          "D": "SLO I n d i a n I n s t i t u t e o f T e c h n o l o g y G u w a h a t i"
+          "A": "Metric",
+          "B": "Log",
+          "C": "Trace",
+          "D": "SLO"
         },
         "correct": "B",
-        "explanation": ""
+        "explanation": "A log is an immutable text record detailing a specific event or transaction that occurred within an application at an exact moment in time. Unlike aggregated metrics, logs provide granular context regarding errors and systemic behaviors for debugging."
       },
       {
         "id": "w10_q14",
         "q_num": 14,
-        "question": "In the provided ETL troubleshooting scenario, what was diagnosed as the root cause for the runtime jumping from 40 minutes to 3 hours? \u25cf",
+        "question": "In the provided ETL troubleshooting scenario, what was diagnosed as the root cause for the runtime jumping from 40 minutes to 3 hours?",
         "options": {
-          "A": "Disk storage failure \u25cf",
-          "B": "Data skew from a new bot account \u25cf",
-          "C": "Network packet loss \u25cf",
+          "A": "Disk storage failure",
+          "B": "Data skew from a new bot account",
+          "C": "Network packet loss",
           "D": "Wrong schema definition"
         },
-        "correct": "D",
-        "explanation": ""
+        "correct": "B",
+        "explanation": "A sudden, dramatic increase in ETL runtime is frequently caused by data skew, where a massive influx of anomalous records (like spam bot activity) maps to a single partition. This creates a \"straggler task\" where one node bottlenecks the entire pipeline."
       },
       {
         "id": "w10_q15",
         "q_num": 15,
-        "question": "When investigating a data pipeline bottleneck, in what specific order should you analyze the three complimentary signals? \u25cf",
+        "question": "When investigating a data pipeline bottleneck, in what specific order should you analyze the three complimentary signals?",
         "options": {
-          "A": "Traces, Metrics, Logs \u25cf",
-          "B": "Metrics, Traces, Logs \u25cf",
-          "C": "Logs, Metrics, Traces \u25cf",
+          "A": "Traces, Metrics, Logs",
+          "B": "Metrics, Traces, Logs",
+          "C": "Logs, Metrics, Traces",
           "D": "Traces, Logs, Metrics"
         },
         "correct": "C",
-        "explanation": ""
+        "explanation": "Analyzing logs first allows engineers to identify exact error messages or immediate anomalies at the timestamp of the bottleneck. Once isolated, metrics can quantify the system's overall resource health, and traces map the request's path to find the specific latency source."
       }
     ]
   }
