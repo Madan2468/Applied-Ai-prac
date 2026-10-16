@@ -2004,5 +2004,251 @@
         "explanation": "Analyzing logs first allows engineers to identify exact error messages or immediate anomalies at the timestamp of the bottleneck. Once isolated, metrics can quantify the system's overall resource health, and traces map the request's path to find the specific latency source."
       }
     ]
+  },
+  {
+    "week": 11,
+    "title": "Week 11: Intelligent Video Analytics Pipeline Architecture, Object Tracking & Vision-LLM Integration",
+    "questions": [
+      {
+        "id": "w11_q1",
+        "q_num": 1,
+        "question": "In the overall Intelligent Video Analytics (IVA) pipeline architecture, what is the specific role of the Large Language Model (LLM) component?",
+        "options": {
+          "A": "It determines if an event occurred directly from raw video frames.",
+          "B": "It acts as the primary multi-object detector and tracker.",
+          "C": "It generates natural language reports after deterministic event analysis.",
+          "D": "It replaces the event logic layer to reduce end-to-end latency."
+        },
+        "correct": "C",
+        "explanation": "The LLM is positioned downstream of the deterministic detection, tracking, and rule engine layers to synthesize structured logs into coherent textual summaries. It acts as an interpretation and reporting interface rather than a real-time computer vision detector or event decision-maker."
+      },
+      {
+        "id": "w11_q2",
+        "q_num": 2,
+        "question": "Architecturally, why are raw bounding boxes from object detectors considered an intermediate representation rather than the ultimate goal of an Intelligent Video Analytics system?",
+        "options": {
+          "A": "Bounding boxes are stored as uncompressed, high-bandwidth raw files.",
+          "B": "Final application goals require structured data for decision support.",
+          "C": "Bounding boxes lack geometric coordinate values like center points.",
+          "D": "Object detectors cannot assign class labels or confidence scores."
+        },
+        "correct": "B",
+        "explanation": "Raw spatial coordinates alone do not answer high-level domain questions or provide actionable insights for end users. They must first be tracked, analyzed temporally, and converted into structured event metrics to deliver operational decision support."
+      },
+      {
+        "id": "w11_q3",
+        "q_num": 3,
+        "question": "What is the primary functional limitation of frame-level object detectors when processing continuous video streams?",
+        "options": {
+          "A": "They cannot predict bounding box coordinates.",
+          "B": "They lack temporal memory across different frames.",
+          "C": "They are limited to identifying a single class.",
+          "D": "They cannot generate numerical confidence scores."
+        },
+        "correct": "B",
+        "explanation": "Frame-level detectors evaluate each frame independently and possess no intrinsic state or temporal memory across time steps. Consequently, they cannot associate identities, compute trajectories, or estimate velocities without a dedicated multi-object tracker."
+      },
+      {
+        "id": "w11_q4",
+        "q_num": 4,
+        "question": "How does the ByteTrack algorithm preserve track continuity during temporary occlusions or motion blurs?",
+        "options": {
+          "A": "It skips low-confidence detections and uses interpolation.",
+          "B": "It uses low-confidence detections in a second association step.",
+          "C": "It creates a brand-new track ID for every blurry frame.",
+          "D": "It sends occluded frames to the LLM for re-identification."
+        },
+        "correct": "B",
+        "explanation": "ByteTrack prioritizes high-score detections in the initial matching stage, then performs a second association phase utilizing low-confidence detections. This effectively recovers true objects degraded by motion blur or partial occlusion rather than discarding them as background noise."
+      },
+      {
+        "id": "w11_q5",
+        "q_num": 5,
+        "question": "Why are Region of Interest (ROI) polygon points stored as normalized coordinates between 0 and 1?",
+        "options": {
+          "A": "They allow site-specific semantic context to be learned automatically by the model.",
+          "B": "They preserve the relative spatial placement across varying video resolution sizes.",
+          "C": "They decrease error rates when calculating bounding box center locations.",
+          "D": "They accelerate feature extraction times during real-time frame processing."
+        },
+        "correct": "B",
+        "explanation": "Normalizing coordinates to a scale between 0 and 1 decouples the spatial geometry of zones from the absolute pixel dimensions of a camera feed. This ensures the polygon definitions remain accurate and invariant even if the video feed resolution or aspect ratio changes."
+      },
+      {
+        "id": "w11_q6",
+        "q_num": 6,
+        "question": "How does the event engine establish that a valid \"Restricted Zone Entry\" transition event has occurred?",
+        "options": {
+          "A": "By verifying the bounding box center stays inside the polygon for a fixed time.",
+          "B": "By evaluating if the object detection confidence score exceeds a given limit.",
+          "C": "By observing if the tracked class label changes upon reaching the polygon edge.",
+          "D": "By checking if a track was outside in the previous frame and inside currently."
+        },
+        "correct": "D",
+        "explanation": "A transition event represents a boundary-crossing state change rather than continuous spatial presence. The logic engine detects this by verifying that a persistent track ID was positioned outside the designated polygon in frame t − 1 and transitioned inside in frame t."
+      },
+      {
+        "id": "w11_q7",
+        "q_num": 7,
+        "question": "What is the primary function of applying a \"cooldown interval\" within the crowd threshold rule?",
+        "options": {
+          "A": "To prevent emitting duplicate event alerts continuously across consecutive frames.",
+          "B": "To clear obsolete object tracking identification records directly out of memory.",
+          "C": "To maintain track ID persistence whenever severe visual occlusion takes place.",
+          "D": "To automatically reset dwell time counters as soon as a new person joins."
+        },
+        "correct": "A",
+        "explanation": "When a crowd condition persists across several seconds, evaluating the rule every frame would flood the system with redundant notifications. A cooldown period enforces a temporal blackout window before the same alarm condition can be re-triggered."
+      },
+      {
+        "id": "w11_q8",
+        "q_num": 8,
+        "question": "Why is the .jsonl (JSON Lines) format utilized for outputting system event logs?",
+        "options": {
+          "A": "It reduces frame storage requirements by compressing raw video pixel streams.",
+          "B": "It permits appending individual event records continuously as real-time streams.",
+          "C": "It converts unstructured raw images straight into plain English sentences.",
+          "D": "It allows language models to evaluate frame data without validation steps."
+        },
+        "correct": "B",
+        "explanation": "Unlike standard JSON arrays, which require re-parsing and re-writing the entire enclosing structure, JSON Lines allows independent objects to be appended line-by-line. This design avoids file corruption during unexpected crashes and supports real-time streaming pipelines."
+      },
+      {
+        "id": "w11_q9",
+        "q_num": 9,
+        "question": "In this system architecture, what role is the Large Language Model (LLM) restricted to performing?",
+        "options": {
+          "A": "Detecting and classifying visual targets directly from original video inputs.",
+          "B": "Modifying line-crossing detection threshold parameters during peak periods.",
+          "C": "Summarizing structured incident logs into reports without inventing new events.",
+          "D": "Correcting misclassifications produced by lower-level object tracking layers."
+        },
+        "correct": "C",
+        "explanation": "The LLM is strictly constrained to narrative synthesis over verified, structured incident data emitted by the deterministic rule engine. Confining its scope to summarization prevents hallucinations and ensures all reported incidents are grounded in ground-truth system telemetry."
+      },
+      {
+        "id": "w11_q10",
+        "q_num": 10,
+        "question": "Why is evaluating only the YOLO model's inference latency insufficient for assessing the performance of a complete Intelligent Video Analytics (IVA) pipeline?",
+        "options": {
+          "A": "Model inference times vary drastically depending on the input frame resolution.",
+          "B": "Neural network inference speed is inherently isolated from memory utilization.",
+          "C": "Object detection accuracy metrics do not correlate with frame rendering rates.",
+          "D": "Other stages like decoding, tracking, or drawing may dominate total processing time."
+        },
+        "correct": "D",
+        "explanation": "An end-to-end IVA system incorporates video stream ingestion, hardware decoding, data transfers, multi-object tracking, zone intersection math, and visual rendering. These auxiliary CPU and I/O overheads frequently surpass the raw GPU tensor forward-pass time in production environments."
+      }
+    ]
+  },
+  {
+    "week": 12,
+    "title": "Week 12: Healthcare AI Applications, Clinical LLMs, FHIR Standards & Guardrails",
+    "questions": [
+      {
+        "id": "w12_q1",
+        "q_num": 1,
+        "question": "Which of the following outlines the correct sequence of the Healthcare AI Application Roadmap?",
+        "options": {
+          "A": "Privacy & Regulation, Language Models, Medical Imaging, Data & System Context",
+          "B": "Data & System Context, Medical Imaging & Structured Risk Prediction, Language Models, RAG & Agents, Privacy and Regulation Evaluation & Monitoring",
+          "C": "Model Inference, Clinical Feedback, Data Preprocessing, FHIR Standard Normalization",
+          "D": "Language Models & Agents, Privacy & Monitoring, Medical Imaging, Data Preprocessing"
+        },
+        "correct": "B",
+        "explanation": "As detailed on the Lecture roadmap slide, the curriculum progresses systematically across healthcare AI foundations: beginning with system context and imaging/EHR models, advancing into clinical NLP/RAG agents, and culminating in privacy, governance, evaluation, and monitoring. This sequence ensures that foundational data representations and safety-critical evaluation practices frame every clinical model deployment."
+      },
+      {
+        "id": "w12_q2",
+        "q_num": 2,
+        "question": "Based on the slide outlining Healthcare Data Modalities, which clinical data items fall under the category of Structured EHR Data?",
+        "options": {
+          "A": "Progress notes, discharge summaries, and radiology reports",
+          "B": "ECG waveforms, ICU time series, and wearable measurements",
+          "C": "Demographics, diagnoses, medications, vitals, and lab results",
+          "D": "Claims, appointments, and billing utilization records"
+        },
+        "correct": "C",
+        "explanation": "According to the Healthcare data modalities slide, structured EHR data specifically comprises tabular clinical elements such as demographics, medications, diagnoses, vitals, and labs. In contrast, narrative documents represent clinical text, and time-series physiological tracings fall under signals and devices."
+      },
+      {
+        "id": "w12_q3",
+        "q_num": 3,
+        "question": "According to the slide introducing HL7 FHIR, what is the core architectural concept of FHIR?",
+        "options": {
+          "A": "Storing all clinical records as uncompressed binary image files",
+          "B": "Modular resources representing entities like Patient, Observation, DiagnosticReport etc",
+          "C": "Replacing all clinical judgment with automated agentic tool execution",
+          "D": "Normalizing image pixel values directly at the scanner hardware layer"
+        },
+        "correct": "B",
+        "explanation": "The FHIR: structured exchange for clinical data slide states that FHIR represents healthcare information as standardized, modular resources such as Patient, Observation, Condition, and DiagnosticReport. This structured representation ensures clinical contexts remain discoverable, interoperable, and machine-processable for AI workflows."
+      },
+      {
+        "id": "w12_q4",
+        "q_num": 4,
+        "question": "Which of the following is listed under \"Pipeline Details & Failures\"?",
+        "options": {
+          "A": "Gradient descent stalling due to learning rate misconfiguration",
+          "B": "Inability to parse FHIR JSON fields during inference",
+          "C": "Shortcut features, metal artifacts, wrong orientation, and distribution shift",
+          "D": "Memory overflow when loading 3D segmentations into web browsers"
+        },
+        "correct": "C",
+        "explanation": "As highlighted on the Imaging pipeline details slide, real-world deployment challenges include acquisition artifacts, scanner protocol shifts, wrong anatomical orientation, and non-causal shortcut features. These practical pipeline failure modes demonstrate why raw image detection cannot replace comprehensive specialist clinical interpretation."
+      },
+      {
+        "id": "w12_q5",
+        "q_num": 5,
+        "question": "On Model Calibration, what distinguishes a well-calibrated risk model?",
+        "options": {
+          "A": "It achieves an ROC-AUC score of 1.0 on clean benchmark datasets.",
+          "B": "It removes the need for clinical review before taking automated actions.",
+          "C": "It converts unstructured clinical text directly into FHIR resources.",
+          "D": "Its predicted probabilities match the observed event rates in the target population."
+        },
+        "correct": "D",
+        "explanation": "The slide Calibration: probability must mean what it says emphasizes that a well-calibrated model produces predicted risks that closely match observed outcome frequencies (e.g., approximately 30% of patients flagged at 30% risk experience the event). Reliable calibration prevents inappropriate resource allocation, over-treatment, and alarm fatigue caused by misleading absolute probabilities."
+      },
+      {
+        "id": "w12_q6",
+        "q_num": 6,
+        "question": "Why is a naive, plain Large Language Model (LLM) considered unsafe for direct deployment in clinical workflows?",
+        "options": {
+          "A": "Fluency in output does not guarantee factual support.",
+          "B": "It lacks auto-regressive text generation capabilities.",
+          "C": "It cannot process unstructured medical text or clinical notes.",
+          "D": "It is incapable of generating structured medical summaries."
+        },
+        "correct": "A",
+        "explanation": "As discussed in the Why naive clinical LLM use is unsafe slide, LLMs frequently generate articulate, confident responses that lack grounding in verified clinical evidence or patient records. Without evidence retrieval, guardrails, and human review, such unconstrained outputs risk producing severe diagnostic hallucinations or missing contraindications."
+      },
+      {
+        "id": "w12_q7",
+        "q_num": 7,
+        "question": "Why is a dedicated clinical calculator used alongside an LLM in a clinical agent system?",
+        "options": {
+          "A": "LLMs cannot handle multi-modal EHR inputs.",
+          "B": "LLMs are strictly forbidden from reading numerical values.",
+          "C": "Calculators remove the need for external audit logging.",
+          "D": "Calculators rely on explicit inputs and documented formulas."
+        },
+        "correct": "D",
+        "explanation": "Referencing Demo Step 4: explicit risk calculator and the What tools can a clinical agent use? slide, dedicated calculators compute risk scores transparently from deterministic, verifiable inputs rather than probabilistic text generation. Displaying the explicit parameters and standard formulas ensures clinical trust, auditability, and safety."
+      },
+      {
+        "id": "w12_q8",
+        "q_num": 8,
+        "question": "What is the primary operational constraint imposed by the \"Read-Only Access\" guardrail in a clinical agent framework?",
+        "options": {
+          "A": "It prevents clinicians from editing model-generated drafts.",
+          "B": "It restricts the agent from searching external Web sources.",
+          "C": "It prevents the system from silently modifying patient charts.",
+          "D": "It blocks the model from outputting citation references."
+        },
+        "correct": "C",
+        "explanation": "The Guardrails for clinical agents slide specifies that agents operate with read-only access by default so they can extract necessary patient context without possessing write permissions to silently alter medical records. All definitive chart entries, orders, and treatment modifications remain strictly reserved for human clinician approval."
+      }
+    ]
   }
 ]
