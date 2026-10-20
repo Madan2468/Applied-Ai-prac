@@ -343,7 +343,8 @@
           "C": "Repetition",
           "D": "Prohibition"
         },
-        "correct": "A"
+        "correct": "A",
+        "id": "w2_q1"
       },
       {
         "q_num": 2,
@@ -354,7 +355,8 @@
           "C": "Lev Vygotsky",
           "D": "Jerome Bruner"
         },
-        "correct": "B"
+        "correct": "B",
+        "id": "w2_q2"
       },
       {
         "q_num": 3,
@@ -365,7 +367,8 @@
           "C": "Logic and reasoning",
           "D": "Language acquisition"
         },
-        "correct": "D"
+        "correct": "D",
+        "id": "w2_q3"
       },
       {
         "q_num": 4,
@@ -376,7 +379,8 @@
           "C": "Language deprivation and acquisition",
           "D": "Classical condition"
         },
-        "correct": "C"
+        "correct": "C",
+        "id": "w2_q4"
       },
       {
         "q_num": 5,
@@ -387,7 +391,8 @@
           "C": "Infants' perception and discrimination of stimuli",
           "D": "Infants' eye movements"
         },
-        "correct": "C"
+        "correct": "C",
+        "id": "w2_q5"
       },
       {
         "q_num": 6,
@@ -398,7 +403,8 @@
           "C": "Basic stage",
           "D": "Concrete operational stage"
         },
-        "correct": "B"
+        "correct": "B",
+        "id": "w2_q6"
       },
       {
         "q_num": 7,
@@ -409,7 +415,8 @@
           "C": "The infant is discriminating between the new and old stimulus",
           "D": "The infant is unable to see any difference between the stimulus"
         },
-        "correct": "C"
+        "correct": "C",
+        "id": "w2_q7"
       },
       {
         "q_num": 8,
@@ -420,7 +427,8 @@
           "C": "Infants' cries",
           "D": "Solving problems"
         },
-        "correct": "A"
+        "correct": "A",
+        "id": "w2_q8"
       },
       {
         "q_num": 9,
@@ -431,7 +439,8 @@
           "C": "Language History Questionnaire",
           "D": "MacArthur Bates Communicative Development Inventory"
         },
-        "correct": "D"
+        "correct": "D",
+        "id": "w2_q9"
       },
       {
         "q_num": 10,
@@ -442,7 +451,8 @@
           "C": "Measure blood oxygenation",
           "D": "Measure muscle contractions"
         },
-        "correct": "C"
+        "correct": "C",
+        "id": "w2_q10"
       },
       {
         "q_num": 11,
@@ -453,7 +463,8 @@
           "C": "P300 and N700",
           "D": "N400 and P600"
         },
-        "correct": "D"
+        "correct": "D",
+        "id": "w2_q11"
       },
       {
         "q_num": 12,
@@ -464,7 +475,8 @@
           "C": "Stuttering",
           "D": "L2 interference"
         },
-        "correct": "B"
+        "correct": "B",
+        "id": "w2_q12"
       },
       {
         "q_num": 13,
@@ -475,7 +487,8 @@
           "C": "Cerebellum",
           "D": "Visual cortex"
         },
-        "correct": "A"
+        "correct": "A",
+        "id": "w2_q13"
       },
       {
         "q_num": 14,
@@ -486,7 +499,8 @@
           "C": "9-12 months",
           "D": "13-16 months"
         },
-        "correct": "C"
+        "correct": "C",
+        "id": "w2_q14"
       },
       {
         "q_num": 15,
@@ -497,7 +511,8 @@
           "C": "Perceptual skills",
           "D": "Executive control"
         },
-        "correct": "A"
+        "correct": "A",
+        "id": "w2_q15"
       },
       {
         "q_num": 16,
@@ -508,7 +523,8 @@
           "C": "Brain stem",
           "D": "Thalamus"
         },
-        "correct": "B"
+        "correct": "B",
+        "id": "w2_q16"
       },
       {
         "q_num": 17,
@@ -519,7 +535,8 @@
           "C": "Huntington's Disease",
           "D": "Parkinson's Disease"
         },
-        "correct": "B"
+        "correct": "B",
+        "id": "w2_q17"
       },
       {
         "q_num": 18,
@@ -530,7 +547,8 @@
           "C": "Box",
           "D": "Cupboard"
         },
-        "correct": "A"
+        "correct": "A",
+        "id": "w2_q18"
       },
       {
         "q_num": 19,
@@ -541,7 +559,8 @@
           "C": "Language is acquired through active interaction and cognitive development.",
           "D": "Language is acquired through classical conditioning."
         },
-        "correct": "C"
+        "correct": "C",
+        "id": "w2_q19"
       },
       {
         "q_num": 20,
@@ -552,7 +571,8 @@
           "C": "Affective filter hypothesis",
           "D": "Connectionism"
         },
-        "correct": "D"
+        "correct": "D",
+        "id": "w2_q20"
       },
       {
         "q_num": 21,
@@ -563,7 +583,8 @@
           "C": "A plural noun",
           "D": "An exclamation"
         },
-        "correct": "C"
+        "correct": "C",
+        "id": "w2_q21"
       },
       {
         "q_num": 22,
@@ -574,7 +595,8 @@
           "C": "The saliva",
           "D": "The food"
         },
-        "correct": "D"
+        "correct": "D",
+        "id": "w2_q22"
       },
       {
         "q_num": 23,
@@ -585,7 +607,8 @@
           "C": "Syntax",
           "D": "Manner"
         },
-        "correct": "C"
+        "correct": "C",
+        "id": "w2_q23"
       },
       {
         "q_num": 24,
@@ -596,7 +619,8 @@
           "C": "Meaning ambiguity",
           "D": "Poverty of stimulus"
         },
-        "correct": "D"
+        "correct": "D",
+        "id": "w2_q24"
       },
       {
         "q_num": 25,
@@ -607,7 +631,8 @@
           "C": "Most Knowledgeable Observer",
           "D": "Mental Knowledge Organizer"
         },
-        "correct": "A"
+        "correct": "A",
+        "id": "w2_q25"
       }
     ]
   },
