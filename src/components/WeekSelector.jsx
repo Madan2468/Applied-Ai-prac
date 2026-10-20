@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, BookOpen, RotateCcw, Flame, Zap, ClipboardCheck, Sparkles, Clock, CheckCircle2 } from 'lucide-react';
+import { Play, BookOpen, RotateCcw, Flame, Zap, ClipboardCheck, Sparkles, Clock, CheckCircle2, ArrowLeft, Grid } from 'lucide-react';
 import { soundManager } from '../utils/audio';
 
 export default function WeekSelector({
@@ -10,7 +10,11 @@ export default function WeekSelector({
   onSelectAllWeeksExam,
   onSelectStudyWeek,
   userStats,
-  onResetStats
+  onResetStats,
+  subjectId = 'applied-ai',
+  subjectName = 'Applied Artificial Intelligence',
+  subjectCode = 'NPTEL Computer Science',
+  onBackToSubjects
 }) {
   const [selectedHomeTab, setSelectedHomeTab] = useState('all'); // 'all' | 'practice' | 'exam'
   const totalQuestionsAllWeeks = weeksData.reduce((acc, w) => acc + w.questions.length, 0);
@@ -26,36 +30,75 @@ export default function WeekSelector({
   });
 
   const overallAccuracy = totalAttempted > 0 ? Math.round((totalCorrect / totalAttempted) * 100) : 0;
+  const isFundamentals = subjectId === 'fundamentals';
 
   return (
-    <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '40px 24px 80px' }}>
+    <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 24px 80px' }}>
+      {/* Top Breadcrumb Navigation */}
+      {onBackToSubjects && (
+        <div style={{ marginBottom: '24px' }}>
+          <button
+            onClick={() => {
+              soundManager.playClick();
+              onBackToSubjects();
+            }}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              background: '#ffffff',
+              border: '1.5px solid var(--color-sage-border)',
+              borderRadius: 'var(--radius-pill)',
+              padding: '7px 16px',
+              fontSize: '0.86rem',
+              fontWeight: 600,
+              color: 'var(--color-forest)',
+              cursor: 'pointer',
+              transition: 'all 0.2s',
+              boxShadow: '0 2px 6px rgba(0,0,0,0.02)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = 'var(--color-forest)';
+              e.currentTarget.style.transform = 'translateX(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = 'var(--color-sage-border)';
+              e.currentTarget.style.transform = 'translateX(0)';
+            }}
+          >
+            <ArrowLeft size={16} /> All Subjects / Courses
+          </button>
+        </div>
+      )}
+
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '32px' }}>
         <div style={{
           display: 'inline-flex',
           alignItems: 'center',
           gap: '8px',
-          background: 'var(--bg-sage-light)',
-          border: '1px solid var(--color-sage-border)',
+          background: isFundamentals ? '#eef2ff' : 'var(--bg-sage-light)',
+          border: `1px solid ${isFundamentals ? '#c7d2fe' : 'var(--color-sage-border)'}`,
           borderRadius: 'var(--radius-pill)',
           padding: '4px 14px',
           fontSize: '0.8rem',
           fontWeight: 700,
-          color: 'var(--color-forest)',
+          color: isFundamentals ? '#4338ca' : 'var(--color-forest)',
           marginBottom: '12px'
         }}>
-          <Sparkles size={14} color="var(--color-forest)" /> All 12 Weeks Complete Collection • 168 NPTEL MCQs
+          <Sparkles size={14} color={isFundamentals ? '#4338ca' : 'var(--color-forest)'} /> 
+          All 12 Weeks Complete Collection • {totalQuestionsAllWeeks} NPTEL MCQs • {subjectCode}
         </div>
 
         <h1 style={{
           fontFamily: 'var(--font-heading)',
           fontSize: '2.5rem',
           fontWeight: 500,
-          color: 'var(--color-forest)',
+          color: isFundamentals ? '#1e1b4b' : 'var(--color-forest)',
           letterSpacing: '-0.02em',
           marginBottom: '8px'
         }}>
-          Applied AI Practice & Mock Exam Platform
+          {subjectName} Practice & Mock Exam
         </h1>
         <p style={{ color: 'var(--text-muted)', fontSize: '1.02rem', maxWidth: '640px', margin: '0 auto 20px' }}>
           Prepare with instant-feedback Practice Mode, or simulate real exams with <strong>Exam Mode</strong> where answers and detailed solutions are revealed at the end!
@@ -71,7 +114,7 @@ export default function WeekSelector({
           borderRadius: 'var(--radius-pill)',
           fontSize: '0.88rem',
           fontWeight: 600,
-          color: 'var(--color-forest)',
+          color: isFundamentals ? '#1e1b4b' : 'var(--color-forest)',
           boxShadow: '0 4px 12px rgba(28, 58, 39, 0.04)',
           flexWrap: 'wrap',
           justifyContent: 'center'
@@ -81,14 +124,16 @@ export default function WeekSelector({
           <div>Accuracy: <strong>{overallAccuracy}%</strong></div>
           <div style={{ color: 'var(--color-sage)' }}>•</div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Flame size={16} fill="var(--color-forest)" color="var(--color-forest)" /> Streak: <strong>{userStats.streak || 0}</strong>
+            <Flame size={16} fill="#ea580c" color="#ea580c" /> Streak: <strong>{userStats.streak || 0}</strong>
           </div>
         </div>
       </div>
 
       {/* OVERALL MODES BANNER (FULL 12 WEEKS: PRACTICE VS EXAM) */}
       <div style={{
-        background: 'linear-gradient(135deg, var(--color-forest) 0%, #152d1e 100%)',
+        background: isFundamentals 
+          ? 'linear-gradient(135deg, #3730a3 0%, #1e1b4b 100%)' 
+          : 'linear-gradient(135deg, var(--color-forest) 0%, #152d1e 100%)',
         borderRadius: '24px',
         padding: '28px 32px',
         color: '#ffffff',
@@ -98,7 +143,9 @@ export default function WeekSelector({
         marginBottom: '36px',
         flexWrap: 'wrap',
         gap: '20px',
-        boxShadow: '0 12px 30px rgba(28, 58, 39, 0.16)'
+        boxShadow: isFundamentals
+          ? '0 12px 30px rgba(55, 48, 163, 0.22)'
+          : '0 12px 30px rgba(28, 58, 39, 0.16)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '18px', maxWidth: '580px' }}>
           <div style={{
@@ -119,7 +166,7 @@ export default function WeekSelector({
               fontWeight: 800,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              color: '#86efac',
+              color: isFundamentals ? '#a5b4fc' : '#86efac',
               marginBottom: '3px'
             }}>
               Grand Full-Length Mock Exam
@@ -127,7 +174,7 @@ export default function WeekSelector({
             <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.4rem', fontWeight: 600, color: '#fff' }}>
               All 12 Weeks Grand Marathon ({totalQuestionsAllWeeks} MCQs)
             </h3>
-            <p style={{ color: '#d1fae5', fontSize: '0.88rem', marginTop: '4px', lineHeight: 1.4 }}>
+            <p style={{ color: isFundamentals ? '#e0e7ff' : '#d1fae5', fontSize: '0.88rem', marginTop: '4px', lineHeight: 1.4 }}>
               Take a comprehensive exam covering all 12 modules. Answers and deep explanations are revealed at the end with a full week-wise report card.
             </p>
           </div>

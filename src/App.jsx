@@ -1,6 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-import questionsData from './data/questions.json';
+import React, { useState, useEffect, useMemo } from 'react';
+import appliedAiData from './data/questions.json';
+import fundamentalsData from './data/fundamentals_questions.json';
+
 import Navbar from './components/Navbar';
+import SubjectSelector from './components/SubjectSelector';
 import WeekSelector from './components/WeekSelector';
 import QuizCard from './components/QuizCard';
 import ResultsModal from './components/ResultsModal';
@@ -13,10 +16,60 @@ import ExamSubmitModal from './components/ExamSubmitModal';
 import ExamResults from './components/ExamResults';
 import { shuffleArray } from './utils/shuffle';
 
+const SUBJECT_CONFIG = {
+  'applied-ai': {
+    id: 'applied-ai',
+    name: 'Applied Artificial Intelligence',
+    shortName: 'Applied AI',
+    code: 'NPTEL CS',
+    data: appliedAiData,
+    statsKey: 'applied_ai_stats',
+    bookmarksKey: 'applied_ai_bookmarks'
+  },
+  'fundamentals': {
+    id: 'fundamentals',
+    name: 'Fundamentals of Language Acquisition',
+    shortName: 'Language Acquisition',
+    code: 'NOC26 HS220',
+    data: fundamentalsData,
+    statsKey: 'fundamentals_stats',
+    bookmarksKey: 'fundamentals_bookmarks'
+  }
+};
+
+// Helper to parse current URL hash
+function getRouteFromHash() {
+  const hash = window.location.hash.replace(/^#\/?/, '').trim();
+  if (!hash) return { subject: null, mode: 'weeks' };
+
+  const parts = hash.split('/').filter(Boolean);
+  const first = parts[0]?.toLowerCase();
+
+  let subject = null;
+  if (first === 'applied-ai' || first === 'applied_ai' || first === 'ai') {
+    subject = 'applied-ai';
+  } else if (
+    first === 'fundamentals' || 
+    first === 'fla' || 
+    first === 'fundamentals-of-language-acquisition' ||
+    first === 'language-acquisition'
+  ) {
+    subject = 'fundamentals';
+  }
+
+  const mode = parts[1] || 'weeks';
+  return { subject, mode };
+}
+
 export default function App() {
-  // Navigation & Mode
-  // 'weeks' | 'practice' | 'all_practice' | 'exam' | 'exam_results' | 'flashcards' | 'results'
-  const [activeMode, setActiveMode] = useState('weeks');
+  const initialRoute = useMemo(() => getRouteFromHash(), []);
+
+  // Active Subject: null (Home Hub) | 'applied-ai' | 'fundamentals'
+  const [activeSubject, setActiveSubject] = useState(initialRoute.subject);
+
+  // Active Mode: 'weeks' | 'practice' | 'all_practice' | 'exam' | 'exam_results' | 'flashcards' | 'results'
+  const [activeMode, setActiveMode] = useState(initialRoute.mode);
+
   const [currentWeekNum, setCurrentWeekNum] = useState(1);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -31,33 +84,84 @@ export default function App() {
   const [quizTitle, setQuizTitle] = useState('');
 
   // Active exam state
-  const [examAnswers, setExamAnswers] = useState({}); // { [qId]: selectedKey }
+  const [examAnswers, setExamAnswers] = useState({});
   const [markedForReview, setMarkedForReview] = useState(() => new Set());
   const [examTimerSeconds, setExamTimerSeconds] = useState(0);
   const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
   const [examScope, setExamScope] = useState('week'); // 'week' | 'overall'
 
-  // Persisted Stats & Bookmarks
-  const [userStats, setUserStats] = useState(() => {
+  // Persisted Stats & Bookmarks for Applied AI
+  const [appliedAiStats, setAppliedAiStats] = useState(() => {
     const saved = localStorage.getItem('applied_ai_stats');
     return saved ? JSON.parse(saved) : { answers: {}, streak: 0 };
   });
 
-  const [bookmarks, setBookmarks] = useState(() => {
+  const [appliedAiBookmarks, setAppliedAiBookmarks] = useState(() => {
     const saved = localStorage.getItem('applied_ai_bookmarks');
+    return saved ? new Set(JSON.parse(saved)) : new Set();
+  });
+
+  // Persisted Stats & Bookmarks for Fundamentals of Language Acquisition
+  const [fundamentalsStats, setFundamentalsStats] = useState(() => {
+    const saved = localStorage.getItem('fundamentals_stats');
+    return saved ? JSON.parse(saved) : { answers: {}, streak: 0 };
+  });
+
+  const [fundamentalsBookmarks, setFundamentalsBookmarks] = useState(() => {
+    const saved = localStorage.getItem('fundamentals_bookmarks');
     return saved ? new Set(JSON.parse(saved)) : new Set();
   });
 
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  // Persist stats
+  // Sync Applied AI persistence
   useEffect(() => {
-    localStorage.setItem('applied_ai_stats', JSON.stringify(userStats));
-  }, [userStats]);
+    localStorage.setItem('applied_ai_stats', JSON.stringify(appliedAiStats));
+  }, [appliedAiStats]);
 
   useEffect(() => {
-    localStorage.setItem('applied_ai_bookmarks', JSON.stringify([...bookmarks]));
-  }, [bookmarks]);
+    localStorage.setItem('applied_ai_bookmarks', JSON.stringify([...appliedAiBookmarks]));
+  }, [appliedAiBookmarks]);
+
+  // Sync Fundamentals persistence
+  useEffect(() => {
+    localStorage.setItem('fundamentals_stats', JSON.stringify(fundamentalsStats));
+  }, [fundamentalsStats]);
+
+  useEffect(() => {
+    localStorage.setItem('fundamentals_bookmarks', JSON.stringify([...fundamentalsBookmarks]));
+  }, [fundamentalsBookmarks]);
+
+  // Sync browser URL Hash with back/forward navigation
+  useEffect(() => {
+    const handleHashChange = () => {
+      const { subject, mode } = getRouteFromHash();
+      setActiveSubject(subject);
+      if (subject) {
+        if (mode === 'weeks' || mode === 'flashcards') {
+          setActiveMode(mode);
+        }
+      } else {
+        setActiveMode('weeks');
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // Update hash helper
+  const navigateTo = (subject, mode = 'weeks') => {
+    if (!subject) {
+      window.location.hash = '#/';
+      setActiveSubject(null);
+      setActiveMode('weeks');
+    } else {
+      window.location.hash = `#/${subject}/${mode}`;
+      setActiveSubject(subject);
+      setActiveMode(mode);
+    }
+  };
 
   // Exam timer interval
   useEffect(() => {
@@ -72,9 +176,21 @@ export default function App() {
     };
   }, [activeMode]);
 
+  // Current active subject data and configs
+  const currentConfig = activeSubject ? SUBJECT_CONFIG[activeSubject] : null;
+  const currentQuestionsData = currentConfig ? currentConfig.data : [];
+
+  // Active stats & bookmarks reference for current subject
+  const currentStats = activeSubject === 'fundamentals' ? fundamentalsStats : appliedAiStats;
+  const setCurrentStats = activeSubject === 'fundamentals' ? setFundamentalsStats : setAppliedAiStats;
+
+  const currentBookmarks = activeSubject === 'fundamentals' ? fundamentalsBookmarks : appliedAiBookmarks;
+  const setCurrentBookmarks = activeSubject === 'fundamentals' ? setFundamentalsBookmarks : setAppliedAiBookmarks;
+
   // Handler: Start Single Week Practice
   const handleStartWeekPractice = (weekNum) => {
-    const weekObj = questionsData.find(w => w.week === weekNum);
+    if (!currentQuestionsData) return;
+    const weekObj = currentQuestionsData.find(w => w.week === weekNum);
     if (!weekObj) return;
 
     setCurrentWeekNum(weekNum);
@@ -83,12 +199,19 @@ export default function App() {
     setCurrentQuestionIndex(0);
     setQuizTitle(weekObj.title);
     setActiveMode('practice');
+    if (activeSubject) {
+      window.location.hash = `#/${activeSubject}/practice`;
+    }
   };
 
-  // Handler: Start All Weeks Practice (Instant feedback marathon)
-  const handleStartAllWeeksPractice = (doShuffleQuestions = false) => {
+  // Handler: Start All Weeks Practice (Marathon)
+  const handleStartAllWeeksPractice = (doShuffleQuestions = false, subjectOverride = null) => {
+    const targetSubj = subjectOverride || activeSubject || 'applied-ai';
+    const conf = SUBJECT_CONFIG[targetSubj];
+    if (!conf) return;
+
     let allQs = [];
-    questionsData.forEach(w => {
+    conf.data.forEach(w => {
       w.questions.forEach(q => {
         allQs.push({
           ...q,
@@ -102,16 +225,22 @@ export default function App() {
       allQs = shuffleArray(allQs);
     }
 
+    if (subjectOverride && subjectOverride !== activeSubject) {
+      setActiveSubject(subjectOverride);
+    }
+
     setActiveQuestions(allQs);
     setQuizAnswers({});
     setCurrentQuestionIndex(0);
-    setQuizTitle(`All 12 Weeks Practice Marathon (${allQs.length} MCQs)`);
+    setQuizTitle(`All 12 Weeks Practice Marathon • ${conf.shortName} (${allQs.length} MCQs)`);
     setActiveMode('all_practice');
+    window.location.hash = `#/${targetSubj}/all_practice`;
   };
 
   // Handler: Start Single Week Exam Mode
   const handleStartWeekExam = (weekNum) => {
-    const weekObj = questionsData.find(w => w.week === weekNum);
+    if (!currentQuestionsData) return;
+    const weekObj = currentQuestionsData.find(w => w.week === weekNum);
     if (!weekObj) return;
 
     const formattedQs = weekObj.questions.map(q => ({
@@ -129,12 +258,19 @@ export default function App() {
     setExamScope('week');
     setQuizTitle(`Week ${weekNum} Exam: ${weekObj.title.replace(/^Week \d+:\s*/, '')}`);
     setActiveMode('exam');
+    if (activeSubject) {
+      window.location.hash = `#/${activeSubject}/exam`;
+    }
   };
 
   // Handler: Start Overall Exam (Full 12 Weeks Mock Exam)
-  const handleStartAllWeeksExam = (doShuffleQuestions = false) => {
+  const handleStartAllWeeksExam = (doShuffleQuestions = false, subjectOverride = null) => {
+    const targetSubj = subjectOverride || activeSubject || 'applied-ai';
+    const conf = SUBJECT_CONFIG[targetSubj];
+    if (!conf) return;
+
     let allQs = [];
-    questionsData.forEach(w => {
+    conf.data.forEach(w => {
       w.questions.forEach(q => {
         allQs.push({
           ...q,
@@ -148,14 +284,19 @@ export default function App() {
       allQs = shuffleArray(allQs);
     }
 
+    if (subjectOverride && subjectOverride !== activeSubject) {
+      setActiveSubject(subjectOverride);
+    }
+
     setActiveQuestions(allQs);
     setExamAnswers({});
     setMarkedForReview(new Set());
     setCurrentQuestionIndex(0);
     setExamTimerSeconds(0);
     setExamScope('overall');
-    setQuizTitle(`Full 12-Week Comprehensive Mock Exam (${allQs.length} MCQs)`);
+    setQuizTitle(`Full 12-Week Comprehensive Mock Exam • ${conf.shortName} (${allQs.length} MCQs)`);
     setActiveMode('exam');
+    window.location.hash = `#/${targetSubj}/exam`;
   };
 
   // Exam Option Handlers
@@ -186,8 +327,8 @@ export default function App() {
   const handleConfirmSubmitExam = () => {
     setIsSubmitModalOpen(false);
 
-    // Record stats from the exam into userStats
-    setUserStats(prev => {
+    // Record stats into active subject's userStats
+    setCurrentStats(prev => {
       const nextAnswers = { ...prev.answers };
       let newStreak = prev.streak || 0;
 
@@ -216,16 +357,16 @@ export default function App() {
     setActiveMode('exam_results');
   };
 
-  // Handler: Drill Missed Questions
+  // Drill Missed Questions
   const handleDrillMissed = (customMissedList = null) => {
     let missedQs = [];
 
     if (customMissedList && customMissedList.length > 0) {
       missedQs = customMissedList;
-    } else {
-      questionsData.forEach(w => {
+    } else if (currentQuestionsData) {
+      currentQuestionsData.forEach(w => {
         w.questions.forEach(q => {
-          const record = userStats.answers[q.id];
+          const record = currentStats.answers[q.id];
           if (record && !record.isCorrect) {
             missedQs.push({
               ...q,
@@ -238,7 +379,7 @@ export default function App() {
     }
 
     if (missedQs.length === 0) {
-      alert("No missed questions recorded yet!");
+      alert("No missed questions recorded yet for this course!");
       return;
     }
 
@@ -258,7 +399,7 @@ export default function App() {
       [questionId]: ansObj
     }));
 
-    setUserStats(prev => {
+    setCurrentStats(prev => {
       const nextAnswers = { ...prev.answers, [questionId]: ansObj };
       let newStreak = isCorrect ? (prev.streak || 0) + 1 : 0;
       return {
@@ -271,7 +412,7 @@ export default function App() {
 
   // Toggle Bookmark
   const handleToggleBookmark = (qId) => {
-    setBookmarks(prev => {
+    setCurrentBookmarks(prev => {
       const next = new Set(prev);
       if (next.has(qId)) next.delete(qId);
       else next.add(qId);
@@ -280,8 +421,12 @@ export default function App() {
   };
 
   const handleResetStats = () => {
-    setUserStats({ answers: {}, streak: 0 });
-    localStorage.removeItem('applied_ai_stats');
+    if (window.confirm("Are you sure you want to reset all progress and accuracy stats for this subject?")) {
+      setCurrentStats({ answers: {}, streak: 0 });
+      if (currentConfig) {
+        localStorage.removeItem(currentConfig.statsKey);
+      }
+    }
   };
 
   const currentQuestion = activeQuestions[currentQuestionIndex];
@@ -296,12 +441,15 @@ export default function App() {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#ffffff' }}>
-      {/* Navbar with Header & Progress Bar */}
+      {/* Top Navbar */}
       <Navbar
         activeMode={activeMode}
         setActiveMode={(mode) => {
           if (mode === 'all_practice') handleStartAllWeeksPractice(true);
-          else setActiveMode(mode);
+          else {
+            setActiveMode(mode);
+            if (activeSubject) window.location.hash = `#/${activeSubject}/${mode}`;
+          }
         }}
         shuffleOptions={shuffleOptions}
         setShuffleOptions={setShuffleOptions}
@@ -311,18 +459,46 @@ export default function App() {
         currentIndex={currentQuestionIndex}
         totalQuestions={activeQuestions.length}
         currentProgressPercent={currentProgressPercent}
-        onCloseQuiz={() => setActiveMode('weeks')}
+        onCloseQuiz={() => {
+          setActiveMode('weeks');
+          if (activeSubject) window.location.hash = `#/${activeSubject}`;
+        }}
         onStartExam={() => handleStartAllWeeksExam(true)}
         examTimerSeconds={examTimerSeconds}
         onSubmitExam={() => setIsSubmitModalOpen(true)}
+        subjectId={activeSubject || 'applied-ai'}
+        subjectName={currentConfig ? currentConfig.shortName : 'NPTEL Prep'}
+        onNavigateHome={() => navigateTo(null)}
+        onSwitchSubject={(subjId) => navigateTo(subjId, 'weeks')}
       />
 
       {/* Main Content Area */}
       <main style={{ flex: 1, paddingBottom: '60px' }}>
-        {/* VIEW: WEEK SELECTOR (HOME) */}
-        {activeMode === 'weeks' && (
+        {/* VIEW 0: HOME PAGE - SUBJECT SELECTION HUB */}
+        {!activeSubject && (
+          <SubjectSelector
+            onSelectSubject={(subjId, initialAction) => {
+              if (initialAction === 'all_practice') {
+                handleStartAllWeeksPractice(true, subjId);
+              } else if (initialAction === 'exam') {
+                handleStartAllWeeksExam(true, subjId);
+              } else {
+                navigateTo(subjId, 'weeks');
+              }
+            }}
+            appliedAiStats={appliedAiStats}
+            appliedAiBookmarks={appliedAiBookmarks}
+            fundamentalsStats={fundamentalsStats}
+            fundamentalsBookmarks={fundamentalsBookmarks}
+            appliedAiTotal={168}
+            fundamentalsTotal={300}
+          />
+        )}
+
+        {/* VIEW 1: WEEK SELECTOR FOR ACTIVE SUBJECT */}
+        {activeSubject && activeMode === 'weeks' && (
           <WeekSelector
-            weeksData={questionsData}
+            weeksData={currentQuestionsData}
             onSelectWeek={handleStartWeekPractice}
             onSelectAllWeeks={() => handleStartAllWeeksPractice(true)}
             onSelectWeekExam={handleStartWeekExam}
@@ -330,14 +506,19 @@ export default function App() {
             onSelectStudyWeek={(wNum) => {
               setCurrentWeekNum(wNum);
               setActiveMode('flashcards');
+              window.location.hash = `#/${activeSubject}/flashcards`;
             }}
-            userStats={userStats}
+            userStats={currentStats}
             onResetStats={handleResetStats}
+            subjectId={activeSubject}
+            subjectName={currentConfig.name}
+            subjectCode={currentConfig.code}
+            onBackToSubjects={() => navigateTo(null)}
           />
         )}
 
-        {/* VIEW: PRACTICE MODE (INSTANT FEEDBACK) */}
-        {(activeMode === 'practice' || activeMode === 'all_practice') && currentQuestion && (
+        {/* VIEW 2: PRACTICE MODE (INSTANT FEEDBACK) */}
+        {activeSubject && (activeMode === 'practice' || activeMode === 'all_practice') && currentQuestion && (
           <div style={{ maxWidth: '760px', margin: '32px auto 0', padding: '0 20px' }}>
             <QuestionNavigator
               questions={activeQuestions}
@@ -366,15 +547,15 @@ export default function App() {
               onAnswer={handleAnswerQuestion}
               userAnswerRecord={quizAnswers[currentQuestion.id]}
               shuffleOptions={shuffleOptions}
-              isBookmarked={bookmarks.has(currentQuestion.id)}
+              isBookmarked={currentBookmarks.has(currentQuestion.id)}
               onToggleBookmark={handleToggleBookmark}
               weekTitle={quizTitle || `Week ${currentWeekNum}`}
             />
           </div>
         )}
 
-        {/* VIEW: EXAM MODE (ANSWERS HIDDEN UNTIL SUBMISSION) */}
-        {activeMode === 'exam' && currentQuestion && (
+        {/* VIEW 3: EXAM MODE (ANSWERS HIDDEN UNTIL SUBMISSION) */}
+        {activeSubject && activeMode === 'exam' && currentQuestion && (
           <div style={{ maxWidth: '780px', margin: '32px auto 0', padding: '0 20px' }}>
             <ExamNavigator
               questions={activeQuestions}
@@ -408,7 +589,7 @@ export default function App() {
               isMarkedForReview={markedForReview.has(currentQuestion.id)}
               onToggleMarkForReview={handleToggleMarkForReview}
               shuffleOptions={shuffleOptions}
-              isBookmarked={bookmarks.has(currentQuestion.id)}
+              isBookmarked={currentBookmarks.has(currentQuestion.id)}
               onToggleBookmark={handleToggleBookmark}
               weekTitle={quizTitle}
               onSubmitExam={() => setIsSubmitModalOpen(true)}
@@ -416,8 +597,8 @@ export default function App() {
           </div>
         )}
 
-        {/* VIEW: EXAM RESULTS (WEEK-WISE & OVERALL BREAKDOWN WITH EXPLANATIONS) */}
-        {activeMode === 'exam_results' && (
+        {/* VIEW 4: EXAM RESULTS (WEEK-WISE & OVERALL BREAKDOWN WITH EXPLANATIONS) */}
+        {activeSubject && activeMode === 'exam_results' && (
           <ExamResults
             questions={activeQuestions}
             examAnswers={examAnswers}
@@ -433,15 +614,18 @@ export default function App() {
               const missed = activeQuestions.filter(q => examAnswers[q.id] !== q.correct);
               handleDrillMissed(missed);
             }}
-            onBackToWeeks={() => setActiveMode('weeks')}
+            onBackToWeeks={() => {
+              setActiveMode('weeks');
+              window.location.hash = `#/${activeSubject}`;
+            }}
             examTitle={quizTitle}
-            bookmarks={bookmarks}
+            bookmarks={currentBookmarks}
             onToggleBookmark={handleToggleBookmark}
           />
         )}
 
-        {/* VIEW: PRACTICE RESULTS */}
-        {activeMode === 'results' && (
+        {/* VIEW 5: PRACTICE RESULTS */}
+        {activeSubject && activeMode === 'results' && (
           <ResultsModal
             questions={activeQuestions}
             userAnswers={quizAnswers}
@@ -451,16 +635,19 @@ export default function App() {
               setActiveMode('practice');
             }}
             onRetakeMissed={handleDrillMissed}
-            onBackToWeeks={() => setActiveMode('weeks')}
+            onBackToWeeks={() => {
+              setActiveMode('weeks');
+              window.location.hash = `#/${activeSubject}`;
+            }}
             quizTitle={quizTitle}
           />
         )}
 
-        {/* VIEW: STUDY FLASHCARD MODE */}
-        {activeMode === 'flashcards' && (
+        {/* VIEW 6: STUDY FLASHCARD MODE */}
+        {activeSubject && activeMode === 'flashcards' && (
           <StudyFlashcardMode
-            weeksData={questionsData}
-            bookmarks={bookmarks}
+            weeksData={currentQuestionsData}
+            bookmarks={currentBookmarks}
             onToggleBookmark={handleToggleBookmark}
           />
         )}
@@ -482,7 +669,7 @@ export default function App() {
       <SearchModal
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
-        weeksData={questionsData}
+        weeksData={currentQuestionsData.length > 0 ? currentQuestionsData : appliedAiData}
         onSelectQuestion={(q) => {
           setActiveQuestions([q]);
           setQuizAnswers({});

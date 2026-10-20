@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   ArrowLeft, 
   Layers, 
@@ -10,7 +10,11 @@ import {
   Search, 
   ClipboardCheck,
   Clock,
-  CheckCircle2
+  CheckCircle2,
+  ChevronDown,
+  Cpu,
+  Brain,
+  Home
 } from 'lucide-react';
 import { soundManager } from '../utils/audio';
 
@@ -28,8 +32,14 @@ export default function Navbar({
   onCloseQuiz,
   onStartExam,
   examTimerSeconds,
-  onSubmitExam
+  onSubmitExam,
+  subjectId = 'applied-ai',
+  subjectName = 'Applied AI',
+  onNavigateHome,
+  onSwitchSubject
 }) {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const toggleAudio = () => {
     const muted = soundManager.toggleMute();
     setIsMuted(muted);
@@ -37,6 +47,7 @@ export default function Navbar({
 
   const isExam = activeMode === 'exam';
   const isPractice = activeMode === 'practice' || activeMode === 'all_practice';
+  const isFundamentals = subjectId === 'fundamentals';
 
   const formatTimer = (secs = 0) => {
     const mins = Math.floor(secs / 60);
@@ -59,7 +70,11 @@ export default function Navbar({
             className="seed-top-stepper-fill" 
             style={{ 
               width: `${currentProgressPercent || 0}%`,
-              background: isExam ? 'linear-gradient(90deg, #d97706, #16a34a)' : undefined
+              background: isExam 
+                ? 'linear-gradient(90deg, #d97706, #16a34a)' 
+                : isFundamentals
+                  ? 'linear-gradient(90deg, #4338ca, #6366f1)'
+                  : undefined
             }} 
           />
         </div>
@@ -75,8 +90,8 @@ export default function Navbar({
         flexWrap: 'wrap',
         gap: '12px'
       }}>
-        {/* Left: Back Button / Brand */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+        {/* Left: Back Button / Brand / Course Switcher */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           {(isPractice || isExam || activeMode === 'exam_results') ? (
             <button
               onClick={() => {
@@ -92,7 +107,7 @@ export default function Navbar({
               style={{
                 background: 'transparent',
                 border: 'none',
-                color: 'var(--color-forest)',
+                color: isFundamentals ? '#4338ca' : 'var(--color-forest)',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
@@ -103,20 +118,166 @@ export default function Navbar({
               <ArrowLeft size={22} />
             </button>
           ) : (
-            <div 
-              onClick={() => setActiveMode('weeks')}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                cursor: 'pointer',
-                fontFamily: 'var(--font-heading)',
-                fontWeight: 700,
-                fontSize: '1.2rem',
-                color: 'var(--color-forest)'
-              }}
-            >
-              Applied AI <span style={{ color: 'var(--color-sage)', fontSize: '0.8rem' }}>●</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', position: 'relative' }}>
+              {/* Home Icon button */}
+              {onNavigateHome && (
+                <button
+                  onClick={() => {
+                    soundManager.playClick();
+                    onNavigateHome();
+                  }}
+                  title="Return to Course Selection"
+                  style={{
+                    background: '#ffffff',
+                    border: '1px solid var(--color-sage-border)',
+                    borderRadius: '8px',
+                    padding: '6px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    color: 'var(--color-forest)',
+                    transition: 'all 0.15s'
+                  }}
+                >
+                  <Home size={16} />
+                </button>
+              )}
+
+              {/* Course Selector Dropdown Button */}
+              <div
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  cursor: 'pointer',
+                  fontFamily: 'var(--font-heading)',
+                  fontWeight: 700,
+                  fontSize: '1.15rem',
+                  color: isFundamentals ? '#1e1b4b' : 'var(--color-forest)',
+                  background: '#ffffff',
+                  padding: '5px 12px',
+                  borderRadius: '12px',
+                  border: '1px solid var(--color-sage-border)',
+                  userSelect: 'none'
+                }}
+              >
+                {isFundamentals ? (
+                  <Brain size={18} color="#4338ca" />
+                ) : (
+                  <Cpu size={18} color="var(--color-forest)" />
+                )}
+                <span>{subjectName}</span>
+                <ChevronDown size={14} color="var(--text-muted)" />
+              </div>
+
+              {/* Course Switcher Menu */}
+              {isDropdownOpen && (
+                <div 
+                  style={{
+                    position: 'absolute',
+                    top: '115%',
+                    left: 0,
+                    width: '260px',
+                    background: '#ffffff',
+                    borderRadius: '16px',
+                    boxShadow: '0 12px 32px rgba(0,0,0,0.12)',
+                    border: '1px solid #e2e8e0',
+                    padding: '8px',
+                    zIndex: 200
+                  }}
+                  onMouseLeave={() => setIsDropdownOpen(false)}
+                >
+                  <div style={{
+                    padding: '6px 10px',
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    color: 'var(--text-muted)',
+                    letterSpacing: '0.04em'
+                  }}>
+                    Switch NPTEL Course
+                  </div>
+
+                  <div
+                    onClick={() => {
+                      soundManager.playClick();
+                      setIsDropdownOpen(false);
+                      if (onSwitchSubject) onSwitchSubject('applied-ai');
+                    }}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      padding: '8px 10px',
+                      borderRadius: '8px',
+                      cursor: 'pointer',
+                      background: subjectId === 'applied-ai' ? '#edf7ee' : 'transparent',
+                      color: subjectId === 'applied-ai' ? '#166534' : 'var(--text-dark)',
+                      fontWeight: subjectId === 'applied-ai' ? 700 : 500,
+                      fontSize: '0.88rem'
+                    }}
+                  >
+                    <Cpu size={16} color="#166534" />
+                    <div>
+                      <div>Applied Artificial Intelligence</div>
+                      <div style={{ fontSize: '0.72rem', color: '#6b7280' }}>12 Weeks • 168 MCQs</div>
+                    </div>
+                  </div>
+
+                  <div
+                    onClick={() => {
+                      soundManager.playClick();
+                      setIsDropdownOpen(false);
+                      if (onSwitchSubject) onSwitchSubject('fundamentals');
+                    }}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      padding: '8px 10px',
+                      borderRadius: '8px',
+                      cursor: 'pointer',
+                      background: subjectId === 'fundamentals' ? '#eef2ff' : 'transparent',
+                      color: subjectId === 'fundamentals' ? '#4338ca' : 'var(--text-dark)',
+                      fontWeight: subjectId === 'fundamentals' ? 700 : 500,
+                      fontSize: '0.88rem',
+                      marginTop: '4px'
+                    }}
+                  >
+                    <Brain size={16} color="#4338ca" />
+                    <div>
+                      <div>Language Acquisition</div>
+                      <div style={{ fontSize: '0.72rem', color: '#6b7280' }}>12 Weeks • 300 MCQs</div>
+                    </div>
+                  </div>
+
+                  {onNavigateHome && (
+                    <div
+                      onClick={() => {
+                        soundManager.playClick();
+                        setIsDropdownOpen(false);
+                        onNavigateHome();
+                      }}
+                      style={{
+                        borderTop: '1px solid #f1f5f9',
+                        marginTop: '6px',
+                        padding: '8px 10px 4px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        fontSize: '0.82rem',
+                        fontWeight: 600,
+                        color: 'var(--color-forest)',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <Home size={14} /> Back to Courses Hub
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -165,13 +326,14 @@ export default function Navbar({
           <div style={{
             fontFamily: 'var(--font-heading)',
             fontWeight: 700,
-            fontSize: '1.1rem',
-            color: 'var(--color-forest)',
+            fontSize: '1.05rem',
+            color: isFundamentals ? '#1e1b4b' : 'var(--color-forest)',
             display: 'flex',
             alignItems: 'center',
             gap: '6px'
           }}>
-            Applied AI <span style={{ color: 'var(--color-sage)', fontSize: '0.75rem' }}>●</span>
+            {isFundamentals ? <Brain size={16} color="#4338ca" /> : <Cpu size={16} color="var(--color-forest)" />}
+            {subjectName} <span style={{ color: 'var(--color-sage)', fontSize: '0.75rem' }}>●</span>
           </div>
         ) : null}
 
