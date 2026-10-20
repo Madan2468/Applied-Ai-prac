@@ -54,24 +54,23 @@ export default function QuizCard({
   }, [question.id]);
 
   useEffect(() => {
-    if (userAnswerRecord) {
-      setSelectedOptionKey(userAnswerRecord.selectedKey);
-      setShowExplanation(true);
-    } else {
-      setSelectedOptionKey(null);
-      setShowExplanation(false);
-    }
-  }, [question.id, userAnswerRecord]);
+    // Reset to clean state on every question change.
+    // We do NOT auto-reveal the explanation even if the question was previously answered.
+    // This prevents the "pre-ticked answer" bug when navigating between questions.
+    setSelectedOptionKey(null);
+    setShowExplanation(false);
+  }, [question.id]);
 
   const processedOptions = useMemo(() => {
     return prepareQuestionOptions(question, shuffleOptions);
   }, [question, shuffleOptions]);
 
-  const isAnswered = selectedOptionKey !== null || userAnswerRecord !== undefined;
-  const currentRecord = userAnswerRecord || (selectedOptionKey ? {
+  // isAnswered is only true when the user has actively selected in this session
+  const isAnswered = selectedOptionKey !== null;
+  const currentRecord = selectedOptionKey ? {
     selectedKey: selectedOptionKey,
     isCorrect: selectedOptionKey === question.correct
-  } : null);
+  } : null;
 
   const handleSelectOption = (optItem) => {
     if (isAnswered) return;
