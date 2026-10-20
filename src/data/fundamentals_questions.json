@@ -335,33 +335,28 @@
     "title": "Week 2: Theories of Language Acquisition & Cognitive Milestones",
     "questions": [
       {
-        "id": "w2_q1",
         "q_num": 1,
-        "question": "Albert Bandura’s (1977) social learning theory involves which of the following stages?",
+        "question": "Albert Bandura's (1977) social learning theory involves which of the following stages?",
         "options": {
           "A": "Retention",
           "B": "Inhibition",
           "C": "Repetition",
           "D": "Prohibition"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: A. Retention. This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "A"
       },
       {
-        "id": "w2_q2",
         "q_num": 2,
-        "question": "Who criticized B. F. Skinner’s Verbal Behaviour?",
+        "question": "Who criticized B. F. Skinner's Verbal Behaviour?",
         "options": {
           "A": "Jean Piaget",
           "B": "Noam Chomsky",
           "C": "Lev Vygotsky",
           "D": "Jerome Bruner"
         },
-        "correct": "B",
-        "explanation": "Correct Answer: B. Noam Chomsky. This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "B"
       },
       {
-        "id": "w2_q3",
         "q_num": 3,
         "question": "Joint attention plays an important role in:",
         "options": {
@@ -370,11 +365,9 @@
           "C": "Logic and reasoning",
           "D": "Language acquisition"
         },
-        "correct": "D",
-        "explanation": "Correct Answer: D. Language acquisition. This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "D"
       },
       {
-        "id": "w2_q4",
         "q_num": 4,
         "question": "Isabelle is best known as a case study related to:",
         "options": {
@@ -383,63 +376,53 @@
           "C": "Language deprivation and acquisition",
           "D": "Classical condition"
         },
-        "correct": "C",
-        "explanation": "Correct Answer: C. Language deprivation and acquisition. This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "C"
       },
       {
-        "id": "w2_q5",
         "q_num": 5,
         "question": "What is the High-Amplitude Sucking Technique mainly used to investigate?",
         "options": {
-          "A": "Infants’ articulatory ability",
-          "B": "Infants’ response to strangers",
-          "C": "Infants’ perception and discrimination of stimuli",
-          "D": "Infants’ eye movements"
+          "A": "Infants' articulatory ability",
+          "B": "Infants' response to strangers",
+          "C": "Infants' perception and discrimination of stimuli",
+          "D": "Infants' eye movements"
         },
-        "correct": "C",
-        "explanation": "Correct Answer: C. Infants’ perception and discrimination of stimuli. This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "C"
       },
       {
-        "id": "w2_q6",
         "q_num": 6,
         "question": "Which is the last stage in Piaget's theory of cognitive development?",
         "options": {
           "A": "Sensorimotor stage",
           "B": "Formal Operational stage",
           "C": "Basic stage",
-          "D": "Concrete operational stage Answer:"
+          "D": "Concrete operational stage"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "B"
       },
       {
-        "id": "w2_q7",
         "q_num": 7,
-        "question": "In habituation studies, what does it mean when an infant shows ‘interest’ in the new stimulus?",
+        "question": "In habituation studies, what does it mean when an infant shows 'interest' in the new stimulus?",
         "options": {
           "A": "The infant forgot the previous stimulus",
           "B": "The infant was bored with the familiar stimulus",
           "C": "The infant is discriminating between the new and old stimulus",
-          "D": "The infant is unable to see any difference between the stimulus Answer:"
+          "D": "The infant is unable to see any difference between the stimulus"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "C"
       },
       {
-        "id": "w2_q8",
         "q_num": 8,
         "question": "During the intermodal preferential-looking, what is analysed?",
         "options": {
-          "A": "Infants’ gaze",
+          "A": "Infants' gaze",
           "B": "Verbal response",
-          "C": "Infants’ cries",
-          "D": "Solving problems Answer:"
+          "C": "Infants' cries",
+          "D": "Solving problems"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "A"
       },
       {
-        "id": "w2_q9",
         "q_num": 9,
         "question": "What is the parental report questionnaire assessing children's language abilities?",
         "options": {
@@ -448,24 +431,20 @@
           "C": "Language History Questionnaire",
           "D": "MacArthur Bates Communicative Development Inventory"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "D"
       },
       {
-        "id": "w2_q10",
         "q_num": 10,
         "question": "What is the function of Near Infra-Red Spectroscopy (NIRS)?",
         "options": {
           "A": "Measure brain wave frequency",
           "B": "Measure sound perception",
           "C": "Measure blood oxygenation",
-          "D": "Measure muscle contractions Answer:"
+          "D": "Measure muscle contractions"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "C"
       },
       {
-        "id": "w2_q11",
         "q_num": 11,
         "question": "Which ERP components are most commonly used to investigate language processing?",
         "options": {
@@ -474,115 +453,97 @@
           "C": "P300 and N700",
           "D": "N400 and P600"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "D"
       },
       {
-        "id": "w2_q12",
         "q_num": 12,
         "question": "The absence or delay in acquiring joint attention skills is commonly associated with:",
         "options": {
           "A": "Dyslexia",
           "B": "Autism Spectrum Disorder",
           "C": "Stuttering",
-          "D": "L2 interference Answer:"
+          "D": "L2 interference"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "B"
       },
       {
-        "id": "w2_q13",
         "q_num": 13,
         "question": "Initiating Joint Attention (IJA) is primarily associated with the:",
         "options": {
           "A": "Anterior attention system",
           "B": "Posterior attention system",
           "C": "Cerebellum",
-          "D": "Visual cortex Answer:"
+          "D": "Visual cortex"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "A"
       },
       {
-        "id": "w2_q14",
         "q_num": 14,
         "question": "Social cognition begins developing around which age?",
         "options": {
           "A": "2-4 months",
           "B": "6 months",
           "C": "9-12 months",
-          "D": "13-16 months Answer:"
+          "D": "13-16 months"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "C"
       },
       {
-        "id": "w2_q15",
         "q_num": 15,
         "question": "The use of small muscles involving extremities (like fingers) while grasping, manipulating objects is known as:",
         "options": {
           "A": "Fine Motor Skills",
           "B": "Locomotor skills",
           "C": "Perceptual skills",
-          "D": "Executive control Answer:"
+          "D": "Executive control"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "A"
       },
       {
-        "id": "w2_q16",
         "q_num": 16,
         "question": "In children with crossed aphasia, language deficits result from damage to which part of the brain?",
         "options": {
           "A": "Left hemisphere",
           "B": "Right hemisphere",
           "C": "Brain stem",
-          "D": "Thalamus Answer:"
+          "D": "Thalamus"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "B"
       },
       {
-        "id": "w2_q17",
         "q_num": 17,
         "question": "“Case Alex”, reported by Vargha-Khadem et al. (1997), involved a child with what disorder?",
         "options": {
           "A": "Down Syndrome",
           "B": "Sturge-Weber Syndrome",
-          "C": "Huntington’s Disease",
-          "D": "Parkinson’s Disease Answer:"
+          "C": "Huntington's Disease",
+          "D": "Parkinson's Disease"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "B"
       },
       {
-        "id": "w2_q18",
         "q_num": 18,
         "question": "A child who successfully passes the Sally–Anne task will predict that Sally will look for the marble in the:",
         "options": {
           "A": "Basket",
-          "B": "Basket",
+          "B": "Pocket",
           "C": "Box",
-          "D": "Cupboard Answer:"
+          "D": "Cupboard"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "A"
       },
       {
-        "id": "w2_q19",
         "q_num": 19,
         "question": "What do constructivists believe regarding language acquisition?",
         "options": {
           "A": "Language is acquired through imitation and reinforcement.",
           "B": "Language develops from an innate Universal Grammar.",
           "C": "Language is acquired through active interaction and cognitive development.",
-          "D": "Language is acquired through classical conditioning. Answer:"
+          "D": "Language is acquired through classical conditioning."
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "C"
       },
       {
-        "id": "w2_q20",
         "q_num": 20,
         "question": "Thorndike's theory of learning is also known as:",
         "options": {
@@ -591,24 +552,20 @@
           "C": "Affective filter hypothesis",
           "D": "Connectionism"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "D"
       },
       {
-        "id": "w2_q21",
         "q_num": 21,
         "question": "In Greenspoon's (1955) study, the interviewer reinforced the participant by saying “hm” whenever the participant produced:",
         "options": {
           "A": "A verb",
           "B": "A sound",
           "C": "A plural noun",
-          "D": "An exclamation Answer:"
+          "D": "An exclamation"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "C"
       },
       {
-        "id": "w2_q22",
         "q_num": 22,
         "question": "In Pavlov's experiment, what was the unconditioned stimulus?",
         "options": {
@@ -617,47 +574,40 @@
           "C": "The saliva",
           "D": "The food"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "D"
       },
       {
-        "id": "w2_q23",
         "q_num": 23,
         "question": "In the modularity approach, primary emphasis is placed on:",
         "options": {
           "A": "Meaning",
           "B": "Words",
           "C": "Syntax",
-          "D": "Manner Answer:"
+          "D": "Manner"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "C"
       },
       {
-        "id": "w2_q24",
         "q_num": 24,
-        "question": "What is often called the ‘logical problem of language acquisition’?",
+        "question": "What is often called the 'logical problem of language acquisition'?",
         "options": {
           "A": "Age of children",
           "B": "Multilingualism",
           "C": "Meaning ambiguity",
           "D": "Poverty of stimulus"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "D"
       },
       {
-        "id": "w2_q25",
         "q_num": 25,
         "question": "In Vygotsky's theory, what does the term \"MKO\" stand for?",
         "options": {
           "A": "More Knowledgeable Other",
           "B": "Mature Knowledge Operator",
           "C": "Most Knowledgeable Observer",
-          "D": "Mental Knowledge Organizer Answer:"
+          "D": "Mental Knowledge Organizer"
         },
-        "correct": "A",
-        "explanation": "Correct Answer: . . This question covers prominent theoretical debates in language acquisition including Skinner’s operant conditioning, Chomsky’s nativist critique, Bandura’s social learning, and Piaget’s developmental stages."
+        "correct": "A"
       }
     ]
   },
@@ -2875,7 +2825,7 @@
         "question": "In J.J. Gibson's ecological approach to perception, what is meant by an \"affordance\" in infant learning?",
         "options": {
           "A": "The financial cost of purchasing educational toys",
-          "B": "An action possibility available in the environment, independent of whether it is actually used (e.g., a tree is \"climb-up-able\") ",
+          "B": "An action possibility available in the environment, independent of whether it is actually used (e.g., a tree is \"climb-up-able\")",
           "C": "A genetic mutation responsible for speech",
           "D": "The grammatical case assigned to a noun"
         },
