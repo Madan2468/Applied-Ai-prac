@@ -2626,327 +2626,327 @@
       {
         "id": "w9_q1",
         "q_num": 1,
-        "question": "In the historical language deprivation experiment conducted by Egyptian Pharaoh Psammetichus I (recorded by Herodotus), what was the first word uttered by the isolated children?",
+        "question": "According to Herodotus’s account, what was the infants’ first word, and what did it mean?",
         "options": {
-          "A": "Mama",
-          "B": "Water",
-          "C": "\"Bekos\" — bread",
-          "D": "Milk"
+          "A": "“Ma” – mother",
+          "B": "“Pa” – father",
+          "C": "“Bekos” – bread",
+          "D": "“Aqua” – water"
         },
         "correct": "C",
-        "explanation": "According to Herodotus, Pharaoh Psammetichus I gave two newborn infants to a shepherd to be raised in complete silence. The children eventually ran up to the shepherd calling \"Bekos\", which was discovered to be the Phrygian word for bread."
+        "explanation": "In the historical account recorded by the Greek historian Herodotus, Egyptian Pharaoh Psammetichus I sought to determine the original language of humanity by raising two infants in isolation. Their first spontaneous utterance was \"bekos\", which was discovered to be the Phrygian word for bread."
       },
       {
         "id": "w9_q2",
         "q_num": 2,
-        "question": "In the case study of Isabelle, a child kept in dark isolation with her deaf-mute mother until age 6.5, what was her long-term linguistic outcome after rescue?",
+        "question": "What did Lenneberg (1966) study in relation to tracheotomy and language development?",
         "options": {
-          "A": "The child's language abilities showed no major issues",
-          "B": "She permanently remained non-verbal",
-          "C": "She could only learn isolated vocabulary with no grammar",
-          "D": "She developed sign language but never spoke"
+          "A": "The child’s language abilities showed no major issues",
+          "B": "Language acquisition was severely impaired",
+          "C": "The child never learned to speak",
+          "D": "Only comprehension was affected"
         },
         "correct": "A",
-        "explanation": "Because Isabelle was rescued around age 6.5 (before the close of the critical period), with intensive training she mastered normal grammatical syntax and vocabulary within two years, showing no major long-term linguistic impairment."
+        "explanation": "Eric Lenneberg (1966) reported on a male infant who underwent a tracheotomy during early infancy and was unable to produce vocalizations for the first six months of life. Upon decannulation, the child demonstrated normal language comprehension and subsequently developed typical expressive speech, showing that early lack of vocal motor production does not impair language acquisition."
       },
       {
         "id": "w9_q3",
         "q_num": 3,
-        "question": "In studies of deaf children raised by hearing parents without exposure to sign language models (Goldin-Meadow), what is \"homesign\" defined as?",
+        "question": "What is “homesign”?",
         "options": {
-          "A": "A formal dialect of American Sign Language",
+          "A": "A conventional sign language taught to deaf children",
           "B": "A form of creative signing that spontaneously emerges in deaf children without a conventional language model",
-          "C": "An oralist method of lip-reading training",
-          "D": "A standardized manual alphabet"
+          "C": "A gesture system used only by hearing children",
+          "D": "A written form of communication"
         },
         "correct": "B",
-        "explanation": "Homesign is a spontaneous, highly structured gestural communication system invented by deaf children who have not been exposed to any conventional signed or spoken language."
+        "explanation": "Homesign is an idiosyncratic, structured gestural communication system that spontaneously emerges in deaf children who are born to hearing parents and have no exposure to a standard sign language or accessible spoken language input."
       },
       {
         "id": "w9_q4",
         "q_num": 4,
-        "question": "How did homesigning deaf children in Goldin-Meadow's research express complex semantic relations in the absence of a spoken language model?",
+        "question": "How did the deaf children in the homesign study use pointing differently from hearing children?",
         "options": {
-          "A": "They only mimicked facial expressions",
-          "B": "They produced random unorganized movements",
+          "A": "They pointed less than hearing children",
+          "B": "They never used pointing",
           "C": "They used pointing in combination to convey semantic relationships between referents",
-          "D": "They avoided gestures and relied on vocal sounds"
+          "D": "They used to point only to indicate objects, never people"
         },
         "correct": "C",
-        "explanation": "Goldin-Meadow observed that deaf children combined pointing gestures and characterizing signs in structured, language-like sequences to mark semantic roles (such as agent, patient, and action)."
+        "explanation": "Goldin-Meadow and colleagues found that while hearing children typically point only to designate objects or people, deaf homesigners combine pointing gestures with other signs or points to specify semantic roles (such as agent, patient, and action relations) in sentence-like structures."
       },
       {
         "id": "w9_q5",
         "q_num": 5,
-        "question": "Unlike Isabelle, Genie was discovered at age 13 after severe deprivation past puberty. What was her primary linguistic limitation following years of intervention?",
+        "question": "What term describes Christopher’s conversational limitations despite his linguistic skill?",
         "options": {
-          "A": "She could not hear speech sounds",
-          "B": "Impoverished conversational ability and severe grammatical/syntactic deficits",
-          "C": "Inability to learn any vocabulary",
-          "D": "Normal syntax but poor articulation"
+          "A": "Enhanced conversational fluency",
+          "B": "Impoverished conversational ability",
+          "C": "Selective mutism",
+          "D": "Echolalia"
         },
         "correct": "B",
-        "explanation": "While Genie acquired a substantial lexicon and communicative intent, she suffered from impoverished conversational ability and was unable to master complex grammar, morphology, or recursive syntactic structures."
+        "explanation": "Christopher, a well-known linguistic savant studied by Neil Smith and Ianthi-Maria Tsimpli, possessed remarkable lexical and translation abilities in dozens of foreign languages, but exhibited impoverished conversational ability and marked pragmatic deficits."
       },
       {
         "id": "w9_q6",
         "q_num": 6,
-        "question": "Which common linguistic profile was observed in both Victor of Aveyron (the Wild Boy of Aveyron) and Genie?",
+        "question": "What linguistic characteristic did “Clive” show, according to Smith (1989)?",
         "options": {
           "A": "Eagerness to communicate but with grammatical deficit",
-          "B": "Complete refusal to interact with humans",
-          "C": "Full mastery of complex relative clauses",
-          "D": "Normal bilingual acquisition"
+          "B": "Fluent grammar, but reluctance to speak",
+          "C": "No language ability at all",
+          "D": "Perfect grammar and communication skills"
         },
         "correct": "A",
-        "explanation": "Both Victor and Genie demonstrated strong desires to socialize and convey meaning, but exhibited profound deficits in mastering formal grammatical syntax and morphosyntactic rules."
+        "explanation": "In Smith's (1989) clinical case studies, \"Clive\" exhibited an eagerness and motivation to communicate and socialize with others, but suffered from pronounced grammatical and syntactic deficits."
       },
       {
         "id": "w9_q7",
         "q_num": 7,
-        "question": "In Landau & Gleitman’s (1985) seminal study of the blind child Kelli learning visual perception words such as \"look\" and \"see\", what did they discover?",
+        "question": "What did the blind child in Landau and Gleitman’s (1985) study reveal about words like “look” and “see”?",
         "options": {
-          "A": "The child never understood what \"look\" or \"see\" meant",
-          "B": "Her understanding of these words developed similarly to a sighted child (e.g., mapping \"look\" to exploring haptically with hands)",
-          "C": "She confused sight verbs with auditory verbs like \"hear\"",
-          "D": "Blind children require explicit vision surgery to acquire perceptual vocabulary"
+          "A": "She never learned to use these words",
+          "B": "Her understanding of these words developed similarly to a sighted child",
+          "C": "She used these words only in a literal tactile sense",
+          "D": "She confused these words with unrelated verbs"
         },
         "correct": "B",
-        "explanation": "Landau and Gleitman showed that syntactic bootstrapping allowed Kelli to distinguish \"look\" (explore actively with hands) from \"touch\", demonstrating that direct visual perception is not required to acquire abstract perceptual terms."
+        "explanation": "Landau and Gleitman (1985) studied a congenitally blind child (\"Kelli\") and demonstrated that her semantic grasp of vision-related terms such as \"look\" and \"see\" developed remarkably similarly to that of sighted children through syntactic bootstrapping, using haptic exploration to represent \"looking\"."
       },
       {
         "id": "w9_q8",
         "q_num": 8,
-        "question": "What did DeCasper and Spence’s (1986) famous \"The Cat in the Hat\" study demonstrate regarding prenatal auditory learning?",
+        "question": "What did the “Cat in the Hat” experiment demonstrate about prenatal auditory learning?",
         "options": {
           "A": "Infants could distinguish a familiar story read to them in the womb from an unfamiliar one",
-          "B": "Fetuses have no ability to perceive sound vibrations",
-          "C": "Infants prefer male voices over female voices at birth",
-          "D": "Infants only recognize synthetic musical tones"
+          "B": "Infants preferred stories read after birth",
+          "C": "Infants showed no story preference at all",
+          "D": "Infants could only recognise their mother’s voice, not stories"
         },
         "correct": "A",
-        "explanation": "By measuring non-nutritive sucking rates at birth, DeCasper and Spence proved that newborns modified their sucking patterns to hear the familiar story their mothers had read aloud during the final weeks of pregnancy."
+        "explanation": "DeCasper and Spence (1986) had pregnant mothers read \"The Cat in the Hat\" twice daily during the last 6 weeks of gestation. At birth, using non-nutritive sucking rates, the newborns actively chose to hear the familiar story over a novel story, proving that infants can perceive and remember specific auditory patterns in utero."
       },
       {
         "id": "w9_q9",
         "q_num": 9,
-        "question": "The specialized speech register characterized by high pitch, exaggerated intonation, and simplified vocabulary used by caregivers is termed:",
+        "question": "What is another common name for Baby Talk Register (BTR)?",
         "options": {
-          "A": "Telegraphic speech",
-          "B": "Motherese / parentese / child-directed speech",
-          "C": "Echolalia",
-          "D": "Metalinguistic discourse"
+          "A": "Formal register",
+          "B": "Motherese/parentese/child-directed speech",
+          "C": "Academic register",
+          "D": "Sign register"
         },
         "correct": "B",
-        "explanation": "Child-Directed Speech (CDS), also known as motherese or parentese, is the distinctive register used across many cultures to speak to infants."
+        "explanation": "Baby Talk Register (BTR) is widely referred to in developmental linguistics as Motherese, Parentese, or Child-Directed Speech (CDS)."
       },
       {
         "id": "w9_q10",
         "q_num": 10,
-        "question": "Around how many months of age do typically developing infants begin showing clear evidence of receptive word comprehension for common social words?",
+        "question": "What is the approximate MLU of adult utterances?",
         "options": {
-          "A": "2 months",
-          "B": "4 months",
-          "C": "7 months",
-          "D": "18 months"
+          "A": "3",
+          "B": "5",
+          "C": "7",
+          "D": "10"
         },
         "correct": "C",
-        "explanation": "Extensive research in infant word learning indicates that by 6-7 months of age, infants consistently show preferential looking toward referents when hearing familiar target words like \"mommy\" or \"bottle\"."
+        "explanation": "In developmental psycholinguistics (e.g., Newport et al., 1977), typical adult-to-adult conversational utterances have a Mean Length of Utterance (MLU) of approximately 7 words/morphemes, whereas speech directed to infants is sharply shortened to roughly 3 to 4."
       },
       {
         "id": "w9_q11",
         "q_num": 11,
-        "question": "Which structural difference distinguishes Child-Directed Speech (CDS) from Adult-Directed Speech (ADS)?",
+        "question": "Which of the following is a syntactic feature of child-directed speech identified by Elliot (1981)?",
         "options": {
-          "A": "Higher density of passive voice and subjunctive clauses",
-          "B": "Shorter MLU (Mean Length of Utterance) and fewer subordinate clauses per utterance",
-          "C": "Absence of pitch variation",
-          "D": "Extremely long, complex multi-clausal sentences"
+          "A": "Longer MLU than adult-directed speech",
+          "B": "Shorter MLU and fewer subordinate clauses per utterance",
+          "C": "More complex sentence structures",
+          "D": "Increased use of modifiers"
         },
         "correct": "B",
-        "explanation": "CDS is syntactically simplified, featuring significantly shorter mean lengths of utterance (MLU), fewer embedded or subordinate clauses, and clear prosodic boundary marking."
+        "explanation": "Elliot (1981) identified that syntactic modifications in child-directed speech include a substantially shorter MLU (Mean Length of Utterance) and fewer subordinate/embedded clauses per utterance to reduce grammatical processing load."
       },
       {
         "id": "w9_q12",
         "q_num": 12,
-        "question": "Why do concrete nouns (e.g., ball, dog) typically dominate children’s earliest vocabularies compared to relational verbs or prepositions?",
+        "question": "Why are content words considered easier for children to learn than function words?",
         "options": {
-          "A": "Verbs are acoustically louder than nouns",
-          "B": "Nouns have no phonological stress",
-          "C": "They have a ready referent that can be directly observed and pointed to",
-          "D": "Nouns are processed exclusively in the right hemisphere"
+          "A": "They are shorter in length",
+          "B": "They are used less frequently",
+          "C": "They have a ready referent",
+          "D": "They require less memory"
         },
         "correct": "C",
-        "explanation": "According to Gentner’s Natural Partitions Hypothesis, concrete nouns denote cohesive physical objects that have a clear, tangible referent in the immediate environment, making them easier to map than relational verbs."
+        "explanation": "Content words (nouns, main verbs, adjectives) carry distinct semantic content and refer directly to observable entities or actions in the immediate physical environment (they have a ready referent), unlike abstract closed-class grammatical function words."
       },
       {
         "id": "w9_q13",
         "q_num": 13,
-        "question": "In maternal conversational styles, how do interrogatives differ functionally from imperatives?",
+        "question": "Why are interrogatives and imperatives used more often in child-directed speech?",
         "options": {
           "A": "Interrogatives encourage responses; imperatives give commands or requests",
-          "B": "Interrogatives force silence; imperatives invite dialogue",
-          "C": "Both serve identical communicative functions",
-          "D": "Imperatives are only used with older adults"
+          "B": "They are grammatically simpler",
+          "C": "They require less vocabulary",
+          "D": "They are easier for adults to pronounce"
         },
         "correct": "A",
-        "explanation": "Mothers use questions (interrogatives) with rising pitch contours to scaffold turn-taking and invite responses, whereas imperatives are directive speech acts used to manage behavior and issue commands."
+        "explanation": "In infant-directed conversations, caregivers frequently utilize interrogatives (questions) to solicit engagement and scaffold communicative turn-taking, and imperatives to direct attention, establish routines, and guide behavior."
       },
       {
         "id": "w9_q14",
         "q_num": 14,
-        "question": "What did Patricia Kuhl et al. (1997) find regarding maternal vowel production across English, Russian, and Swedish in infant-directed speech?",
+        "question": "What did Kuhl et al. (1997) find regarding vowel production in mothers speaking to infants?",
         "options": {
           "A": "Mothers produced acoustically extreme (stretched) vowels compared to adult-directed speech",
-          "B": "Mothers neutralized all vowels to a central schwa",
-          "C": "Vowel space was compressed and muffled",
-          "D": "Speech was whispered without fundamental frequency"
+          "B": "Mothers used the same vowel space as in adult speech",
+          "C": "Mothers reduced vowel duration when speaking to infants",
+          "D": "Vowel space was smaller in infant-directed speech"
         },
         "correct": "A",
-        "explanation": "Kuhl et al. proved that mothers unconsciously expand their acoustic vowel space (stretching the formant distances for /i/, /u/, /a/), effectively hyperarticulating vowels to help infants differentiate phonemic contrasts."
+        "explanation": "Kuhl et al. (1997) found that across English, Russian, and Swedish, mothers hyperarticulate vowels when speaking to infants, producing acoustically extreme, stretched vowels that enlarge the acoustic vowel triangle (/a/, /i/, /u/) and clarify phonetic distinctions."
       },
       {
         "id": "w9_q15",
         "q_num": 15,
-        "question": "According to Anne Fernald, what is the primary initial biological function of infant-directed prosody in early caregiver-infant interaction?",
+        "question": "Which factor can “gating” through social interaction increase, thereby influencing learning across a wide variety of domains?",
         "options": {
-          "A": "Teaching formal syntactic transformations",
-          "B": "Modulating infant attention and arousal states",
-          "C": "Training dictionary reading habits",
-          "D": "Encouraging athletic coordination"
+          "A": "Information and memory",
+          "B": "Attention and arousal",
+          "C": "Sense of relationship only",
+          "D": "Perception and action only"
         },
         "correct": "B",
-        "explanation": "Fernald’s research highlights that the exaggerated pitch contours of motherese primarily serve an affective and regulatory function: capturing infant visual attention and soothing or alerting infant arousal."
+        "explanation": "Under Kuhl's Social Gating Hypothesis, real-time social interaction serves as a computational gate by heightening infant attention and arousal, thereby unlocking neuroplasticity and enhancing linguistic learning."
       },
       {
         "id": "w9_q16",
         "q_num": 16,
-        "question": "In cross-cultural investigations by Bornstein et al. (2004) examining vocabulary development in diverse geographic settings:",
+        "question": "What was the key finding regarding urban versus rural children’s vocabulary (Bornstein & Cote, 2005)?",
         "options": {
-          "A": "Rural children spoke with complete adult syntax by 12 months",
-          "B": "No cultural differences exist in maternal interactions",
-          "C": "Socioeconomic factors had zero impact on vocabulary",
+          "A": "Rural children had larger vocabularies than urban children",
+          "B": "There was no difference between urban and rural children",
+          "C": "Vocabulary size depended only on language, not on the urban/rural setting",
           "D": "Urban children in Argentina and the US had larger expressive vocabularies than rural peers"
         },
         "correct": "D",
-        "explanation": "Bornstein et al. found that urban environments with higher levels of maternal education and child-directed conversational turns correlated with significantly larger expressive vocabularies in toddlers."
+        "explanation": "Bornstein and Cote (2005) compared vocabulary acquisition in Argentina and the United States and found that urban children possessed significantly larger expressive vocabularies than their rural counterparts in both nations."
       },
       {
         "id": "w9_q17",
         "q_num": 17,
-        "question": "Helen Neville’s electrophysiological studies on deaf and hearing individuals provided key evidence that:",
+        "question": "According to Neville and Bavelier (2000), what does the “Neo-Lenneberg hypothesis” propose?",
         "options": {
-          "A": "The auditory cortex never responds to visual stimuli",
-          "B": "Language-relevant aspects of cerebral organisation are dependent on language experience during sensitive developmental periods",
-          "C": "Brain hemispheric dominance is fixed at conception and cannot be modified",
-          "D": "Language cannot be represented in the human brain without hearing sound"
+          "A": "Language areas are fixed at birth regardless of experience",
+          "B": "Language-relevant aspects of cerebral organisation are dependent on language experience",
+          "C": "Brain organisation for language is entirely genetic",
+          "D": "Experience does not affect brain organisation"
         },
-        "correct": "B",
-        "explanation": "Neville demonstrated that neural pathways and cortical organization for language are experience-dependent: individuals deprived of early language input exhibit altered cortical specialization."
+        "correct": "A",
+        "explanation": "As discussed by Neville and Bavelier (2000), the classic Neo-Lenneberg hypothesis proposed that specific cortical language areas are structurally pre-specified and fixed at birth, in contrast to the experience-dependent neuroplasticity model."
       },
       {
         "id": "w9_q18",
         "q_num": 18,
-        "question": "In J.J. Gibson's ecological approach to perception, what is meant by an \"affordance\" in infant learning?",
+        "question": "What is the concept of “affordances,” as proposed by James Gibson?",
         "options": {
-          "A": "The financial cost of purchasing educational toys",
-          "B": "An action possibility available in the environment, independent of whether it is actually used (e.g., a tree is \"climb-up-able\")",
-          "C": "A genetic mutation responsible for speech",
-          "D": "The grammatical case assigned to a noun"
+          "A": "A learned behaviour that develops only through explicit teaching",
+          "B": "An action possibility available in the environment, independent of whether it is actually used (e.g., a tree is “climb-up-able”)",
+          "C": "A type of grammatical structure in child-directed speech",
+          "D": "A measure of vocabulary size across cultures"
         },
         "correct": "B",
-        "explanation": "Gibson defined an affordance as the actionable properties between an actor and their environment (such as an object being graspable, or a surface being walk-on-able), guiding infant sensorimotor discovery."
+        "explanation": "In James J. Gibson's ecological psychology framework, an affordance is an objective action possibility that an environment provides to an organism (such as a flat surface being walkable or a tree being climb-up-able), existing independently of the organism's immediate ability to recognize it."
       },
       {
         "id": "w9_q19",
         "q_num": 19,
-        "question": "Which three corner vowels form the boundary of the human acoustic vowel space that mothers hyperarticulate in child-directed speech?",
+        "question": "In the Kuhl et al. (1997) study, which three vowels were found to have an expanded acoustic space in Motherese?",
         "options": {
-          "A": "/e/, /o/, /ə/",
+          "A": "/e/, /o/, /u/",
           "B": "/a/, /i/, /u/",
-          "C": "/p/, /t/, /k/",
-          "D": "/s/, /z/, /ʃ/"
+          "C": "/a/, /e/, /i/",
+          "D": "/o/, /u/, /a/"
         },
         "correct": "B",
-        "explanation": "The three extreme corner vowels in the acoustic F1/F2 quadrilateral are /a/ (low back), /i/ (high front), and /u/ (high back), which define the perceptual perimeter of human vowel systems."
+        "explanation": "The three corner vowels /a/, /i/, and /u/ represent the physiological and acoustic extremes of the human vowel space. Kuhl et al. (1997) found that mothers exaggerate formant frequencies (F1 and F2) specifically for /a/, /i/, and /u/ during infant-directed speech."
       },
       {
         "id": "w9_q20",
         "q_num": 20,
-        "question": "Which stylistic features are most typical of maternal speech to young language learners?",
+        "question": "Which set of features describes the syntactic properties of BTR?",
         "options": {
           "A": "Short sentences, parataxis, telegraphic style, repetition",
-          "B": "Hyper-academic vocabulary and Latin phrases",
-          "C": "Polysyllabic compound words and complex syntax",
-          "D": "Monotone pitch without prosodic variation"
+          "B": "Complex subordination and long embedded clauses",
+          "C": "Exaggerated contours, slow rate of production",
+          "D": "Cluster reduction, liquid substitution, questions, and pronoun shifts"
         },
         "correct": "A",
-        "explanation": "Caregivers consistently utilize short sentences, high redundancy and repetition, paratactic coordination rather than embedding, and telegraphic lexical focus when addressing young infants."
+        "explanation": "The syntactic properties of Baby Talk Register (BTR) include short utterance length, high parataxis (coordination rather than subordinate clauses), telegraphic brevity, and frequent repetition of utterances."
       },
       {
         "id": "w9_q21",
         "q_num": 21,
-        "question": "According to Eric Lenneberg’s (1967) Critical Period Hypothesis, when does the biological window for effortless, native-like first language acquisition close?",
+        "question": "Up to what stage does the physical development of the brain continue?",
         "options": {
-          "A": "At birth",
-          "B": "At 2 years of age",
+          "A": "Till the age of the critical period of language acquisition",
+          "B": "It continues for the entire lifetime",
           "C": "Puberty",
-          "D": "Around age 30"
+          "D": "It keeps on developing till adulthood is completed"
         },
         "correct": "C",
-        "explanation": "Lenneberg proposed that lateralization and loss of brain neural plasticity around puberty marks the end of the critical period for acquiring a first language naturally and natively."
+        "explanation": "In classical developmental neurobiology and Lenneberg's Critical Period framework, the major phase of physical and architectural maturation of the brain (including lateralization and synaptic stabilization) was understood to culminate around puberty."
       },
       {
         "id": "w9_q22",
         "q_num": 22,
-        "question": "What core premise distinguishes the emergentist / embodied theory of language acquisition from traditional Chomskyan nativism?",
+        "question": "What does the Ecological theory of language acquisition highlight?",
         "options": {
-          "A": "This theory explains the initial steps of the language acquisition process as unintended and inevitable consequences of the infant's multisensory interaction with the environment.",
-          "B": "Language is an innate biological organ that matures without any sensory input",
-          "C": "Children acquire language solely through rote flashcard drills",
-          "D": "Grammar is impossible to learn without explicit formal corrections"
+          "A": "This theory explains the initial steps of the language acquisition process as unintended and inevitable consequences of the infant’s multisensory interaction with the environment.",
+          "B": "The sensory motor domains don’t involve the language acquisition process.",
+          "C": "The children are passive learners in the process of language acquisition.",
+          "D": "It’s only the brain that helps in language acquisition, and our environment doesn’t play any active role in it."
         },
         "correct": "A",
-        "explanation": "Emergentism views language development not as the unfolding of an innate pre-wired module, but as an emergent property of dynamic interactions between basic perceptual-motor capacities and rich environmental stimulation."
+        "explanation": "The ecological theory highlights language acquisition as an embodied, emergent phenomenon: the infant's multisensory and exploratory sensorimotor interactions with physical objects and social partners inevitably give rise to symbolic communication."
       },
       {
         "id": "w9_q23",
         "q_num": 23,
-        "question": "Why is direct negative evidence (explicit parental corrections) considered largely ineffective in natural first language acquisition?",
+        "question": "What does the concept of “direct negative evidence” suggest about children’s language learning?",
         "options": {
-          "A": "Children do not have ears to hear adult corrections",
-          "B": "Parents never speak to their children",
-          "C": "Negative evidence is illegal in modern education",
+          "A": "Children often correct their mistakes whenever adults correct their phonological or syntactic mistakes by providing direct negative evidence.",
+          "B": "Children don’t resist direct negative evidence. They acquire language by memorising the corrections made by adults.",
+          "C": "Children acquire language through feedback from adults, based on direct negative evidence.",
           "D": "Children often resist direct negative evidence because when the adult directly hints at correction at various levels, such as phonology and syntax, the child often does not learn from it."
         },
         "correct": "D",
-        "explanation": "Famous experiments by McNeill and Brown showed that when parents attempt to directly correct a child's ungrammatical utterances (e.g. \"Nobody don't like me\"), the child focuses on communicative content rather than the formal rule."
+        "explanation": "Direct negative evidence (explicit grammatical correction by parents) is notoriously ineffective in young children's language acquisition; children routinely resist explicit correction and continue using their own internal grammar until their developmental rule system evolves."
       },
       {
         "id": "w9_q24",
         "q_num": 24,
-        "question": "In developmental psychology studies on \"epistemic trust\" (Koenig & Harris, 2005), what behavioral measure was evaluated in children?",
+        "question": "What did Shafto et al. (2012) link epistemic trust to in older children?",
         "options": {
-          "A": "Physical running speed",
-          "B": "Hearing thresholds",
-          "C": "Their word-learning behaviour when presented with accurate vs inaccurate informants",
-          "D": "Their dietary preferences"
+          "A": "Their ability to produce complex sentences",
+          "B": "Their phonological development",
+          "C": "Their word-learning behaviour",
+          "D": "Their ability to imitate adult speech"
         },
         "correct": "C",
-        "explanation": "Koenig and Harris demonstrated that preschoolers evaluate the past reliability of speakers and preferentially adopt new labels for novel objects from informants who previously named common objects correctly."
+        "explanation": "Shafto et al. (2012) demonstrated that children's epistemic trust (evaluating whether a teacher or informant is knowledgeable and helpful) directly dictates their word-learning behavior and selection of informants."
       },
       {
         "id": "w9_q25",
         "q_num": 25,
-        "question": "How is \"epistemic vigilance\" or selective social learning defined in cognitive development?",
+        "question": "What is epistemic trust?",
         "options": {
           "A": "The process by which a learner uses direct observations to infer which information sources are trustworthy",
-          "B": "Blind acceptance of whatever adults state",
-          "C": "The complete distrust of all language",
-          "D": "Inability to discriminate reliable from unreliable speakers"
+          "B": "The belief that all information sources are equally reliable",
+          "C": "A child’s ability to memorize vocabulary",
+          "D": "The tendency to imitate only family members"
         },
         "correct": "A",
-        "explanation": "Epistemic vigilance describes the cognitive mechanisms that enable children to track credibility cues, identify unreliable informants, and selectively trust verified sources of knowledge."
+        "explanation": "Epistemic trust is defined as the cognitive mechanism by which a learner evaluates past reliability and empirical observations to determine whether an information source or informant is trustworthy and reliable."
       }
     ]
   },
